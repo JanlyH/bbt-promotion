@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<!--关键字-->
+	<meta name="keywords" content="">	
+	<!--网站描述-->
+	<meta name="description" itemprop="description" content=""> 
+
+	<!--网站图标引入-->
+
+	<!-- <link rel="shortcut icon" type="/image/x-icon" href="/favicon.ico" /> 
+	<link href="./favicon.ico" type="/image/x-icon" rel="icon">-->
+
+	<!--网站图标引入END-->
+
+	<title>宝贝团--宝贝管理</title>
+		
+	<!--@Bootstrap v3.3.5 -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css"/>
+
+	<!--@页面共同样式css  v1.0.0-->
+
+	<link rel="stylesheet" href="./css/common.css"/>
+
+	<!--@自定义css v1.0.0-->
+	<link rel="stylesheet" href="./css/gdman_1100.css"/>
+
+
+
+
+</head>
+<body>
+	<!--顶部head-->
+	<div class="containertitle">
+		<div class="containerbox">
+			<div class="bbrow">
+				 <div class="bb-index-logo"><a href="javascript:;"><img src="./imgs/bblogo.png" alt="index_logo"><span>高级版</span></a></div>
+				 <div class="bb-right-nav">
+				 	<div class="bb-right-free">
+				 		<a href="javascript:;" class="bb-discount">续费有礼</a>
+				 	</div>
+				 	
+				 		<ul class="bb-right-navcontent">
+				 			<li ><a href="javascript:;" class="bb-right-opera">卖家中心</a></li>
+				 			<li ><a href="javascript:;" class="bb-right-opera">联系客服</a></li>
+				 			<li class="bb-usernav">
+				 				<a href="javascript:;" class="bb-right-opera">宝贝团科技</a><i><img src="./imgs/down_allow.png"/></i>
+				 				<!--顶部head 用户信息模态框-->
+								<div class="bb-usermodel">
+									<div class="bb-user-row">
+										<i class="bb-user-love"></i>
+										<i class="bb-user-love"></i>
+										<i class="bb-user-love"></i>
+										<a href="javascript:;" class="bb-user-cheats">升级秘籍  先到先得</a>
+									</div>
+									<div class="bb-user-row">
+										<i class="bb-user-crown"></i>
+										<a href="javascript:;" class="bb-user-crowntips" title="超级全能版  还可使用102天">超级全能版  还可使用102天</a>
+										<a href="javascript:;" class='bb-user-renew'>续费</a>
+									</div>
+									<div class="bb-user-row">
+										<i class="bb-user-envelope"></i>
+										<a href="javascript:;" class="bb-user-crowntips" title="短信余额1000条，只够用一周啦！">短信余额1000条，只够用一周啦！</a>
+										<a href="javascript:;" class='bb-user-recharge'>充值</a>
+									</div>
+									<div class="bb-user-row bb-user-operabtn">
+										<a href="javascript:;" class="bb-user-myshop">进入店铺</a>
+										<a href="javascript:;" class="bb-user-logout">退出</a>
+									</div>
+								</div>
+								<!--顶部head 用户信息模态框 END-->
+				 			</li>
+				 		</ul>
+				 	
+				 	
+				 	
+				 	
+				 </div>
+			</div>
+		</div>
+		
+
+	</div>
+	<!--顶部head END-->
+
+
+	<!--中部主体部分-->
+	<div class="container-content">
+		<div class="container-mid">
+			<!--左边导航栏 -->
+			<div class="bb-content-nav">
+				<dl class="bb-content-list">
+					<!--当前页面为首页时dt加上{bb-dt-active}样式-->
+					<dt><a href="./index.html" class="bb-contentnav-indexlink"><i class="bb-contentnav-index"></i><span>首页</span></a></dt>
+				</dl>
+				<!--init-status 为初始化参数，没实际效果，记录页面初始化时需要展开的list-->
+				<!--list-active 为记录当前展开的list列表，实现再点击后收起-->
+				<dl class="bb-content-list">
+					<dt class="bb-dt-active"><a href="./goodsman.html"><i class="bb-contentnav-goods"></i><span>宝贝管理</span></a></dt>
+				</dl>
+				<dl class="bb-content-list">
+					<dt><a href="./promotion/activitylist.html"><i class="bb-contentnav-pro"></i><span>促销管理</span><em class="bb-content-allow"></em></a></dt>
+					<dd class="normal"><a href="./promotion/activitylist.html">活动列表</a></dd>
+					<dd class="normal"><a href="./promotion/limittimediscount.html">限时折扣</a></dd>
+					<dd class="normal"><a href="javascript:;">阶梯折扣</a></dd>
+					<dd class="normal"><a href="./promotion/fullgive.html">满就送</a></dd>
+
+					<dd class="normal"><a href="javascript:;">多级包邮</a></dd>
+			
+				</dl>
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-renovation"></i><span>装修素材</span><em class="bb-content-allow"></em></a></dt>
+					<dd class="normal"><a href="javascript:;">发布列表</a></dd>
+					<dd class="normal"><a href="./renovation/rmk.html">关联销售模版</a></dd>
+					<dd class="normal"><a href="javascript:;">搭配套餐模版</a></dd>
+					<dd class="normal"><a href="javascript:;">团购模版</a></dd>
+					<dd class="normal"><a href="javascript:;">优惠卷</a></dd>
+					<dd class="normal"><a href="javascript:;">客服模版</a></dd>
+					<dd class="normal"><a href="javascript:;">分类模版</a></dd>
+					<dd class="normal"><a href="javascript:;">店铺海报</a></dd>
+					<dd class="normal"><a href="javascript:;">主图视频</a></dd>
+					<dd class="normal"><a href="javascript:;">促销水印</a></dd>
+				</dl>
+
+				
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-trading"></i><span>交易管理</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-wireless"></i><span>无线营销</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-user"></i><span>会员营销</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-share"></i><span>站外推广</span></a></dt>
+				</dl>
+
+				
+			</div>
+
+			<!--右边内容-->
+
+			<div class="container-content-frame">
+				
+				<div class="gd-container">
+					<div class="gd-head">
+						<p class="gd-head-title">上架中的宝贝</p>
+						<ul class="gd-head-nav">
+							<li class="active gd-head-nav-left"><a href="javascript:;">看折扣</a></li>
+							<li class="gd-head-nav-right"><a href="javascript:;">看模版</a></li>
+						</ul>
+
+						<div class="gd-head-serbox">
+							<div class="gd-head-sser">
+								<input type="text" class="form-control gdsearch" id="gdsearch" autocomplete="off" placeholder="输入宝贝ID、链接或促销标签"/>
+								<a href="javascript:;" class="gd-head-btn"></a>
+							</div>
+							<div class="gd-head-ckbox">
+								<div class="full-check-sm gd-head-radio">
+									<p class="full-radios radios-active" ttp="radios" name="yuan" value="4"><i></i>按最新上架展示</p>
+									<p class="full-radios" ttp="radios" value="8" name="pisces"><i></i>按活动数高低展示</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="gd-table">
+						<div class="gd-tb-thead">
+							<p class="gd-font gd-desc">宝贝描述</p>
+							<p class="gd-font gd-price">价格</p>
+							<p class="gd-font gd-pustime">上架时间</p>
+							<p class="gd-font gd-actnums">活动数量</p>
+							<p class="gd-font gd-opera">操作</p>
+						</div>
+						<!--宝贝主体 {循环体}-->
+						<div class="gd-tb-tbody">
+							<div class="gd-tb-tbody-box">
+								<div class="gd-desc gd-tbody-gd-desc">
+									<div class="gd-tbody-gdimg">
+										<img src="./imgs/gd-mg.png"/>
+									</div>
+									<a href="javascript:;" class="gd-tbody-gd-descfont">秋水伊人韩版纯色毛呢呢子大衣</a>
+								</div>
+								<p class="gd-price gd-tbody-gd-price">¥99.00</p>
+								<p class="gd-pustime gd-tbody-gd-pustime">2015-09-23 12:30</p>
+								<ul class="gd-actnums gd-tbody-gd-actnums">
+									<!--红色 gd-actnums-sup-->
+									<!--蓝色 gd-actnums-more-->
+									<!--黄色 gd-actnums-limitt-->
+									<li class="gd-actnums-sup">超级满就送</li>
+									<li class="gd-actnums-more">多买多送</li>
+									<li class="gd-actnums-limitt">限时打折</li>
+								</ul>
+								<ul class="gd-opera gd-tbody-gd-opera">
+									<li><a href="javascript:;" direction="slidedown" class="gd-tbody-opera-show opera-slidedown-native"><i></i><span>展开详情</span></a></li>
+									<li><a href="javascript:;" class="gd-tbody-crediscount"><i>+</i>创建打折</a></li>
+								</ul>
+							</div>
+							<div class="gd-tb-tbody-hb">
+								<div class="gd-tb-hb-thead">
+									<p class="gd-tb-hbth gd-tb-hbth-label">促销标签</p>
+									<p class="gd-tb-hbth gd-tb-hbth-actype">活动类型</p>
+									<p class="gd-tb-hbth gd-tb-hbth-acstatus">活动状态</p>
+									<p class="gd-tb-hbth gd-tb-hbth-gdnums">活动宝贝数</p>
+									<p class="gd-tb-hbth gd-tb-hbth-actime">活动时间</p>
+									<p class="gd-tb-hbth gd-tb-hbth-proprice">促销价</p>
+									<p class="gd-tb-hbth gd-tb-hbth-opera">操作</p>
+								</div>
+								<!--活动详情列信息，{循环体}-->
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<p class="gd-actnums-sup">超级满就送</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">满就送</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:30%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										<li><a href="javacript:;">修改折扣</a></li>
+										<li><a href="javacript:;">取消折扣</a></li>
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+								<!--活动详情列信息,{循环体}END-->
+								<!--活动详情列信息 各种样式-->
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<!--红色 gd-actnums-sup-->
+										<!--蓝色 gd-actnums-more-->
+										<!--黄色 gd-actnums-limitt-->
+										<p class="gd-actnums-more">多买多送</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">多买多送</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:60%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										<li><a href="javacript:;">修改折扣</a></li>
+										<li><a href="javacript:;">取消折扣</a></li>
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<!--红色 gd-actnums-sup-->
+										<!--蓝色 gd-actnums-more-->
+										<!--黄色 gd-actnums-limitt-->
+										<p class="gd-actnums-limitt">限时打折</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">限时打折</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:50%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+
+
+								<!--活动详情列信息 END -->
+							</div>
+						</div>
+						<!--宝贝主体 {循环体} END-->
+
+						<!--宝贝主体 ｛其它｝ 可删除-->
+						<div class="gd-tb-tbody">
+							<div class="gd-tb-tbody-box">
+								<div class="gd-desc gd-tbody-gd-desc">
+									<div class="gd-tbody-gdimg">
+										<img src="./imgs/gd-mg.png"/>
+									</div>
+									<a href="javascript:;" class="gd-tbody-gd-descfont">秋水伊人韩版纯色毛呢呢子大衣</a>
+								</div>
+								<p class="gd-price gd-tbody-gd-price">¥99.00</p>
+								<p class="gd-pustime gd-tbody-gd-pustime">2015-09-23 12:30</p>
+								<ul class="gd-actnums gd-tbody-gd-actnums">
+									<!--红色 gd-actnums-sup-->
+									<!--蓝色 gd-actnums-more-->
+									<!--黄色 gd-actnums-limitt-->
+									<li class="gd-actnums-sup">超级满就送</li>
+									<li class="gd-actnums-more">多买多送</li>
+									<li class="gd-actnums-limitt">限时打折</li>
+								</ul>
+								<ul class="gd-opera gd-tbody-gd-opera">
+									<li><a href="javascript:;" direction="slidedown" class="gd-tbody-opera-show opera-slidedown-native"><i></i><span>展开详情</span></a></li>
+									<li><a href="javascript:;" class="gd-tbody-crediscount"><i>+</i>创建打折</a></li>
+								</ul>
+							</div>
+							<div class="gd-tb-tbody-hb">
+								<div class="gd-tb-hb-thead">
+									<p class="gd-tb-hbth gd-tb-hbth-label">促销标签</p>
+									<p class="gd-tb-hbth gd-tb-hbth-actype">活动类型</p>
+									<p class="gd-tb-hbth gd-tb-hbth-acstatus">活动状态</p>
+									<p class="gd-tb-hbth gd-tb-hbth-gdnums">活动宝贝数</p>
+									<p class="gd-tb-hbth gd-tb-hbth-actime">活动时间</p>
+									<p class="gd-tb-hbth gd-tb-hbth-proprice">促销价</p>
+									<p class="gd-tb-hbth gd-tb-hbth-opera">操作</p>
+								</div>
+								<!--活动详情列信息，{循环体}-->
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<p class="gd-actnums-sup">超级满就送</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">满就送</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:30%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										<li><a href="javacript:;">修改折扣</a></li>
+										<li><a href="javacript:;">取消折扣</a></li>
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+								<!--活动详情列信息,{循环体}END-->
+								<!--活动详情列信息 各种样式-->
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<!--红色 gd-actnums-sup-->
+										<!--蓝色 gd-actnums-more-->
+										<!--黄色 gd-actnums-limitt-->
+										<p class="gd-actnums-more">多买多送</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">多买多送</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:60%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										<li><a href="javacript:;">修改折扣</a></li>
+										<li><a href="javacript:;">取消折扣</a></li>
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<!--红色 gd-actnums-sup-->
+										<!--蓝色 gd-actnums-more-->
+										<!--黄色 gd-actnums-limitt-->
+										<p class="gd-actnums-limitt">限时打折</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">限时打折</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:50%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+
+
+								<!--活动详情列信息 END -->
+							</div>
+						</div>
+
+						<div class="gd-tb-tbody">
+							<div class="gd-tb-tbody-box">
+								<div class="gd-desc gd-tbody-gd-desc">
+									<div class="gd-tbody-gdimg">
+										<img src="./imgs/gd-mg.png"/>
+									</div>
+									<a href="javascript:;" class="gd-tbody-gd-descfont">秋水伊人韩版纯色毛呢呢子大衣</a>
+								</div>
+								<p class="gd-price gd-tbody-gd-price">¥99.00</p>
+								<p class="gd-pustime gd-tbody-gd-pustime">2015-09-23 12:30</p>
+								<ul class="gd-actnums gd-tbody-gd-actnums">
+									<!--红色 gd-actnums-sup-->
+									<!--蓝色 gd-actnums-more-->
+									<!--黄色 gd-actnums-limitt-->
+									<li class="gd-actnums-sup">超级满就送</li>
+									<li class="gd-actnums-more">多买多送</li>
+									<li class="gd-actnums-limitt">限时打折</li>
+								</ul>
+								<ul class="gd-opera gd-tbody-gd-opera">
+									<li><a href="javascript:;" direction="slidedown" class="gd-tbody-opera-show opera-slidedown-native"><i></i><span>展开详情</span></a></li>
+									<li><a href="javascript:;" class="gd-tbody-crediscount"><i>+</i>创建打折</a></li>
+								</ul>
+							</div>
+							<div class="gd-tb-tbody-hb">
+								<div class="gd-tb-hb-thead">
+									<p class="gd-tb-hbth gd-tb-hbth-label">促销标签</p>
+									<p class="gd-tb-hbth gd-tb-hbth-actype">活动类型</p>
+									<p class="gd-tb-hbth gd-tb-hbth-acstatus">活动状态</p>
+									<p class="gd-tb-hbth gd-tb-hbth-gdnums">活动宝贝数</p>
+									<p class="gd-tb-hbth gd-tb-hbth-actime">活动时间</p>
+									<p class="gd-tb-hbth gd-tb-hbth-proprice">促销价</p>
+									<p class="gd-tb-hbth gd-tb-hbth-opera">操作</p>
+								</div>
+								<!--活动详情列信息，{循环体}-->
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<p class="gd-actnums-sup">超级满就送</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">满就送</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:30%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										<li><a href="javacript:;">修改折扣</a></li>
+										<li><a href="javacript:;">取消折扣</a></li>
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+								<!--活动详情列信息,{循环体}END-->
+								<!--活动详情列信息 各种样式-->
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<!--红色 gd-actnums-sup-->
+										<!--蓝色 gd-actnums-more-->
+										<!--黄色 gd-actnums-limitt-->
+										<p class="gd-actnums-more">多买多送</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">多买多送</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:60%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										<li><a href="javacript:;">修改折扣</a></li>
+										<li><a href="javacript:;">取消折扣</a></li>
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<!--红色 gd-actnums-sup-->
+										<!--蓝色 gd-actnums-more-->
+										<!--黄色 gd-actnums-limitt-->
+										<p class="gd-actnums-limitt">限时打折</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">限时打折</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:50%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+
+
+								<!--活动详情列信息 END -->
+							</div>
+						</div>
+
+						<div class="gd-tb-tbody">
+							<div class="gd-tb-tbody-box">
+								<div class="gd-desc gd-tbody-gd-desc">
+									<div class="gd-tbody-gdimg">
+										<img src="./imgs/gd-mg.png"/>
+									</div>
+									<a href="javascript:;" class="gd-tbody-gd-descfont">秋水伊人韩版纯色毛呢呢子大衣</a>
+								</div>
+								<p class="gd-price gd-tbody-gd-price">¥99.00</p>
+								<p class="gd-pustime gd-tbody-gd-pustime">2015-09-23 12:30</p>
+								<ul class="gd-actnums gd-tbody-gd-actnums">
+									<!--红色 gd-actnums-sup-->
+									<!--蓝色 gd-actnums-more-->
+									<!--黄色 gd-actnums-limitt-->
+									<li class="gd-actnums-sup">超级满就送</li>
+									<li class="gd-actnums-more">多买多送</li>
+									<li class="gd-actnums-limitt">限时打折</li>
+								</ul>
+								<ul class="gd-opera gd-tbody-gd-opera">
+									<li><a href="javascript:;" direction="slidedown" class="gd-tbody-opera-show opera-slidedown-native"><i></i><span>展开详情</span></a></li>
+									<li><a href="javascript:;" class="gd-tbody-crediscount"><i>+</i>创建打折</a></li>
+								</ul>
+							</div>
+							<div class="gd-tb-tbody-hb">
+								<div class="gd-tb-hb-thead">
+									<p class="gd-tb-hbth gd-tb-hbth-label">促销标签</p>
+									<p class="gd-tb-hbth gd-tb-hbth-actype">活动类型</p>
+									<p class="gd-tb-hbth gd-tb-hbth-acstatus">活动状态</p>
+									<p class="gd-tb-hbth gd-tb-hbth-gdnums">活动宝贝数</p>
+									<p class="gd-tb-hbth gd-tb-hbth-actime">活动时间</p>
+									<p class="gd-tb-hbth gd-tb-hbth-proprice">促销价</p>
+									<p class="gd-tb-hbth gd-tb-hbth-opera">操作</p>
+								</div>
+								<!--活动详情列信息，{循环体}-->
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<p class="gd-actnums-sup">超级满就送</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">满就送</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:30%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										<li><a href="javacript:;">修改折扣</a></li>
+										<li><a href="javacript:;">取消折扣</a></li>
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+								<!--活动详情列信息,{循环体}END-->
+								<!--活动详情列信息 各种样式-->
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<!--红色 gd-actnums-sup-->
+										<!--蓝色 gd-actnums-more-->
+										<!--黄色 gd-actnums-limitt-->
+										<p class="gd-actnums-more">多买多送</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">多买多送</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:60%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										<li><a href="javacript:;">修改折扣</a></li>
+										<li><a href="javacript:;">取消折扣</a></li>
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+
+								<div class="gd-tb-hb-tbody">
+									<div class="gd-tb-hbth-label gd-tb-hbtb-label">
+										<!--红色 gd-actnums-sup-->
+										<!--蓝色 gd-actnums-more-->
+										<!--黄色 gd-actnums-limitt-->
+										<p class="gd-actnums-limitt">限时打折</p>
+									</div>
+									<p class="gd-tb-hbth-actype gd-tb-hbtb-actype">限时打折</p>
+									<p class="gd-tb-hbth-acstatus gd-tb-hbtb-acstatus">进行中</p>
+									<p class="gd-tb-hbth-gdnums gd-tb-hbtb-gdnums">50</p>
+									<div class="gd-tb-hbth-actime gd-tb-hbtb-actime">
+										<div class="gd-hbtb-progress">
+											<i style="width:50%;"></i>
+										</div>
+										<p class="gd-hbtb-actime-lasttime">剩余：4天17小时27分54秒</p>
+									</div>
+									<p class="gd-tb-hbth-proprice gd-tb-hbtb-proprice">50.0</p>
+									<ul class="gd-tb-hbth-opera gd-tb-hbtb-opera">
+										
+										<li><a href="javacript:;">修改该活动</a></li>
+									</ul>
+								</div>
+
+
+								<!--活动详情列信息 END -->
+							</div>
+						</div>
+						<!--宝贝主体 ｛其它｝ 可删除 END-->
+					</div>
+				</div>
+				
+				
+
+
+				<a href="javascript:;" class="bb-slide-switch mid-slide-left" direction="slideLeft"></a>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+	<!--@JQuery v1.9.1-->
+
+	<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+
+	<!--@JQuery 动画过渡插件-->
+
+	<script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>
+
+	<!--@Common 共同js v1.0.0-->
+
+	<script type="text/javascript" src="./js/common.js"></script>
+
+	<!--@form 表单组件 v1.0.0-->
+
+	<script type="text/javascript" src="./js/form.js"></script>
+
+	<!--@本页js-->
+	
+	<script type="text/javascript" src="./js/gd.js"></script>
+
+
+</body>
+</html>

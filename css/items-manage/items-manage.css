@@ -1,0 +1,104 @@
+.items-manage-content {
+  padding: 15px;
+  background-color: #fff;
+  min-height: 400px; }
+
+.steps-nav {
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px; }
+  .steps-nav li {
+    display: inline-block;
+    margin-right: 15px; }
+    .steps-nav li.finished a {
+      color: #22a4ff; }
+      .steps-nav li.finished a:hover {
+        color: #55b9ff; }
+    .steps-nav li.current a {
+      color: #22a4ff;
+      font-weight: bold; }
+      .steps-nav li.current a:hover {
+        color: #55b9ff; }
+
+.module-title {
+  padding: 8px 5px;
+  background-color: #f5f5f5;
+  margin-bottom: 20px; }
+  .module-title h3 {
+    margin-right: 20px; }
+
+.condition-content {
+  margin-bottom: 10px; }
+  .condition-content .input-search {
+    margin-right: 20px; }
+
+.items-search-table {
+  border-top: 1px solid #ddd; }
+  .items-search-table .original-price {
+    color: #999;
+    font-size: 16px; }
+  .items-search-table .activity-price {
+    color: #ff424f;
+    font-size: 16px; }
+  .items-search-table .stock {
+    font-size: 16px; }
+  .items-search-table .price-sign {
+    font-size: 12px;
+    padding-right: 5px; }
+  .items-search-table .unit {
+    font-size: 12px;
+    margin-left: 5px; }
+  .items-search-table .ctrl-btns a {
+    display: inline-block;
+    margin: 5px 10px; }
+  .items-search-table .table-row {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #ddd; }
+    .items-search-table .table-row .td-pic {
+      width: 86px; }
+    .items-search-table .table-row .td-title, .items-search-table .table-row .td-ctrl {
+      width: 240px; }
+    .items-search-table .table-row .td-o-price, .items-search-table .table-row .td-stock, .items-search-table .table-row .td-act-price {
+      width: 100px;
+      padding-top: 20px; }
+    .items-search-table .table-row.table-thead .table-td {
+      height: 36px; }
+    .items-search-table .table-row .table-td {
+      float: left;
+      height: 77px;
+      padding: 8px;
+      text-align: center; }
+    .items-search-table .table-row.table-tbody .td-title {
+      padding-top: 20px;
+      text-align: left; }
+    .items-search-table .table-row.table-tbody .td-o-price, .items-search-table .table-row.table-tbody .td-stock, .items-search-table .table-row.table-tbody .td-act-price {
+      padding-top: 28px; }
+    .items-search-table .table-row.table-tbody .td-ctrl {
+      text-align: left; }
+  .items-search-table .activity-list {
+    display: none;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    background-color: #f5f5f5; }
+    .items-search-table .activity-list .table {
+      background-color: #fff;
+      border: 1px solid #ddd; }
+  .items-search-table .view-activity-btn .arrow-icon {
+    display: inline-block;
+    width: 11px;
+    height: 6px;
+    margin-left: 7px;
+    background: url(https://img.alicdn.com/imgextra/i2/17157061/TB2EOpDiVXXXXXkXpXXXXXXXXXX-17157061.png) no-repeat;
+    background-position: 0 -32px;
+    -moz-transition: -moz-transform 0.5s;
+    -o-transition: -o-transform 0.5s;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s; }
+    .items-search-table .view-activity-btn .arrow-icon.arrow-up {
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg); }

@@ -1,0 +1,105 @@
+@import "./tmpl/crm-common.scss";
+@import "./tmpl/condition.scss";
+.tips-title{
+	margin-bottom: 10px;
+	.blue-warning{
+		float: left;
+		margin-top: 1px;
+		margin-right: 5px;
+	}
+}
+.search-content{
+	.search-item{
+		margin-bottom: 10px;
+		.search-subitem{
+			&:first-child{
+				margin-right: 100px;
+			}
+			display: inline-block;
+			.input-small{
+				width: 90px;
+			}
+		}
+	}
+	.search-btn{
+		text-align: center;
+		padding-top: 10px;
+		margin-bottom: 20px;
+	}
+}
+.member-group-table{
+	.create-group{
+		padding-bottom: 10px;
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 20px;
+		.create-icon{
+			display: inline-block;
+			float: left;
+			width: 14px;
+			height: 14px;
+			background-position: -14px -1256px;
+    		margin-top: 3px;
+		}
+		.btn-link{
+			float: right;
+			margin: 0 10px;
+		}
+	}
+	.ctrl{
+		.btn-link+.btn-link{
+			border-left: 1px solid #ddd;
+		}
+		.btn-link{
+			float: left;
+			padding: 0 6px;
+		}
+	}
+}
+.condition-group-popup{
+	width: 850px;
+	.search-content{
+		text-align: center;
+		margin-bottom: 20px;
+		.btn{
+			margin-bottom: 10px;
+		}
+		.btn-link{
+			margin-left: 20px;
+		}
+		.search-result{
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		.tips{
+			color: #999;
+		}
+	}
+}
+
+.comfirm-box{
+	text-align: center;
+	.btn{
+		margin: 0 20px;
+	}
+}
+.manual-group-popup{
+	width: 350px;
+	text-align: center;
+	.group-name, & .tips{
+		margin-bottom: 15px;
+	}
+}
+.member-info-ctrl{
+	margin-bottom: 20px;
+	.btn{
+		margin: 0 10px;
+	}
+}
+.member-filter{
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+	.search-ctrl{
+		text-align: center;
+	}
+}

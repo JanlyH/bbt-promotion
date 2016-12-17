@@ -1,0 +1,6 @@
+@charset "UTF-8";
+/*雪碧图用*/
+.imgs-sprite {
+  background-image: url('/imgs/../imgs-s463dea4ecd.png');
+  background-repeat: no-repeat;
+}

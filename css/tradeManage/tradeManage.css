@@ -1,0 +1,372 @@
+.tips-content {
+  margin-bottom: 20px; }
+  .tips-content .tips-title {
+    margin-bottom: 10px; }
+  .tips-content .blue-warning {
+    float: left;
+    margin-right: 10px; }
+  .tips-content .tips-list li {
+    margin-left: 26px;
+    margin-bottom: 10px;
+    list-style-type: decimal;
+    color: #999; }
+
+.nav-title {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: -1px;
+  font-size: 14px; }
+  .nav-title .title-item {
+    width: 170px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #22a4ff;
+    color: #fff;
+    border-radius: 4px 4px 0 0; }
+
+.tradeManage-content {
+  padding: 15px;
+  background-color: #fff;
+  min-height: 600px; }
+  .tradeManage-content .btn, .tradeManage-content input.form-control {
+    vertical-align: middle; }
+  .tradeManage-content .page-header {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd; }
+  .tradeManage-content .stopBadComment-header {
+    border-bottom: 0; }
+  .tradeManage-content .form-control.custom-w130 {
+    width: 130px; }
+  .tradeManage-content .tabs-wraped {
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    margin-top: -16px;
+    margin-left: -15px;
+    margin-right: -15px; }
+    .tradeManage-content .tabs-wraped li {
+      float: left;
+      height: 50px;
+      width: 150px;
+      line-height: 50px;
+      background-color: #f5f5f5;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: -1px;
+      cursor: pointer;
+      font-size: 16px; }
+      .tradeManage-content .tabs-wraped li a {
+        width: 100%;
+        height: 100%;
+        display: block; }
+      .tradeManage-content .tabs-wraped li.active {
+        background-color: #fff;
+        border-top: 2px solid #22a4ff;
+        border-bottom: 0; }
+        .tradeManage-content .tabs-wraped li.active a {
+          margin-top: -1px; }
+      .tradeManage-content .tabs-wraped li:hover {
+        background-color: #fff; }
+    .tradeManage-content .tabs-wraped .tab-pane {
+      position: relative;
+      display: none; }
+  .tradeManage-content .pandect-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px; }
+    .tradeManage-content .pandect-item:before, .tradeManage-content .pandect-item:after {
+      content: " ";
+      display: table; }
+    .tradeManage-content .pandect-item:after {
+      clear: both; }
+    .tradeManage-content .pandect-item + .pandect-item {
+      padding-top: 20px;
+      border-top: 1px solid #ddd; }
+    .tradeManage-content .pandect-item .chart-content {
+      float: left;
+      width: 700px;
+      height: 220px;
+      border-right: 1px solid #ddd; }
+    .tradeManage-content .pandect-item.stopBadCommentRule .chart-content {
+      padding: 10px;
+      height: 240px; }
+    .tradeManage-content .pandect-item .table {
+      margin-bottom: 20px; }
+    .tradeManage-content .pandect-item .detaile-items li {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 10px; }
+      .tradeManage-content .pandect-item .detaile-items li:after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 10px;
+        width: 10px;
+        left: 0;
+        top: 5px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px; }
+      .tradeManage-content .pandect-item .detaile-items li.success:after {
+        background-color: #11c986; }
+      .tradeManage-content .pandect-item .detaile-items li.danger:after {
+        background-color: #ff424f; }
+  .tradeManage-content .pandect-ctrl, .tradeManage-content .switch-item {
+    float: left;
+    width: 270px;
+    height: 220px;
+    padding: 10px; }
+    .tradeManage-content .pandect-ctrl .switch-bar, .tradeManage-content .switch-item .switch-bar {
+      vertical-align: middle; }
+    .tradeManage-content .pandect-ctrl h5, .tradeManage-content .pandect-ctrl h4, .tradeManage-content .switch-item h5, .tradeManage-content .switch-item h4 {
+      width: 100px;
+      text-align: right;
+      vertical-align: middle; }
+    .tradeManage-content .pandect-ctrl .switch-date, .tradeManage-content .switch-item .switch-date {
+      vertical-align: middle; }
+  .tradeManage-content .ctrl-item {
+    padding-bottom: 20px;
+    margin-bottom: 20px; }
+    .tradeManage-content .ctrl-item.border {
+      border-bottom: 1px dashed #ddd; }
+    .tradeManage-content .ctrl-item .set-btn {
+      margin-top: 20px;
+      text-align: center; }
+  .tradeManage-content .chart-tit {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center; }
+  .tradeManage-content #pandect-chart {
+    width: 100%;
+    height: 100%; }
+  .tradeManage-content .form-item {
+    padding: 15px 0;
+    border-bottom: 1px dashed #ddd; }
+    .tradeManage-content .form-item:before, .tradeManage-content .form-item:after {
+      content: " ";
+      display: table; }
+    .tradeManage-content .form-item:after {
+      clear: both; }
+    .tradeManage-content .form-item .item-tit {
+      float: left;
+      width: 120px;
+      text-align: right;
+      margin-top: 6px;
+      margin-right: 10px; }
+      .tradeManage-content .form-item .item-tit.mt0 {
+        margin-top: 0; }
+    .tradeManage-content .form-item .item-detailes {
+      float: left;
+      display: inline-block;
+      width: 840px; }
+      .tradeManage-content .form-item .item-detailes input.input-mini {
+        margin: 0 5px; }
+      .tradeManage-content .form-item .item-detailes .dropdown-menu {
+        min-width: 120px;
+        line-height: 25px; }
+      .tradeManage-content .form-item .item-detailes .form-checkbox {
+        vertical-align: middle; }
+      .tradeManage-content .form-item .item-detailes li:before, .tradeManage-content .form-item .item-detailes li:after {
+        content: " ";
+        display: table; }
+      .tradeManage-content .form-item .item-detailes li:after {
+        clear: both; }
+      .tradeManage-content .form-item .item-detailes .sel-btn {
+        float: left;
+        margin-top: 6px;
+        margin-right: 10px; }
+      .tradeManage-content .form-item .item-detailes .detaile-info {
+        float: left;
+        width: 800px; }
+      .tradeManage-content .form-item .item-detailes .tips-text {
+        color: #999; }
+      .tradeManage-content .form-item .item-detailes .tips-box {
+        float: left;
+        width: 330px; }
+      .tradeManage-content .form-item .item-detailes .textarea-content {
+        float: left;
+        width: 500px;
+        margin-right: 10px; }
+        .tradeManage-content .form-item .item-detailes .textarea-content textarea {
+          height: 150px;
+          margin-bottom: 10px; }
+      .tradeManage-content .form-item .item-detailes .recharge-btn {
+        font-size: 12px;
+        padding: 2px 10px; }
+    .tradeManage-content .form-item .detaile-info > li {
+      margin-bottom: 10px;
+      min-height: 32px;
+      line-height: 32px; }
+  .tradeManage-content .msg-inform .item-detailes {
+    margin-bottom: 10px; }
+  .tradeManage-content .ctrl-btns {
+    text-align: center;
+    padding-top: 20px; }
+    .tradeManage-content .ctrl-btns .btn {
+      margin: 0 20px;
+      font-size: 18px; }
+  .tradeManage-content .trade-switch {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 170px; }
+    .tradeManage-content .trade-switch .switch-item {
+      width: 240px;
+      height: 170px; }
+      .tradeManage-content .trade-switch .switch-item + .switch-item {
+        border-left: 1px solid #ddd; }
+      .tradeManage-content .trade-switch .switch-item h4 {
+        width: auto; }
+      .tradeManage-content .trade-switch .switch-item .ctrl-item {
+        text-align: center; }
+  .tradeManage-content .seller-comment-manage .tabs-wraped {
+    margin-top: 0;
+    margin-bottom: 20px; }
+  .tradeManage-content .seller-comment-manage h4 {
+    margin-bottom: 20px; }
+  .tradeManage-content .search-condition {
+    font-size: 0;
+    width: 100%;
+    margin-bottom: 30px; }
+    .tradeManage-content .search-condition.border {
+      border-bottom: 1px dashed #ddd; }
+  .tradeManage-content .condition-item {
+    display: inline-block;
+    font-size: 14px; }
+    .tradeManage-content .condition-item.w50 {
+      width: 50%; }
+    .tradeManage-content .condition-item.w30 {
+      width: 30%; }
+    .tradeManage-content .condition-item.w33 {
+      width: 33%; }
+    .tradeManage-content .condition-item.w25 {
+      width: 25%; }
+    .tradeManage-content .condition-item.max {
+      width: 100%; }
+    .tradeManage-content .condition-item.w250px {
+      width: 250px; }
+      .tradeManage-content .condition-item.w250px input {
+        width: 250px; }
+    .tradeManage-content .condition-item .btn {
+      vertical-align: middle; }
+    .tradeManage-content .condition-item input.form-control {
+      vertical-align: middle; }
+    .tradeManage-content .condition-item .btn {
+      margin: 0 5px; }
+      .tradeManage-content .condition-item .btn.mr0 {
+        margin: 0; }
+  .tradeManage-content .condition-name {
+    width: 100px;
+    text-align: right;
+    vertical-align: middle; }
+  .tradeManage-content .condition-row {
+    width: 100%;
+    padding-bottom: 15px;
+    font-size: 0; }
+  .tradeManage-content .sel-display-pages .dropdown-menu {
+    min-width: 67px; }
+  .tradeManage-content .result-table {
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd; }
+    .tradeManage-content .result-table .table {
+      margin-top: 20px; }
+    .tradeManage-content .result-table .item-title {
+      display: inline-block;
+      width: 200px;
+      height: 20px;
+      line-height: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+    .tradeManage-content .result-table .cant-comment {
+      position: relative;
+      cursor: not-allowed; }
+      .tradeManage-content .result-table .cant-comment:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 70px;
+        height: 20px;
+        left: 0;
+        top: 0;
+        background-color: #fff;
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+        z-index: 2; }
+    .tradeManage-content .result-table .btn-link img {
+      margin-right: 5px; }
+  .tradeManage-content .comment-stats {
+    background: url(https://img.alicdn.com/tps/TB1WgeNIVXXXXb5XXXXXXXXXXXX.png) no-repeat;
+    padding-left: 24px;
+    line-height: 18px; }
+    .tradeManage-content .comment-stats.good {
+      background-position: 0 -100px; }
+    .tradeManage-content .comment-stats.soso {
+      background-position: 0 -50px; }
+    .tradeManage-content .comment-stats.poor {
+      background-position: 0 0; }
+  .tradeManage-content .tips {
+    color: #999;
+    vertical-align: middle; }
+  .tradeManage-content .commentTab .tabs-wraped {
+    height: 40px;
+    margin: 0; }
+    .tradeManage-content .commentTab .tabs-wraped li {
+      height: 40px;
+      width: 166px;
+      line-height: 40px;
+      font-size: 14px; }
+  .tradeManage-content .commentTab .tab-content {
+    padding-top: 0; }
+    .tradeManage-content .commentTab .tab-content textarea {
+      width: 499px;
+      border-top: 0;
+      border-color: #ddd;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      resize: vertical;
+      box-shadow: 0 0 0 transparent;
+      -webkit-box-shadow: 0 0 0 transparent;
+      -moz-box-shadow: 0 0 0 transparent;
+      -ms-box-shadow: 0 0 0 transparent; }
+      .tradeManage-content .commentTab .tab-content textarea:focus {
+        box-shadow: 0 0 0 transparent;
+        -webkit-box-shadow: 0 0 0 transparent;
+        -moz-box-shadow: 0 0 0 transparent;
+        -ms-box-shadow: 0 0 0 transparent;
+        border-color: #ddd; }
+  .tradeManage-content .buyer-comment {
+    width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+    .tradeManage-content .buyer-comment.before {
+      color: #999;
+      border-bottom: 1px dashed #ddd;
+      padding-bottom: 5px;
+      margin-bottom: 5px; }
+    .tradeManage-content .buyer-comment.after {
+      color: #666; }
+    .tradeManage-content .buyer-comment.large {
+      width: 220px; }
+  .tradeManage-content .interceptContent .title {
+    width: 200px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    text-align: center; }
+
+.send-msg-popup.tradeManage-content {
+  padding: 5px; }
+
+.send-msg-popup .textarea-content textarea {
+  resize: none;
+  height: 150px; }

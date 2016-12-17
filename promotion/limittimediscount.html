@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<!--关键字-->
+	<meta name="keywords" content="">	
+	<!--网站描述-->
+	<meta name="description" itemprop="description" content=""> 
+
+	<!--网站图标引入-->
+
+	<!-- <link rel="shortcut icon" type="/image/x-icon" href="/favicon.ico" /> 
+	<link href="./favicon.ico" type="/image/x-icon" rel="icon">-->
+
+	<!--网站图标引入END-->
+
+	<title>宝贝团-促销管理-限时折扣</title>
+		
+	<!--@Bootstrap v3.3.5 -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+
+	<!--@页面共同样式css  v1.0.0-->
+
+	<link rel="stylesheet" href="../css/common.css"/>
+
+	<!--@日历控件样式 v1.0.0-->
+
+	<link rel="stylesheet" href="../css/clndr.css"/>
+	
+	<!--@页面共同样式css  v1.0.0-->
+
+	<link rel="stylesheet" href="../css/promotion_1103.css"/>
+
+
+
+
+</head>
+<body id="limittdiscount">
+	<!--顶部head-->
+	<div class="containertitle">
+		<div class="containerbox">
+			<div class="bbrow">
+				 <div class="bb-index-logo"><a href="javascript:;"><img src="../imgs/bblogo.png" alt="index_logo"><span>高级版</span></a></div>
+				 <div class="bb-right-nav">
+				 	<div class="bb-right-free">
+				 		<a href="javascript:;" class="bb-discount">续费有礼</a>
+				 	</div>
+				 	
+				 		<ul class="bb-right-navcontent">
+				 			<li ><a href="javascript:;" class="bb-right-opera">卖家中心</a></li>
+				 			<li ><a href="javascript:;" class="bb-right-opera">联系客服</a></li>
+				 			<li class="bb-usernav">
+				 				<a href="javascript:;" class="bb-right-opera">宝贝团科技</a><i><img src="../imgs/down_allow.png"/></i>
+				 				<!--顶部head 用户信息模态框-->
+								<div class="bb-usermodel">
+									<div class="bb-user-row">
+										<i class="bb-user-love"></i>
+										<i class="bb-user-love"></i>
+										<i class="bb-user-love"></i>
+										<a href="javascript:;" class="bb-user-cheats">升级秘籍  先到先得</a>
+									</div>
+									<div class="bb-user-row">
+										<i class="bb-user-crown"></i>
+										<a href="javascript:;" class="bb-user-crowntips" title="超级全能版  还可使用102天">超级全能版  还可使用102天</a>
+										<a href="javascript:;" class='bb-user-renew'>续费</a>
+									</div>
+									<div class="bb-user-row">
+										<i class="bb-user-envelope"></i>
+										<a href="javascript:;" class="bb-user-crowntips" title="短信余额1000条，只够用一周啦！">短信余额1000条，只够用一周啦！</a>
+										<a href="javascript:;" class='bb-user-recharge'>充值</a>
+									</div>
+									<div class="bb-user-row bb-user-operabtn">
+										<a href="javascript:;" class="bb-user-myshop">进入店铺</a>
+										<a href="javascript:;" class="bb-user-logout">退出</a>
+									</div>
+								</div>
+								<!--顶部head 用户信息模态框 END-->
+				 			</li>
+				 		</ul>
+				 	
+				 	
+				 	
+				 	
+				 </div>
+			</div>
+		</div>
+		
+
+	</div>
+	<!--顶部head END-->
+
+
+	<!--中部主体部分-->
+	<div class="container-content">
+		<div class="container-mid">
+			<!--左边导航栏 -->
+			<div class="bb-content-nav navfixed">
+				<dl class="bb-content-list">
+					<!--当前页面为首页时dt加上{bb-dt-active}样式-->
+					<dt><a href="../index.html" class="bb-contentnav-indexlink"><i class="bb-contentnav-index"></i><span>首页</span></a></dt>
+				</dl>
+				<!--init-status 为初始化参数，没实际效果，记录页面初始化时需要展开的list-->
+				<!--list-active 为记录当前展开的list列表，实现再点击后收起-->
+				<dl class="bb-content-list">
+					<dt><a href="../goodsman.html"><i class="bb-contentnav-goods"></i><span>宝贝管理</span></a></dt>
+				</dl>
+				<dl class="bb-content-list init-status list-active">
+					<dt><a href="javascript:;"><i class="bb-contentnav-pro"></i><span>促销管理</span><em class="bb-content-allow"></em></a></dt>
+					<dd class="normal"><a href="./activitylist.html">活动列表</a></dd>
+					<dd class="active"><a href="./limittimediscount.html">限时折扣</a></dd>
+					<dd class="normal"><a href="javascript:;">阶梯折扣</a></dd>
+					<dd class="normal"><a href="./fullgive.html">满就送</a></dd>
+
+					<dd class="normal"><a href="javascript:;">多级包邮</a></dd>
+		
+				</dl>
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-renovation"></i><span>装修素材</span><em class="bb-content-allow"></em></a></dt>
+					<dd class="normal"><a href="javascript:;">发布列表</a></dd>
+					<dd class="normal"><a href="../renovation/rmk.html">关联销售模版</a></dd>
+					<dd class="normal"><a href="javascript:;">搭配套餐模版</a></dd>
+					<dd class="normal"><a href="javascript:;">团购模版</a></dd>
+					<dd class="normal"><a href="javascript:;">优惠卷</a></dd>
+					<dd class="normal"><a href="javascript:;">客服模版</a></dd>
+					<dd class="normal"><a href="javascript:;">分类模版</a></dd>
+					<dd class="normal"><a href="javascript:;">店铺海报</a></dd>
+					<dd class="normal"><a href="javascript:;">主图视频</a></dd>
+					<dd class="normal"><a href="javascript:;">促销水印</a></dd>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-trading"></i><span>交易管理</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-wireless"></i><span>无线营销</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-user"></i><span>会员营销</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-share"></i><span>站外推广</span></a></dt>
+				</dl>
+
+				
+			</div>
+
+			<!--右边内容-->
+
+			<div class="container-content-frame">
+				
+				<!--宝贝折扣编辑页-->
+
+				<div class="prodise-disinfo-box" >
+					<div class="prodise-disinfo-ifbox">
+						<div class="prodise-cbox-head">
+							<p class="prodise-cbox-title"><span>促销活动</span> — 限时打折</p>
+							<p class="prodise-cbox-titlenav"><a href="javascript:;"><i>①</i>基本信息  >   </a><span><i>②</i>宝贝及折扣</span></p>
+						</div>
+						<div class="prodise-disinfo-row">
+							<p class="prodise-disinfo-lv1ttl">活动名称：</p>
+							<div class="prodise-disinfo-lv1input">
+								<input type="text" class="form-control" autocomplete="off" />
+							</div>
+							<div class="prodise-disinfo-protitle">
+								<p class="prodise-disinfo-protitle-t">促销标语：</p>
+								<div class="prodise-disinfo-protitle-input">
+								<input type="text" class="form-control" autocomplete="off" />
+
+								</div>
+								<ul class="prodise-disinfo-selul">
+									<li class="active"><a href="javascript:;">限时促销</a></li>
+									<li><a href="javascript:;">限时秒杀</a></li>
+									<li><a href="javascript:;">限时特惠</a></li>
+									<li><a href="javascript:;">限时特价</a></li>
+								</ul>
+							</div>
+
+						</div>
+
+						<div class="prodise-disinfo-row">
+							<p class="prodise-disinfo-lv1ttl">活动时间：</p>
+							<div class="prodise-disinfo-lv1input" id="as">
+								<p class="prodise-date" id="pro-start-day"><span></span><i></i></p>
+							</div>
+							<i class="prodise-disinfo-date">-</i>
+							<div class="prodise-disinfo-lv1input">
+								<p class="prodise-date" id="pro-end-day"><span></span><i></i></p>
+							</div>
+							<ul class="prodise-disinfo-dtime">
+								<li><a href="javascript:;">3天</a></li>
+								<li><a href="javascript:;">7天</a></li>
+								<li><a href="javascript:;">15天</a></li>
+								<li><a href="javascript:;">30天</a></li>
+								<li><a href="javascript:;">产品到期时间</a></li>
+							</ul>
+						</div>
+
+						<div class="prodise-disinfo-row">
+							<p class="prodise-disinfo-lv1ttl">优惠对象：</p>
+							<div class="prodise-disinfo-lv1input">
+								<div class="dropdown">
+									  <a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									    更多
+									    <span class="caret"></span>
+									  </a>
+									  <ul class="dropdown-menu" aria-labelledby="dLabel">
+									     <li>123456</li>
+									     <li>123456</li>
+									     <li>123456</li>
+									  </ul>
+									</div>
+							</div>
+							<div class="prodise-disinfo-switch">
+								
+								<div class="form-checkbox">
+									<p class="form-checkbox-pp" ttp="checkbox" name="fulllimit"><i></i>开启限购模式</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="prodise-disinfo-row">
+							<p class="prodise-disinfo-lv1ttl">消息提醒：</p>
+							
+							<div class="prodise-disinfo-disobject">
+								<div class="form-checkbox">
+									<p class="form-checkbox-pp" ttp="checkbox" name="fulllimit"><i></i>开启活动到期短信提醒（默认提前12小时）</p>
+								</div>
+								
+							</div>
+						</div>
+
+
+						<div class="prodise-disinfo-prehead">
+							<p>预览效果</p>
+						</div>
+
+						<div class="prodise-preshow-box">
+							<div class="prodise-preshow-head">
+								<p class="prodise-preshow-headprice"><span>价格</span><i>￥268.00</i></p>
+								<p class="prodise-preshow-taobaoprice"><span>淘宝价</span><i>￥268.00</i><em class="prodise-preshow-taobaoprice-label">直供价</em></p>
+							</div>
+							<div class="prodise-preshow-place">
+								<p class="prodise-preshow-epln"><span>配送</span><i>韩国&nbsp;&nbsp;至&nbsp;&nbsp;广东深圳南山区</i><em></em><i>运费&nbsp;免运费</i><em></em></p>
+							</div>
+							<div class="prodise-preshow-nums">
+								<span>数量</span>
+								<div class="prodise-preshow-cal">
+									<a href="javacript:;" class="prodise-preshow-calbtn prodise-preshow-dis">-</a>
+									<input type="text" class="prodise-preshow-input" value="1"/>
+									<a href="javacript:;" class="prodise-preshow-calbtn prodise-preshow-add">+</a>
+								</div>
+								<i>件(库存2479件)</i>
+							</div>
+							<div class="prodise-preshow-sub">
+								<a href="javascirpt:;" class="prodise-preshow-buynow">立即购买</a>
+								<a href="javascirpt:;" class="prodise-preshow-addcart"><img src="../imgs/shoppingcart.png" />加入购物车</a>
+							</div>
+						</div>
+						
+						
+					</div>
+
+					<div class="prodise-subbtnbox">
+						<a href="javascript:;" class="prodise-subbtn">下一步</a>
+					</div>
+
+				</div>
+
+				<!--宝贝折扣编辑页END-->
+
+
+			<!--限时打折信息显示页及设置页-->
+				<div class="prodise-cbox" style="display:none;" >
+					<div class="prodise-cbox-frame">
+						<div class="prodise-cbox-head">
+							<p class="prodise-cbox-title"><span>促销活动</span> — 限时打折</p>
+							<p class="prodise-cbox-titlenav"><a href="javascript:;"><i>①</i>基本信息  >   </a><span><i>②</i>宝贝及折扣</span></p>
+						</div>
+						<div class="prodise-cbox-selbox">
+							<ul class="prodise-cbox-selul">
+								<li class="active"><a href="javascript:;">部分宝贝不同优惠</a></li>
+								<li class="border-left-none "><a href="javascript:;">部分宝贝统一优惠</a></li>
+								<li class="border-left-none "><a href="javascript:;">全部宝贝</a></li>
+							</ul>
+							<div class="prodise-cbox-limtbuy">
+								<span>限购</span>
+								<input type="text" class="form-control prodise-cbox-limit"/>
+								<span>件</span>
+							</div>
+							<p class="prodise-cbox-selected">已选择<span>5</span>个宝贝</p>
+								
+						</div>
+						<div class="prodise-cbox-search">
+							<!--搜索框-->
+							<div class="prodise-cbox-selall">
+								<div class="dropdown">
+								  <a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								    全店类目
+								    <span class="caret"></span>
+								  </a>
+								  <ul class="dropdown-menu" aria-labelledby="dLabel">
+								     <li>123456</li>
+								     <li>123456</li>
+								     <li>123456</li>
+								  </ul>
+								</div>
+							</div>
+
+							<div class="prodise-cbox-selstatus">
+								<div class="dropdown">
+								  <a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								    在售
+								    <span class="caret"></span>
+								  </a>
+								  <ul class="dropdown-menu" aria-labelledby="dLabel">
+								     <li>123456</li>
+								     <li>123456</li>
+								     <li>123456</li>
+								  </ul>
+								</div>
+							</div>
+
+							<div class="prodise-cbox-search-ii">
+								<input type="text" id="prodiseiiinput" class="form-control" autocomplete="off" placeholder="输入活动名称、宝贝id或链接"/>
+								<a href="javascript:;" id="prolincboxsearchbtn"></a>
+							</div>
+
+							<ul class="prodise-cbox-sel-showorhide">
+								<li class="active"><a href="javascript:;">隐藏已加入的宝贝</a></li>
+								<li><a href="javascript:;">隐藏已打折的宝贝</a></li>
+							</ul>
+							<div class="prodise-cbox-orderby">
+								<div class="dropdown">
+								  <a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								    智能排序
+								    <span class="caret"></span>
+								  </a>
+								  <ul class="dropdown-menu" aria-labelledby="dLabel">
+								     <li>123456</li>
+								     <li>123456</li>
+								     <li>123456</li>
+								  </ul>
+								</div>
+							</div>
+							<!--搜索框 END-->
+
+						</div>
+						<div class="prodisecn-hd-box">
+							<div class="prodise-cbox-thead" >
+								<div class="hd-box-psj">
+									<div class="hd-box-shotip">
+										<div class="hd-box-sty">
+											<!--折扣 表头-->
+
+											<div class="prodise-cbox-thead-sel">
+												<div class="form-checkbox">
+													<p class="form-checkbox-pp" ttp="checkbox" cboxname="selall"><i></i>全选</p>
+												</div>
+											</div>
+											<p class="prodise-p prodise-cbox-thead-desc">宝贝描述</p>
+											<p class="prodise-p prodise-cbox-thead-price">价格</p>
+											<p class="prodise-p prodise-cbox-thead-proprice">促销价</p>
+											<p class="prodise-p prodise-cbox-thead-discount">折扣</p>
+											<p class="prodise-p prodise-cbox-thead-disprice">减价</p>
+											<p class="prodise-p prodise-cbox-thead-status">状态</p>
+											<p class="prodise-p prodise-cbox-thead-opearaction">操作</p>
+											<!--折扣 表头 END-->
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tbody-navscroll">
+								<!--宝贝折扣 {循环体}-->
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<!--宝贝折扣 {循环体} END-->
+
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-no">未打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+								<div class="prodise-cbox-tbody">
+									<div class="prodise-cbox-tbody-checkbox">
+										<div class="form-checkbox">
+											<p class="form-checkbox-pp" ttp="checkbox" name="goosel"><i></i></p>
+										</div>
+									</div>
+									<div class="prodise-cbox-tbody-img">
+										<img src="../imgs/goods_img.png"/>
+									</div>
+									<div class="prodise-cbox-tbody-desc">
+										<a href="javascript:;">甜美波点印花连衣裙 气质女装高腰修身蓬蓬背心裙</a>
+									</div>
+
+									<p class="prodise-cbox-tbody-price">1253.00</p>
+									<div class="prodise-cbox-tbody-proprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-discount">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<div class="prodise-cbox-tbody-disprice">
+										<input type="text" class="form-control" autocomplete="off" />
+									</div>
+
+									<p class="prodise-cbox-thead-status prodise-cbox-status-yes">已打折</p>
+									<div class="prodise-cbox-thead-editgoods">
+										<a href="javascript:;">编辑宝贝</a>
+
+									</div>
+
+								</div>
+
+						</div>
+					</div>
+
+					<div class="prodise-cbox-footer prodise-footer-fixed">
+						<div class="footer-fixed-nab" >
+							<div class="footer-fixed-npi" >
+								<div class="footer-fixed-content">
+									<a href="javascript:;" class="prodise-cbox-prestep">上一步</a>
+									<p class="prodise-cbox-added">已加入：<span>5</span>/185</p>
+									<div class="prodise-cbox-discount-cal">
+										<p class="prodise-cbox-footer-setdiscount">设置折扣:</p>
+										<div class="prodise-cbox-footer-discounttype">
+											<div class="dropup">
+											  <a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+											    打折
+											    <span class="caret"></span>
+											  </a>
+											  <ul class="dropdown-menu" aria-labelledby="dLabel">
+											     <li>123456</li>
+											     <li>123456</li>
+											     <li>123456</li>
+											  </ul>
+											</div>
+										</div>
+										<div class="prodise-cbox-footer-discountval">
+											<input type="text" class="form-control" autocomplete="off" />
+										</div>
+										<div class="prodise-cbox-footer-precal">
+											<a href="javascript:;">试算</a>
+										</div>
+
+										<ul class="prodise-cbox-footer-scroe">
+											<li><a href="javascript:;">抹角分</a></li>
+											<li><a href="javascript:;">抹分</a></li>
+										</ul>
+									</div>
+									<a href="javascript:;" class="prodise-cbox-publishactivity">发布活动</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--限时打折信息显示页及设置页END-->
+				
+
+
+				<a href="javascript:;" class="bb-slide-switch mid-slide-left" direction="slideLeft"></a>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+	<!--@JQuery v1.9.1-->
+
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+	<!--@bootstrap 下拉组件-->
+
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+	<!--@Common 共同js v1.0.0-->
+
+	<script type="text/javascript" src="../js/common.js"></script>
+
+	<!--@clndr 日历组件 v1.0.0-->
+
+	<script type="text/javascript" src="../js/pclndr.js"></script>
+
+	<!--@clndr 本页js v1.0.0-->
+
+
+	<script type="text/javascript" src="../js/promotion.js"></script>
+
+	<script>
+		$('.dropdown-toggle').dropdown();
+	</script>
+
+</body>
+</html>

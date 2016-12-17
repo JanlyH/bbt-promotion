@@ -1,0 +1,48 @@
+.create-success {
+  width: 100%;
+  background-color: #fff;
+  padding: 15px;
+  min-height: 600px; }
+  .create-success .breadcrumb {
+    line-height: 30px;
+    margin-top: 0; }
+  .create-success .page-header {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px; }
+  .create-success .ctrl-btns {
+    padding-bottom: 20px;
+    margin-bottom: 20px; }
+    .create-success .ctrl-btns a {
+      display: inline-block;
+      width: 120px;
+      padding: 5px 0;
+      text-align: center;
+      margin: 0 10px;
+      vertical-align: middle; }
+    .create-success .ctrl-btns .line {
+      display: inline-block;
+      width: 1px;
+      height: 32px;
+      border-left: 1px solid #ddd;
+      vertical-align: middle; }
+  .create-success .cont .table-bordered td {
+    width: 33.3%; }
+  .create-success .state-tips-text {
+    font-size: 40px;
+    text-align: center;
+    color: #11c986;
+    padding: 20px 0; }
+    .create-success .state-tips-text .bbt-icons {
+      font-size: 42px;
+      margin-right: 10px; }
+  .create-success .ctrl-btns {
+    text-align: center; }
+  .create-success .sub-tips-text {
+    font-size: 14px;
+    padding-bottom: 60px;
+    color: #666;
+    text-align: center; }

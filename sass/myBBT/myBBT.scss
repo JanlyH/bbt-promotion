@@ -1,0 +1,867 @@
+@import "opt";
+@import "tips";
+i{
+	font-style: normal;
+}
+.nav-title{
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: -1px;
+	font-size: 14px;
+	.title-item{
+		width: 100px;
+		height: 32px;
+		line-height: 32px;
+		text-align: center;
+		background-color: #22a4ff;
+		color: #fff;
+		border-radius: 4px 4px 0 0;
+	}
+}
+.myBBT-content{
+	padding: 15px;
+	background-color: #fff;
+	min-height: 600px;
+	@include clearfix();
+	// 首页
+	.page-header{
+		width: 100%;
+		margin: 0;
+	    margin-bottom: 15px;
+	    padding-bottom: 15px;
+	    border-bottom: 1px solid #ddd;
+	    font-size: 16px;
+	}
+	.welcome{
+		width: 100%;
+		height: 55px;
+		padding: 10px 20px;
+		background-color: #f5f5f5;
+		margin-bottom: 20px;
+	}
+	.welcome-word{
+		float: left;
+		font-size: 18px;
+		margin-top: 5px;
+	}
+	.bind-phone-num{
+		float: right;
+		width: 350px;
+		height: 100%;
+		.bind{
+			display: inline-block;
+			width: 200px;
+			text-align: left;
+			margin-top: 8px;
+		}
+		.btn{
+			float: right;
+		}
+	}
+	.user-info{
+		display: inline-block;
+		font-size: 0;
+		width: 100%;
+		margin-bottom: 30px;
+		.info-item+.info-item{
+			border-left: 1px solid #ddd;
+		}
+		.info-item{
+			display: inline-block;
+			width: 33%;
+			height: 120px;
+			font-size: 14px;
+			padding: 10px 20px;
+		}
+		.user-logo{
+			float: left;
+			width: 100px;
+			height: 100px;
+			@include border-radius(60px);
+			border: 1px solid #ddd;
+			overflow: hidden;
+			margin-right: 20px;
+			img{
+				max-width: 100px;
+				max-height: 100px; 
+				border: 0;
+			}
+		}
+		.user-base-info{
+			float: left;
+			width: 160px;
+			padding-top: 10px;
+			&.full{
+				width: 100%;
+			}
+			.user-name{
+				display: inline-block;
+				width: 90px;
+				height: 20px;
+				line-height: 20px;
+				vertical-align: top;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+			li{
+				margin-bottom: 10px;
+			}
+			.renew-btn{
+			    display: block;
+				float: right;
+			    width: 40px;
+			    height: 20px;
+			    line-height: 20px;
+			    text-align: center;
+			    margin-right: 10px;
+			    background: #ff3131;
+			    color: #fff;
+			    font-size: 12px;
+			    @include border-radius(2px);
+			    &:hover{
+			    	background-color: lighten(#ff3131, 10%);
+			    }
+			}
+			.recharge-btn{
+				display: block;
+				float: right;
+			    width: 40px;
+			    height: 20px;
+			    line-height: 20px;
+			    text-align: center;
+			    margin-right: 10px;
+			    background: #22a4ff;
+			    color: #fff;
+			    font-size: 12px;
+			    @include border-radius(2px);
+			    &:hover{
+			    	background-color: lighten(#22a4ff, 10%);
+			    }
+			}
+		}
+		.score-header{
+			float: left;
+			width: 100%;
+			margin-top: 10px;
+			.btn-link{
+				float: right;
+			}
+		}
+		.score{
+			float: left;
+			width: 100%;
+			.num{
+				font-size: 50px;
+			}
+			.unit{
+				font-size: 20px;
+			}
+		}
+	}
+	.get-score{
+		font-size: 0;
+		margin-bottom: 30px;
+		.score-item+.score-item{
+			border-left: 1px solid #ddd;
+		}
+		.score-item-title{
+			width: 100%;
+			height: 36px;
+			line-height: 36px;
+			font-size: 18px;
+			background-color: #f5f5f5;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		.score-item{
+			display: inline-block;
+			width: 33%;
+			height: 200px;
+			font-size: 14px;
+			padding: 10px 20px;
+			margin-top: 20px;
+			&.friend{
+				.item-logo{
+					background-color: #22a4ff;
+				}
+				.logo-icon{
+					background-position: 6px -1485px;
+				}
+				.item-intro li{
+					margin-bottom: 10px;
+				}
+			}
+			&.evaluate{
+				.item-logo{
+					background-color: #ff424f;
+				}
+				.logo-icon{
+					background-position: 2px -1538px;
+				}
+			}
+			&.phone{
+				.item-logo{
+					background-color: #1ebeb4;
+				}
+				.logo-icon{
+					background-position: 14px -1594px;
+				}
+			}
+		}
+		.item-logo{
+			float: left;
+			width: 100px;
+			height: 100px;
+			@include border-radius(60px);
+			border: 1px solid #ddd;
+			overflow: hidden;
+			margin-right: 20px;
+			margin-top: 17px;
+		}
+		.logo-icon{
+			display: block;
+			width: 60px;
+			height: 52px;
+			margin: 23px auto;
+			background: url(https://img.alicdn.com/imgextra/i2/17157061/TB2EOpDiVXXXXXkXpXXXXXXXXXX-17157061.png) no-repeat;
+		}
+		.item-main-content{
+			float: left;
+			position: relative;
+			width: 150px;
+			height: 130px;
+			.btn{
+				position: absolute;
+				bottom: 0;
+			    width: 100%;
+			    font-size: 18px;
+			}
+		}
+	}
+	.own-discount{
+		position: relative;
+		font-size: 0;
+		@include clearfix();
+		.cut-line{
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			top: 375px;
+			border-top: 1px dashed #ddd;
+		}
+		.own-discount-item+.own-discount-item{
+			border-left: 1px solid #ddd;
+		}
+		.own-discount-item{
+			display: inline-block;
+			float: left;
+			width: 50%;
+			height: 300px;
+			font-size: 14px;
+			padding: 20px;
+			margin: 20px 0;
+			&.nobordered{
+				border: 0;
+			}
+			.item-title{
+				width: 100%;
+				height: 36px;
+				line-height: 36px;
+				background-color: #f5f5f5;
+				font-size: 18px;
+				text-align: center;
+				margin-bottom: 20px;
+			}
+			.item-banner{
+				float: left;
+				width: 180px;
+				height: 220px;
+				background-color: #f5f5f5;
+				overflow: hidden;
+				text-align: center;
+				img{
+					vertical-align: middle;
+				}
+			}
+			.item-main-content{
+				position: relative;
+				float: right;
+				width: 240px;
+				height: 220px;
+				text-align: center;
+			}
+			.discount-info{
+				font-size: 16px;
+			}
+			.btn{
+				position: absolute;
+				width: 100%;
+				bottom: 0;
+				left: 0;
+				font-size: 18px;
+			}
+			.discount-info{
+				li{
+					margin-bottom: 10px;
+				}
+			}
+			.discount-condition{
+				.first-condition, & .second-condition{
+					color: #ff424f;
+				}
+				.first-condition{
+					display: inline-block;
+					font-size: 26px;
+					width: 85px;
+					text-align: right;
+				}
+				.unit{
+					font-size: 16px;
+					padding: 0 5px;
+				}
+				.sign{
+					padding: 0 10px;
+					color: #999;
+				}
+				.discount-item{
+					display: inline-block;
+					width: 105px;
+					text-align: left;
+				}
+			}
+			&.upgrade-version{
+				.discount-condition{
+					padding: 25px 0;
+				}
+				.first-condition, & .second-condition{
+					font-size: 36px;
+				}
+				.sign{
+					font-size: 36px;
+				}
+			}
+			&.other-discount{
+				.sign, .unit{
+					padding: 0;
+				}
+				.first-condition{
+					width: 56px;
+					font-size: 18px;
+				}
+				.discount-info{
+					padding-top: 20px;
+				}
+			}
+		}
+	}
+
+	.tips-content{
+		color: #999;
+	}
+
+	// 邀请朋友
+	.version-score{
+		float: left;
+		width: 50%;
+		border-bottom: 1px solid #ddd;
+		padding-right: 10px;
+		margin-bottom: 30px;	
+		.table{
+			margin-top: 20px;
+		}
+	}
+	.winners-list{
+		float: left;
+		width: 50%;
+		padding-left: 10px;
+		.nav-title{
+			.btn-link{
+				float: right;
+				margin-top: -25px;
+			}
+		}
+		.winners{
+			margin-top: 20px;
+			padding: 0 20px;
+			li{
+				height: 37px;
+				line-height: 37px;
+			}
+			.inviter{
+				display: inline-block;
+				width: 60px;
+				margin-right: 10px;
+			}
+			.invitee{
+				display: inline-block;
+				width: 60px;
+				margin: 0 10px;
+			}
+			.product-name{
+				display: inline-block;
+				width: 120px;
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.friend-discount{
+		float: left;
+		width: 100%;
+		margin-bottom: 30px;
+		@include clearfix();
+	}
+	.version-fz{
+		margin-top: 20px;
+	}
+	.version-qn{
+		margin-top: 20px;
+		.version-name{
+			background-color: #fff1f1;
+			color: #ff424f;
+			border-color: #ff424f;
+		}
+		.version-price .real-price{
+			em{
+				color: #ff424f;
+			}
+		}
+		.version-price .save{
+			background-color: #ff424f;
+		}
+		.price-content .real-price .unit{
+			color: #ff424f;
+		}
+	}
+	.version-name{
+		display: inline-block;
+		width: 40px;
+		height: 126px;
+		background-color: #f3f9ff;
+		color: #2695fc;
+		font-size: 18px;
+		border: 1px solid #2695fc;
+		vertical-align: middle;
+		margin-left: 40px;
+		text-align: center;
+		padding: 23px 5px;
+	}
+	.version-price{
+		position: relative;
+		display: inline-block;
+		width: 200px;
+		height: 165px;
+		border: 1px solid #ddd;
+		text-align: center;
+		vertical-align: middle;
+		margin: 0 40px;
+		.save{
+			position: absolute;
+			width: 100%;
+			height: 32px;
+			bottom: 0;
+			line-height: 32px;
+			font-size: 16px;
+			background-color: #2695fc;
+			color: #fff;
+		}
+	}
+	.price-item-tit{
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		background-color: #f5f5f5;
+		margin-bottom: 10px;
+		font-size: 18px;
+	}
+	.price-content{
+		position: relative;
+		width: 100%;
+		.original-price{
+			position: absolute;
+			width: 80px;
+			top: 15px;
+			color: #999;
+			text-align: right;
+			text-decoration: line-through;
+		}
+		.real-price{
+			font-size: 16px;
+			em{
+				font-size: 50px;
+				color: #22a4ff;
+				padding: 0 10px;
+			}
+			.unit{
+				color: #22a4ff;
+			}
+		}
+	}
+
+	.send-invite{
+		float: left;
+		width: 100%;
+		margin-bottom: 30px;
+		.nav-title{
+			float: left;
+		}
+		.invite-fz, .invite-qn{
+			float: left;
+			width: 50%;
+			padding: 0 30px;
+			margin-top: 30px;
+			text-align: center
+		}
+		.textarea{
+			position: relative;
+			margin-bottom: 30px;
+			.textarea-tag{
+				background-color: #22a4ff;
+			}
+		}
+		.invite-qn{
+			.textarea{
+				.textarea-tag{
+					background-color: #ff424f;
+				}
+			}
+		}
+		.textarea-tag{
+			position: absolute;
+			width: 40px;
+			height: 100%;
+			top: 0;
+			left: 0;
+			color: #fff;
+			font-size: 18px;
+			padding: 45px 10px;
+		}
+		.form-control{
+			height: 166px;
+			padding-left: 50px;
+			text-align: left;
+			resize: none;
+			@include border-radius(0 4px 4px 0);
+			&:focus{
+				@include box-shadow(0, 0, 0, 0);
+			}
+		}
+		.platforms-icons{
+			display: inline-block;
+			vertical-align: middle;
+			i{
+				display: inline-block;
+				width: 28px;
+				height: 28px;
+				margin-right: 10px; 
+				background: url(https://img.alicdn.com/imgextra/i2/17157061/TB2EOpDiVXXXXXkXpXXXXXXXXXX-17157061.png) no-repeat;
+				cursor: pointer;
+			}
+			.pyq{
+				background-position: -57px 1px;
+				&:hover{
+					background-position: -30px 1px;
+				}
+			}
+
+			.qq{
+				background-position: -57px -29px;
+				&:hover{
+					background-position: -30px -29px;
+				}
+			}
+			.txwb{
+				background-position: -57px -60px;
+				&:hover{
+					background-position: -30px -60px;
+				}
+			}
+			.xlwb{
+				background-position: -57px -91px;
+				&:hover{
+					background-position: -30px -91px;
+				}
+			}
+			.rrw{
+				background-position: -59px -122px;
+				&:hover{
+					background-position: -31px -122px;
+				}
+			}
+		}
+	}
+
+	.invite-flow{
+		float: left;
+		width: 100%;
+		.flow-content{
+			margin-top: 30px;
+			border-bottom: 4px solid #22a4ff;
+			padding-bottom: 40px;
+			margin-bottom: 70px;
+			@include clearfix();
+		}
+		.flow-item{
+			position: relative;
+			display: block;
+			float: left;
+			width: 200px;
+			height: 100px;
+			line-height: 25px;
+			border-color: #ddd;
+			margin: 0 20px;
+			@include box-shadow(0, 0, 0, 0);
+			z-index: 0;
+			.step-num{
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				left: 50%;
+				bottom: -55px;
+				margin-left: -15px;
+				@include border-radius(15px);
+				background-color: #22a4ff;
+				color: #fff;
+				text-align: center;
+				line-height: 30px;
+				font-size: 20px;
+			}
+		}
+	}
+	
+	.upgrade-version{
+		float: left;
+		width: 100%;
+		margin-bottom: 30px;
+		.version-qn{
+			margin-bottom: 30px;
+		}
+	}
+	.upgrade-and-renew{
+		margin-bottom: 50px;
+		.upgrade-btn{
+			position: absolute;
+			left: 50%;
+			bottom: -50px;
+			width: 110px;
+			margin-left: -55px;
+			@include border-radius(16px)
+		}
+		.original-price{
+			top: 0;
+			left: 10px;
+		}
+		.real-price{
+			padding-top: 20px;
+			em{
+				font-size: 26px;
+				padding: 0 5px 0 0;
+			}
+			.sign{
+				font-size: 26px;
+				padding: 0 10px;
+				color: #999;
+			}
+		}
+	}
+	.renew-product{
+		float: left;
+		width: 100%;
+		margin-bottom: 20px;
+		.version-qn{
+			margin-bottom: 30px;
+		}
+	}
+	.msg-exchange{
+		float: left;
+		width: 100%;
+		margin-bottom: 30px;
+		.exchange-formula{
+			position: relative;
+			float: left;
+			width: 50%;
+			padding: 5px 20px;
+			padding-left: 60px;
+			margin: 20px 0 10px 0;
+			&.border{
+				border-right: 1px solid #ddd;
+			}
+			.btn{
+				margin-top: 5px;
+			}
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				width: 36px;
+				height: 36px;
+				top: 4px;
+				left: 20px;
+				background: url(https://img.alicdn.com/imgextra/i2/17157061/TB2EOpDiVXXXXXkXpXXXXXXXXXX-17157061.png) no-repeat -30px -155px;
+			}
+		}
+		.count{
+			font-size: 30px;
+			color: #ff424f;
+		}
+		.num{
+			display: inline-block;
+			width: 80px;
+			&.r{
+				text-align: right;
+			}
+			&.l{
+				text-align: left;
+			}
+		}
+		.unit{
+			color: #ff424f;
+			padding-left: 10px;
+			font-size: 14px;
+		}
+		.sign{
+			font-size: 30px;
+			color: #999;
+			padding: 10px;
+		}
+	}
+	.other-discount{
+		float: left;
+		width: 100%;
+		.discount-item{
+			float: left;
+			position: relative;
+			width: 50%;
+			padding: 10px 20px 10px 120px;
+			margin-top: 20px;
+			&.border{
+				border-right: 1px solid #ddd;
+			}
+			&:after{
+				content: '';
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				top: 10px;
+				left: 20px;
+				border: 1px solid #ddd;
+				@include border-radius(4px);
+				background: url(https://img.alicdn.com/imgextra/i4/17157061/TB2Kh94XBLxQeBjy0FnXXcQwpXa-17157061.png) no-repeat;
+				overflow: hidden;
+			}
+			&.ju:after{
+				background-position: 0 0;
+			}
+			&.ll:after{
+				background-position: 0 -80px;
+			}
+			&.dnjy:after{
+				background-position: 0 -240px;
+			}
+			&.dncx:after{
+				background-position: 0 -160px;
+			}
+			.discount-formula{
+				margin-bottom: 13px;
+			}
+			.num{
+				font-size: 24px;
+				color: #ff424f;
+				padding-right: 5px;
+				&.prize{
+					font-size: 20px;
+				}
+			}
+			.sign{
+				font-size: 24px;
+				color: #999;
+				padding: 0 10px;
+			}
+			.unit{
+				font-size: 14px;
+				&.text-default{
+					color: #666;
+				}
+			}
+			.btn{
+				width: 140px;
+			}
+		}
+	}
+
+	// 积分日志
+	.scoreLog-search{
+		float: left;
+		width: 100%;
+		margin-bottom: 30px;
+		.search-condition{
+			float: left;
+			height: 32px;
+			margin-bottom: 10px;
+			h5{
+				width: 80px;
+				text-align: right;
+				vertical-align: middle;
+			}
+			.form-control{
+				vertical-align: middle;
+			}
+			&.date-picker{
+				width: 440px;
+			}
+			&.downmenu{
+				width: 230px;
+			}
+			&.nick, &.own-score{
+				width: 300px;
+			}
+			.nick-name{
+				display: inline-block;
+				height: 32px;
+				line-height: 32px;
+				font-size: 18px;
+				color: #ff424f;
+				vertical-align: middle;
+			}
+			&.score-range{
+				width: 300px;
+				.form-control{
+					width: 90px;
+				}
+			}
+			&.own-score{
+				.score{
+					display: inline-block;
+					height: 32px;
+					line-height: 32px;
+					font-size: 26px;
+					color: #ff424f;
+					vertical-align: middle;
+				}
+			}
+			.search-btn{
+				vertical-align: middle;
+				margin: 0 10px;
+			}
+		}
+		.search-btn-content{
+			float: left;
+			width: 100%;
+			text-align: center;
+			a{
+				margin: 0 10px;
+			}
+		}
+	}
+
+	.scoreLog-table{
+		float: left;
+		width: 100%;
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 20px;
+		.btn-link{
+			padding: 0 10px;
+		}
+	}
+}

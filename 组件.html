@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<!--关键字-->
+	<meta name="keywords" content="">	
+	<!--网站描述-->
+	<meta name="description" itemprop="description" content=""> 
+
+	<title>宝贝团--基本组件样式</title>
+		
+	<!--@Bootstrap v3.3.5 -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+
+	<!--@页面共同样式css  v1.0.0-->
+
+	<link rel="stylesheet" href="css/common.css"/>
+
+	<style type="text/css">
+		.container{
+			padding: 15px;
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.tit{
+			display: block;
+			margin-bottom: 20px;
+			font-weight: bold;
+			text-align: center;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #ddd;
+		}
+		.module-content{
+			padding: 15px;
+			margin-bottom: 20px;
+		}
+		input{
+			margin-bottom: 10px;
+		}
+		table{
+			margin-bottom: 10px!important;
+		}
+	</style>
+</head>
+	<body>
+		<div class="container">
+			<div class="module-content">
+				<h1 class="tit">按钮</h1>
+				<a href="javascript:;"  class="btn btn-default">btn-default</a>
+				<a href="javascript:;"  class="btn btn-primary">btn-primary</a>
+				<a href="javascript:;"  class="btn btn-success">btn-success</a>
+				<a href="javascript:;"  class="btn btn-info">btn-info</a>
+				<a href="javascript:;"  class="btn btn-warning">btn-warning</a>
+				<a href="javascript:;"  class="btn btn-danger">btn-danger</a>
+				<a href="javascript:;"  class="btn-link">btn-link</a>
+				<div style="margin-bottom: 20px;"></div>
+				<a href="javascript:;"  class="btn btn-oval btn-default">btn-default</a>
+				<a href="javascript:;"  class="btn btn-oval btn-primary">btn-primary</a>
+				<a href="javascript:;"  class="btn btn-oval btn-success">btn-success</a>
+				<a href="javascript:;"  class="btn btn-oval btn-info">btn-info</a>
+				<a href="javascript:;"  class="btn btn-oval btn-warning">btn-warning</a>
+				<a href="javascript:;"  class="btn btn-oval btn-danger">btn-danger</a>
+			</div>
+			<div class="module-content">
+				<h1 class="tit">下拉框</h1>
+				<div class="dropdown">
+				  <a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				    下拉框
+				    <span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu" aria-labelledby="dLabel">
+				     <li>123456</li>
+				     <li>123456</li>
+				     <li>123456</li>
+				  </ul>
+				</div>
+			</div>
+			<div class="module-content">
+				<h1 class="tit">文本框</h1>
+				<input type="text" class="form-control input-mini" placeholder="input-mini"><br>
+				<input type="text" class="form-control input-small" placeholder="input-small"><br>
+				<input type="text" class="form-control input-medium" placeholder="input-medium"><br>
+				<input type="text" class="form-control input-large" placeholder="input-large"><br>
+				<input type="text" class="form-control input-xlarge" placeholder="input-xlarge"><br>
+				<input type="text" class="form-control input-xxlarge" placeholder="input-xxlarge"><br>
+				<input type="text" class="form-control input-max" placeholder="input-max">
+				<div class="input-search">
+					<input type="text" class="form-control oval input-xlarge search" placeholder="查询">
+					<a href="javascript:;" class="search-btn"></a>
+				</div>	
+			</div>
+			<div class="module-content">
+				<h1 class="tit">多选、单选</h1>
+				<div class="form-checkbox">
+					<p ttp="checkbox"><i></i>多选</p>
+					<p ttp="checkbox"><i></i>多选</p>
+				</div>
+				<div class="form-radios">
+					<p ttp="radios"><i></i>单选</p>
+					<p ttp="radios"><i></i>单选</p>
+				</div>
+			</div>
+			<div class="module-content">
+				<h1 class="tit">表格</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>4</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</tbody>
+				</table>
+				<h1 class="tit">带边框表格</h1>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>4</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</tbody>
+				</table>
+				<h1 class="tit">带hover的表格</h1>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>4</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="module-content">
+				<h1 class="tit">情景文本</h1>
+				<span class="text-primary">情景文本1</span>
+				<span class="text-success">情景文本2</span>
+				<span class="text-info">情景文本3</span>
+				<span class="text-warning">情景文本4</span>
+				<span class="text-danger">情景文本5</span>
+			</div>
+			<div class="module-content">
+				<h1 class="tit">情境背景色</h1>
+				<p class="bg-primary">情景背景1</p>
+				<p class="bg-success">情景背景2</p>
+				<p class="bg-info">情景背景3</p>
+				<p class="bg-warning">情景背景4</p>
+				<p class="bg-danger">情景背景5</p>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+	</body>
+</html>

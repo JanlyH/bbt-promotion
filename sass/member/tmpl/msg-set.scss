@@ -1,0 +1,75 @@
+.msg-config{
+	float: left;
+	width: 70%;
+	padding-right: 10px;
+}
+.msg-preview{
+	float: left;
+	width: 30%;
+}
+.config-option .config-option-tit{
+	float: left;
+	width: 100%;
+	text-align: left;
+	padding-right: 10px;
+	margin-bottom: 10px;
+}
+.config-option .config-option-content{
+	float: left;
+	width: 100%;
+}
+.config-option-content .list-inline{
+	margin-bottom: 10px;
+}
+.msg-config .config-option{
+	margin-bottom: 20px;
+}
+.msg-config .panel{
+	margin-bottom: 0;
+}
+.msg-content.panel-body{
+	height: 100px;
+	padding: 0;
+}
+.msg-content.panel-body textarea{
+	height: 100%;
+	border: 0;
+	resize: none;
+}
+.msg-config .panel .rule{
+	float: right;
+	margin-top: 5px;
+}
+.test-phone h4{
+	margin-top: 7px;
+}
+.test-phone input{
+	width: 200px;
+}
+.msg-preview .preview-box{
+	width: 250px;
+	height: 510px;
+	margin: 0 auto;
+	background-image: url(https://img.alicdn.com/imgextra/i1/17157061/TB2PTy9jXXXXXcuXpXXXXXXXXXX-17157061.png);
+	background-position: center;
+}
+.msg-preview .preview-box .preview-content{
+	width: 211px;
+	height: 350px;
+	padding: 5px;
+	float: left;
+    margin-top: 88px;
+    margin-left: 20px;
+}
+.msg-config .send-config input{
+	margin: 0 3px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+.msg-config .send-config h4{
+	margin-top: 7px;
+}
+.msg-config .create-sign{
+	margin-left: 10px;
+	margin-right: 30px;
+}

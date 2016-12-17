@@ -1,0 +1,76 @@
+@charset "UTF-8";
+.batch-switch-box{
+	width: 100%;
+	min-height: 76px;
+	background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+.batch-switch-list li{
+	width: 32%;
+	float: left;
+	padding: 5px 23px 5px 15px;
+	margin-top: 5px;
+}
+.batch-switch-list li+li{
+	border-left: 1px solid #ddd;
+}
+.batch-switch-list li h3{
+	float: left;
+	margin-top: 2px;
+}
+.batch-main-box{
+	width: 100%;
+	min-height: 500px;
+	background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+.tab-pane{
+	display: none;
+}
+.tab-pane.active{
+	display: block;
+}
+.tab-nav{
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+}
+.tab-nav li a{
+	display: inline-block;
+	padding: 10px 15px;
+}
+.tab-nav li{
+	margin-bottom: -1px;
+}
+.tab-nav li.active{
+	border-bottom: 2px solid #22a4ff;
+}
+.tab-content{
+	padding: 15px 0;
+}
+.evaluate-table{
+	min-height: 400px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+.evaluate-set-tit{
+	display: inline-block;
+	float: left;
+	width: 100px;
+	text-align: right;
+}
+.evaluate-modules li{
+	list-style-type: decimal;
+	margin-bottom: 20px;
+}
+.evaluate-modules li a{
+	padding: 3px 25px;
+	margin-top: 2px;
+}
+.evaluate-modules li span{
+	display: inline-block;
+	padding: 7px 0;
+	max-width: 70%;
+}

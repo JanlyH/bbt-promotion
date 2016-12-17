@@ -1,0 +1,48 @@
+.condition-items > li {
+  margin-bottom: 20px; }
+
+.condition-items .item-title {
+  display: inline-block;
+  width: 120px;
+  text-align: right; }
+  .condition-items .item-title.sm {
+    width: 70px; }
+
+.condition-items .condition-details {
+  display: inline-block; }
+  .condition-items .condition-details .form-radios {
+    display: inline-block;
+    float: left;
+    margin-top: 6px; }
+    .condition-items .condition-details .form-radios p + p {
+      margin-left: 20px; }
+  .condition-items .condition-details .clearmargin {
+    margin-top: 0; }
+  .condition-items .condition-details .form-checkbox p {
+    display: inline-block;
+    width: auto; }
+  .condition-items .condition-details .form-checkbox p + p {
+    margin-left: 20px; }
+  .condition-items .condition-details .custom {
+    display: inline-block;
+    margin-left: 10px; }
+  .condition-items .condition-details .select-list {
+    display: inline-block; }
+    .condition-items .condition-details .select-list li {
+      position: relative;
+      display: inline-block;
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      cursor: pointer; }
+    .condition-items .condition-details .select-list li:hover, .condition-items .condition-details .select-list li.active {
+      border: 1px solid #22a4ff;
+      background-color: #22a4ff;
+      color: #fff; }
+
+.condition-items .location .form-radios {
+  margin-top: 0; }

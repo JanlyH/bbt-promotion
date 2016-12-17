@@ -1,0 +1,720 @@
+.tips-content {
+  margin-bottom: 20px; }
+  .tips-content .tips-title {
+    margin-bottom: 10px; }
+  .tips-content .blue-warning {
+    float: left;
+    margin-right: 10px; }
+  .tips-content .tips-list li {
+    margin-left: 26px;
+    margin-bottom: 10px;
+    list-style-type: decimal; }
+
+i {
+  font-style: normal; }
+
+.nav-title {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: -1px;
+  font-size: 14px; }
+  .nav-title .title-item {
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #22a4ff;
+    color: #fff;
+    border-radius: 4px 4px 0 0; }
+
+.myBBT-content {
+  padding: 15px;
+  background-color: #fff;
+  min-height: 600px; }
+  .myBBT-content:before, .myBBT-content:after {
+    content: " ";
+    display: table; }
+  .myBBT-content:after {
+    clear: both; }
+  .myBBT-content .page-header {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px; }
+  .myBBT-content .welcome {
+    width: 100%;
+    height: 55px;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    margin-bottom: 20px; }
+  .myBBT-content .welcome-word {
+    float: left;
+    font-size: 18px;
+    margin-top: 5px; }
+  .myBBT-content .bind-phone-num {
+    float: right;
+    width: 350px;
+    height: 100%; }
+    .myBBT-content .bind-phone-num .bind {
+      display: inline-block;
+      width: 200px;
+      text-align: left;
+      margin-top: 8px; }
+    .myBBT-content .bind-phone-num .btn {
+      float: right; }
+  .myBBT-content .user-info {
+    display: inline-block;
+    font-size: 0;
+    width: 100%;
+    margin-bottom: 30px; }
+    .myBBT-content .user-info .info-item + .info-item {
+      border-left: 1px solid #ddd; }
+    .myBBT-content .user-info .info-item {
+      display: inline-block;
+      width: 33%;
+      height: 120px;
+      font-size: 14px;
+      padding: 10px 20px; }
+    .myBBT-content .user-info .user-logo {
+      float: left;
+      width: 100px;
+      height: 100px;
+      border-radius: 60px;
+      -webkit-border-radius: 60px;
+      -moz-border-radius: 60px;
+      -ms-border-radius: 60px;
+      border: 1px solid #ddd;
+      overflow: hidden;
+      margin-right: 20px; }
+      .myBBT-content .user-info .user-logo img {
+        max-width: 100px;
+        max-height: 100px;
+        border: 0; }
+    .myBBT-content .user-info .user-base-info {
+      float: left;
+      width: 160px;
+      padding-top: 10px; }
+      .myBBT-content .user-info .user-base-info.full {
+        width: 100%; }
+      .myBBT-content .user-info .user-base-info .user-name {
+        display: inline-block;
+        width: 90px;
+        height: 20px;
+        line-height: 20px;
+        vertical-align: top;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .myBBT-content .user-info .user-base-info li {
+        margin-bottom: 10px; }
+      .myBBT-content .user-info .user-base-info .renew-btn {
+        display: block;
+        float: right;
+        width: 40px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        margin-right: 10px;
+        background: #ff3131;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px; }
+        .myBBT-content .user-info .user-base-info .renew-btn:hover {
+          background-color: #ff6464; }
+      .myBBT-content .user-info .user-base-info .recharge-btn {
+        display: block;
+        float: right;
+        width: 40px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        margin-right: 10px;
+        background: #22a4ff;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px; }
+        .myBBT-content .user-info .user-base-info .recharge-btn:hover {
+          background-color: #55b9ff; }
+    .myBBT-content .user-info .score-header {
+      float: left;
+      width: 100%;
+      margin-top: 10px; }
+      .myBBT-content .user-info .score-header .btn-link {
+        float: right; }
+    .myBBT-content .user-info .score {
+      float: left;
+      width: 100%; }
+      .myBBT-content .user-info .score .num {
+        font-size: 50px; }
+      .myBBT-content .user-info .score .unit {
+        font-size: 20px; }
+  .myBBT-content .get-score {
+    font-size: 0;
+    margin-bottom: 30px; }
+    .myBBT-content .get-score .score-item + .score-item {
+      border-left: 1px solid #ddd; }
+    .myBBT-content .get-score .score-item-title {
+      width: 100%;
+      height: 36px;
+      line-height: 36px;
+      font-size: 18px;
+      background-color: #f5f5f5;
+      text-align: center;
+      margin-bottom: 10px; }
+    .myBBT-content .get-score .score-item {
+      display: inline-block;
+      width: 33%;
+      height: 200px;
+      font-size: 14px;
+      padding: 10px 20px;
+      margin-top: 20px; }
+      .myBBT-content .get-score .score-item.friend .item-logo {
+        background-color: #22a4ff; }
+      .myBBT-content .get-score .score-item.friend .logo-icon {
+        background-position: 6px -1485px; }
+      .myBBT-content .get-score .score-item.friend .item-intro li {
+        margin-bottom: 10px; }
+      .myBBT-content .get-score .score-item.evaluate .item-logo {
+        background-color: #ff424f; }
+      .myBBT-content .get-score .score-item.evaluate .logo-icon {
+        background-position: 2px -1538px; }
+      .myBBT-content .get-score .score-item.phone .item-logo {
+        background-color: #1ebeb4; }
+      .myBBT-content .get-score .score-item.phone .logo-icon {
+        background-position: 14px -1594px; }
+    .myBBT-content .get-score .item-logo {
+      float: left;
+      width: 100px;
+      height: 100px;
+      border-radius: 60px;
+      -webkit-border-radius: 60px;
+      -moz-border-radius: 60px;
+      -ms-border-radius: 60px;
+      border: 1px solid #ddd;
+      overflow: hidden;
+      margin-right: 20px;
+      margin-top: 17px; }
+    .myBBT-content .get-score .logo-icon {
+      display: block;
+      width: 60px;
+      height: 52px;
+      margin: 23px auto;
+      background: url(https://img.alicdn.com/imgextra/i2/17157061/TB2EOpDiVXXXXXkXpXXXXXXXXXX-17157061.png) no-repeat; }
+    .myBBT-content .get-score .item-main-content {
+      float: left;
+      position: relative;
+      width: 150px;
+      height: 130px; }
+      .myBBT-content .get-score .item-main-content .btn {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        font-size: 18px; }
+  .myBBT-content .own-discount {
+    position: relative;
+    font-size: 0; }
+    .myBBT-content .own-discount:before, .myBBT-content .own-discount:after {
+      content: " ";
+      display: table; }
+    .myBBT-content .own-discount:after {
+      clear: both; }
+    .myBBT-content .own-discount .cut-line {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      top: 375px;
+      border-top: 1px dashed #ddd; }
+    .myBBT-content .own-discount .own-discount-item + .own-discount-item {
+      border-left: 1px solid #ddd; }
+    .myBBT-content .own-discount .own-discount-item {
+      display: inline-block;
+      float: left;
+      width: 50%;
+      height: 300px;
+      font-size: 14px;
+      padding: 20px;
+      margin: 20px 0; }
+      .myBBT-content .own-discount .own-discount-item.nobordered {
+        border: 0; }
+      .myBBT-content .own-discount .own-discount-item .item-title {
+        width: 100%;
+        height: 36px;
+        line-height: 36px;
+        background-color: #f5f5f5;
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px; }
+      .myBBT-content .own-discount .own-discount-item .item-banner {
+        float: left;
+        width: 180px;
+        height: 220px;
+        background-color: #f5f5f5;
+        overflow: hidden;
+        text-align: center; }
+        .myBBT-content .own-discount .own-discount-item .item-banner img {
+          vertical-align: middle; }
+      .myBBT-content .own-discount .own-discount-item .item-main-content {
+        position: relative;
+        float: right;
+        width: 240px;
+        height: 220px;
+        text-align: center; }
+      .myBBT-content .own-discount .own-discount-item .discount-info {
+        font-size: 16px; }
+      .myBBT-content .own-discount .own-discount-item .btn {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        font-size: 18px; }
+      .myBBT-content .own-discount .own-discount-item .discount-info li {
+        margin-bottom: 10px; }
+      .myBBT-content .own-discount .own-discount-item .discount-condition .first-condition, .myBBT-content .own-discount .own-discount-item .discount-condition .second-condition {
+        color: #ff424f; }
+      .myBBT-content .own-discount .own-discount-item .discount-condition .first-condition {
+        display: inline-block;
+        font-size: 26px;
+        width: 85px;
+        text-align: right; }
+      .myBBT-content .own-discount .own-discount-item .discount-condition .unit {
+        font-size: 16px;
+        padding: 0 5px; }
+      .myBBT-content .own-discount .own-discount-item .discount-condition .sign {
+        padding: 0 10px;
+        color: #999; }
+      .myBBT-content .own-discount .own-discount-item .discount-condition .discount-item {
+        display: inline-block;
+        width: 105px;
+        text-align: left; }
+      .myBBT-content .own-discount .own-discount-item.upgrade-version .discount-condition {
+        padding: 25px 0; }
+      .myBBT-content .own-discount .own-discount-item.upgrade-version .first-condition, .myBBT-content .own-discount .own-discount-item.upgrade-version .second-condition {
+        font-size: 36px; }
+      .myBBT-content .own-discount .own-discount-item.upgrade-version .sign {
+        font-size: 36px; }
+      .myBBT-content .own-discount .own-discount-item.other-discount .sign, .myBBT-content .own-discount .own-discount-item.other-discount .unit {
+        padding: 0; }
+      .myBBT-content .own-discount .own-discount-item.other-discount .first-condition {
+        width: 56px;
+        font-size: 18px; }
+      .myBBT-content .own-discount .own-discount-item.other-discount .discount-info {
+        padding-top: 20px; }
+  .myBBT-content .tips-content {
+    color: #999; }
+  .myBBT-content .version-score {
+    float: left;
+    width: 50%;
+    border-bottom: 1px solid #ddd;
+    padding-right: 10px;
+    margin-bottom: 30px; }
+    .myBBT-content .version-score .table {
+      margin-top: 20px; }
+  .myBBT-content .winners-list {
+    float: left;
+    width: 50%;
+    padding-left: 10px; }
+    .myBBT-content .winners-list .nav-title .btn-link {
+      float: right;
+      margin-top: -25px; }
+    .myBBT-content .winners-list .winners {
+      margin-top: 20px;
+      padding: 0 20px; }
+      .myBBT-content .winners-list .winners li {
+        height: 37px;
+        line-height: 37px; }
+      .myBBT-content .winners-list .winners .inviter {
+        display: inline-block;
+        width: 60px;
+        margin-right: 10px; }
+      .myBBT-content .winners-list .winners .invitee {
+        display: inline-block;
+        width: 60px;
+        margin: 0 10px; }
+      .myBBT-content .winners-list .winners .product-name {
+        display: inline-block;
+        width: 120px;
+        margin-right: 10px; }
+  .myBBT-content .friend-discount {
+    float: left;
+    width: 100%;
+    margin-bottom: 30px; }
+    .myBBT-content .friend-discount:before, .myBBT-content .friend-discount:after {
+      content: " ";
+      display: table; }
+    .myBBT-content .friend-discount:after {
+      clear: both; }
+  .myBBT-content .version-fz {
+    margin-top: 20px; }
+  .myBBT-content .version-qn {
+    margin-top: 20px; }
+    .myBBT-content .version-qn .version-name {
+      background-color: #fff1f1;
+      color: #ff424f;
+      border-color: #ff424f; }
+    .myBBT-content .version-qn .version-price .real-price em {
+      color: #ff424f; }
+    .myBBT-content .version-qn .version-price .save {
+      background-color: #ff424f; }
+    .myBBT-content .version-qn .price-content .real-price .unit {
+      color: #ff424f; }
+  .myBBT-content .version-name {
+    display: inline-block;
+    width: 40px;
+    height: 126px;
+    background-color: #f3f9ff;
+    color: #2695fc;
+    font-size: 18px;
+    border: 1px solid #2695fc;
+    vertical-align: middle;
+    margin-left: 40px;
+    text-align: center;
+    padding: 23px 5px; }
+  .myBBT-content .version-price {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 165px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 40px; }
+    .myBBT-content .version-price .save {
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      bottom: 0;
+      line-height: 32px;
+      font-size: 16px;
+      background-color: #2695fc;
+      color: #fff; }
+  .myBBT-content .price-item-tit {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+    font-size: 18px; }
+  .myBBT-content .price-content {
+    position: relative;
+    width: 100%; }
+    .myBBT-content .price-content .original-price {
+      position: absolute;
+      width: 80px;
+      top: 15px;
+      color: #999;
+      text-align: right;
+      text-decoration: line-through; }
+    .myBBT-content .price-content .real-price {
+      font-size: 16px; }
+      .myBBT-content .price-content .real-price em {
+        font-size: 50px;
+        color: #22a4ff;
+        padding: 0 10px; }
+      .myBBT-content .price-content .real-price .unit {
+        color: #22a4ff; }
+  .myBBT-content .send-invite {
+    float: left;
+    width: 100%;
+    margin-bottom: 30px; }
+    .myBBT-content .send-invite .nav-title {
+      float: left; }
+    .myBBT-content .send-invite .invite-fz, .myBBT-content .send-invite .invite-qn {
+      float: left;
+      width: 50%;
+      padding: 0 30px;
+      margin-top: 30px;
+      text-align: center; }
+    .myBBT-content .send-invite .textarea {
+      position: relative;
+      margin-bottom: 30px; }
+      .myBBT-content .send-invite .textarea .textarea-tag {
+        background-color: #22a4ff; }
+    .myBBT-content .send-invite .invite-qn .textarea .textarea-tag {
+      background-color: #ff424f; }
+    .myBBT-content .send-invite .textarea-tag {
+      position: absolute;
+      width: 40px;
+      height: 100%;
+      top: 0;
+      left: 0;
+      color: #fff;
+      font-size: 18px;
+      padding: 45px 10px; }
+    .myBBT-content .send-invite .form-control {
+      height: 166px;
+      padding-left: 50px;
+      text-align: left;
+      resize: none;
+      border-radius: 0 4px 4px 0;
+      -webkit-border-radius: 0 4px 4px 0;
+      -moz-border-radius: 0 4px 4px 0;
+      -ms-border-radius: 0 4px 4px 0; }
+      .myBBT-content .send-invite .form-control:focus {
+        box-shadow: 0 0 0 transparent;
+        -webkit-box-shadow: 0 0 0 transparent;
+        -moz-box-shadow: 0 0 0 transparent;
+        -ms-box-shadow: 0 0 0 transparent; }
+    .myBBT-content .send-invite .platforms-icons {
+      display: inline-block;
+      vertical-align: middle; }
+      .myBBT-content .send-invite .platforms-icons i {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        background: url(https://img.alicdn.com/imgextra/i2/17157061/TB2EOpDiVXXXXXkXpXXXXXXXXXX-17157061.png) no-repeat;
+        cursor: pointer; }
+      .myBBT-content .send-invite .platforms-icons .pyq {
+        background-position: -57px 1px; }
+        .myBBT-content .send-invite .platforms-icons .pyq:hover {
+          background-position: -30px 1px; }
+      .myBBT-content .send-invite .platforms-icons .qq {
+        background-position: -57px -29px; }
+        .myBBT-content .send-invite .platforms-icons .qq:hover {
+          background-position: -30px -29px; }
+      .myBBT-content .send-invite .platforms-icons .txwb {
+        background-position: -57px -60px; }
+        .myBBT-content .send-invite .platforms-icons .txwb:hover {
+          background-position: -30px -60px; }
+      .myBBT-content .send-invite .platforms-icons .xlwb {
+        background-position: -57px -91px; }
+        .myBBT-content .send-invite .platforms-icons .xlwb:hover {
+          background-position: -30px -91px; }
+      .myBBT-content .send-invite .platforms-icons .rrw {
+        background-position: -59px -122px; }
+        .myBBT-content .send-invite .platforms-icons .rrw:hover {
+          background-position: -31px -122px; }
+  .myBBT-content .invite-flow {
+    float: left;
+    width: 100%; }
+    .myBBT-content .invite-flow .flow-content {
+      margin-top: 30px;
+      border-bottom: 4px solid #22a4ff;
+      padding-bottom: 40px;
+      margin-bottom: 70px; }
+      .myBBT-content .invite-flow .flow-content:before, .myBBT-content .invite-flow .flow-content:after {
+        content: " ";
+        display: table; }
+      .myBBT-content .invite-flow .flow-content:after {
+        clear: both; }
+    .myBBT-content .invite-flow .flow-item {
+      position: relative;
+      display: block;
+      float: left;
+      width: 200px;
+      height: 100px;
+      line-height: 25px;
+      border-color: #ddd;
+      margin: 0 20px;
+      box-shadow: 0 0 0 transparent;
+      -webkit-box-shadow: 0 0 0 transparent;
+      -moz-box-shadow: 0 0 0 transparent;
+      -ms-box-shadow: 0 0 0 transparent;
+      z-index: 0; }
+      .myBBT-content .invite-flow .flow-item .step-num {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 50%;
+        bottom: -55px;
+        margin-left: -15px;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        background-color: #22a4ff;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        font-size: 20px; }
+  .myBBT-content .upgrade-version {
+    float: left;
+    width: 100%;
+    margin-bottom: 30px; }
+    .myBBT-content .upgrade-version .version-qn {
+      margin-bottom: 30px; }
+  .myBBT-content .upgrade-and-renew {
+    margin-bottom: 50px; }
+    .myBBT-content .upgrade-and-renew .upgrade-btn {
+      position: absolute;
+      left: 50%;
+      bottom: -50px;
+      width: 110px;
+      margin-left: -55px;
+      border-radius: 16px;
+      -webkit-border-radius: 16px;
+      -moz-border-radius: 16px;
+      -ms-border-radius: 16px; }
+    .myBBT-content .upgrade-and-renew .original-price {
+      top: 0;
+      left: 10px; }
+    .myBBT-content .upgrade-and-renew .real-price {
+      padding-top: 20px; }
+      .myBBT-content .upgrade-and-renew .real-price em {
+        font-size: 26px;
+        padding: 0 5px 0 0; }
+      .myBBT-content .upgrade-and-renew .real-price .sign {
+        font-size: 26px;
+        padding: 0 10px;
+        color: #999; }
+  .myBBT-content .renew-product {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px; }
+    .myBBT-content .renew-product .version-qn {
+      margin-bottom: 30px; }
+  .myBBT-content .msg-exchange {
+    float: left;
+    width: 100%;
+    margin-bottom: 30px; }
+    .myBBT-content .msg-exchange .exchange-formula {
+      position: relative;
+      float: left;
+      width: 50%;
+      padding: 5px 20px;
+      padding-left: 60px;
+      margin: 20px 0 10px 0; }
+      .myBBT-content .msg-exchange .exchange-formula.border {
+        border-right: 1px solid #ddd; }
+      .myBBT-content .msg-exchange .exchange-formula .btn {
+        margin-top: 5px; }
+      .myBBT-content .msg-exchange .exchange-formula:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        top: 4px;
+        left: 20px;
+        background: url(https://img.alicdn.com/imgextra/i2/17157061/TB2EOpDiVXXXXXkXpXXXXXXXXXX-17157061.png) no-repeat -30px -155px; }
+    .myBBT-content .msg-exchange .count {
+      font-size: 30px;
+      color: #ff424f; }
+    .myBBT-content .msg-exchange .num {
+      display: inline-block;
+      width: 80px; }
+      .myBBT-content .msg-exchange .num.r {
+        text-align: right; }
+      .myBBT-content .msg-exchange .num.l {
+        text-align: left; }
+    .myBBT-content .msg-exchange .unit {
+      color: #ff424f;
+      padding-left: 10px;
+      font-size: 14px; }
+    .myBBT-content .msg-exchange .sign {
+      font-size: 30px;
+      color: #999;
+      padding: 10px; }
+  .myBBT-content .other-discount {
+    float: left;
+    width: 100%; }
+    .myBBT-content .other-discount .discount-item {
+      float: left;
+      position: relative;
+      width: 50%;
+      padding: 10px 20px 10px 120px;
+      margin-top: 20px; }
+      .myBBT-content .other-discount .discount-item.border {
+        border-right: 1px solid #ddd; }
+      .myBBT-content .other-discount .discount-item:after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        left: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        background: url(https://img.alicdn.com/imgextra/i4/17157061/TB2Kh94XBLxQeBjy0FnXXcQwpXa-17157061.png) no-repeat;
+        overflow: hidden; }
+      .myBBT-content .other-discount .discount-item.ju:after {
+        background-position: 0 0; }
+      .myBBT-content .other-discount .discount-item.ll:after {
+        background-position: 0 -80px; }
+      .myBBT-content .other-discount .discount-item.dnjy:after {
+        background-position: 0 -240px; }
+      .myBBT-content .other-discount .discount-item.dncx:after {
+        background-position: 0 -160px; }
+      .myBBT-content .other-discount .discount-item .discount-formula {
+        margin-bottom: 13px; }
+      .myBBT-content .other-discount .discount-item .num {
+        font-size: 24px;
+        color: #ff424f;
+        padding-right: 5px; }
+        .myBBT-content .other-discount .discount-item .num.prize {
+          font-size: 20px; }
+      .myBBT-content .other-discount .discount-item .sign {
+        font-size: 24px;
+        color: #999;
+        padding: 0 10px; }
+      .myBBT-content .other-discount .discount-item .unit {
+        font-size: 14px; }
+        .myBBT-content .other-discount .discount-item .unit.text-default {
+          color: #666; }
+      .myBBT-content .other-discount .discount-item .btn {
+        width: 140px; }
+  .myBBT-content .scoreLog-search {
+    float: left;
+    width: 100%;
+    margin-bottom: 30px; }
+    .myBBT-content .scoreLog-search .search-condition {
+      float: left;
+      height: 32px;
+      margin-bottom: 10px; }
+      .myBBT-content .scoreLog-search .search-condition h5 {
+        width: 80px;
+        text-align: right;
+        vertical-align: middle; }
+      .myBBT-content .scoreLog-search .search-condition .form-control {
+        vertical-align: middle; }
+      .myBBT-content .scoreLog-search .search-condition.date-picker {
+        width: 440px; }
+      .myBBT-content .scoreLog-search .search-condition.downmenu {
+        width: 230px; }
+      .myBBT-content .scoreLog-search .search-condition.nick, .myBBT-content .scoreLog-search .search-condition.own-score {
+        width: 300px; }
+      .myBBT-content .scoreLog-search .search-condition .nick-name {
+        display: inline-block;
+        height: 32px;
+        line-height: 32px;
+        font-size: 18px;
+        color: #ff424f;
+        vertical-align: middle; }
+      .myBBT-content .scoreLog-search .search-condition.score-range {
+        width: 300px; }
+        .myBBT-content .scoreLog-search .search-condition.score-range .form-control {
+          width: 90px; }
+      .myBBT-content .scoreLog-search .search-condition.own-score .score {
+        display: inline-block;
+        height: 32px;
+        line-height: 32px;
+        font-size: 26px;
+        color: #ff424f;
+        vertical-align: middle; }
+      .myBBT-content .scoreLog-search .search-condition .search-btn {
+        vertical-align: middle;
+        margin: 0 10px; }
+    .myBBT-content .scoreLog-search .search-btn-content {
+      float: left;
+      width: 100%;
+      text-align: center; }
+      .myBBT-content .scoreLog-search .search-btn-content a {
+        margin: 0 10px; }
+  .myBBT-content .scoreLog-table {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px; }
+    .myBBT-content .scoreLog-table .btn-link {
+      padding: 0 10px; }

@@ -1,0 +1,38 @@
+@mixin border-radius($radius){
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+}
+@mixin box-shadow($x, $y, $weight, $opacity){
+	box-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-webkit-box-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-moz-box-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-ms-box-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+}
+@mixin text-shadow($x, $y, $weight, $opacity){
+	text-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-webkit-text-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-moz-text-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-ms-text-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+}
+@mixin opacity($val){
+	opacity: $val;
+	filter:alpha(opacity= $val * 100);
+}
+@mixin transition($time){
+	transition: all $time ease-in-out;
+	-webkit-transition: all $time ease-in-out;
+	-moz-transition: all $time ease-in-out;
+	-ms-transition: all $time ease-in-out;
+}
+@mixin clearfix(){
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}

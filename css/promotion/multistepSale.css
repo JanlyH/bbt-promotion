@@ -1,0 +1,184 @@
+@font-face {
+  font-family: 'bbt';
+  src: url("../../fonts/bbt.eot");
+  /* IE9*/
+  src: url("../../fonts/bbt.eot?#iefix") format("embedded-opentype"), url("../../fonts/bbt.woff") format("woff"), url("../../fonts/bbt.ttf") format("truetype"), url("../../fonts/bbt.svg#bbt") format("svg");
+  /* iOS 4.1- */ }
+
+.bbt-icons {
+  font-family: "bbt" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale; }
+
+.nav-title {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  font-size: 14px; }
+  .nav-title .title-item {
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #22a4ff;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: -1px; }
+
+.multistepSaleContent {
+  width: 100%;
+  min-height: 600px;
+  padding: 16px;
+  background-color: #fff; }
+  .multistepSaleContent .breadcrumb {
+    line-height: 30px;
+    margin-top: 0; }
+  .multistepSaleContent .page-header {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px; }
+  .multistepSaleContent .form-data {
+    padding-bottom: 20px;
+    margin-bottom: 20px; }
+    .multistepSaleContent .form-data.border {
+      border-bottom: 1px solid #ddd; }
+    .multistepSaleContent .form-data .date-input {
+      width: 180px; }
+    .multistepSaleContent .form-data .cdtion-item {
+      width: 100%; }
+    .multistepSaleContent .form-data .cdtion-item + .cdtion-item {
+      margin-top: 20px; }
+    .multistepSaleContent .form-data .cdtion-tit {
+      width: 100px;
+      text-align: right; }
+      .multistepSaleContent .form-data .cdtion-tit.saleSlogan {
+        vertical-align: top;
+        padding-top: 8px; }
+    .multistepSaleContent .form-data .cdtion-set {
+      display: inline-block; }
+      .multistepSaleContent .form-data .cdtion-set .tips {
+        padding-left: 10px;
+        color: #999; }
+      .multistepSaleContent .form-data .cdtion-set .tellphone {
+        padding-right: 40px; }
+      .multistepSaleContent .form-data .cdtion-set .discount-type p {
+        padding-right: 20px; }
+    .multistepSaleContent .form-data .tags {
+      margin-top: 10px; }
+      .multistepSaleContent .form-data .tags.inl-block {
+        display: inline-block; }
+      .multistepSaleContent .form-data .tags li {
+        display: inline-block;
+        padding: 4px 15px;
+        text-align: center;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        cursor: pointer; }
+        .multistepSaleContent .form-data .tags li:hover, .multistepSaleContent .form-data .tags li.active {
+          background-color: #22a4ff;
+          color: #fff;
+          border-color: #22a4ff; }
+    .multistepSaleContent .form-data .sale-item {
+      position: relative;
+      padding: 0 20px;
+      width: 940px;
+      margin-left: 30px;
+      border-left: 1px dashed #ddd; }
+      .multistepSaleContent .form-data .sale-item:hover .num {
+        background-color: #ff424f;
+        transition: background-color 0.1s ease-in-out;
+        -webkit-transition: background-color 0.1s ease-in-out;
+        -moz-transition: background-color 0.1s ease-in-out;
+        -ms-transition: background-color 0.1s ease-in-out; }
+      .multistepSaleContent .form-data .sale-item .sale-detaile {
+        padding: 30px 10px 20px 10px;
+        border-bottom: 1px solid #ddd; }
+      .multistepSaleContent .form-data .sale-item input {
+        margin: 0 5px;
+        text-align: center;
+        vertical-align: middle; }
+      .multistepSaleContent .form-data .sale-item .num {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 0;
+        left: -15px;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        background-color: #ccc;
+        font-size: 20px;
+        transition: background-color 0.1s ease-in-out;
+        -webkit-transition: background-color 0.1s ease-in-out;
+        -moz-transition: background-color 0.1s ease-in-out;
+        -ms-transition: background-color 0.1s ease-in-out; }
+      .multistepSaleContent .form-data .sale-item .close-btn {
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 18px;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        color: #aaa;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        transform: rotate(0);
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out; }
+        .multistepSaleContent .form-data .sale-item .close-btn:hover {
+          color: #ff424f;
+          transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transition: all 0.3s ease-in-out;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -ms-transition: all 0.3s ease-in-out; }
+      .multistepSaleContent .form-data .sale-item .hm {
+        display: inline-block;
+        position: relative; }
+        .multistepSaleContent .form-data .sale-item .hm span {
+          position: absolute;
+          top: 6px;
+          right: 10px; }
+        .multistepSaleContent .form-data .sale-item .hm input {
+          width: 56px;
+          padding-right: 20px; }
+    .multistepSaleContent .form-data .add-sale {
+      margin-top: 20px;
+      text-align: center; }
+    .multistepSaleContent .form-data .tips {
+      color: #999;
+      margin-left: 60px;
+      margin-bottom: 20px; }
+  .multistepSaleContent .ctrl-btns {
+    text-align: center; }
+    .multistepSaleContent .ctrl-btns .btn {
+      margin: 0 10px; }

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<!--关键字-->
+	<meta name="keywords" content="淘宝工具,宝贝团营销,营销工具,限时打折,搭配套餐,满就送,卖家工具">	
+	<!--网站描述-->
+	<meta name="description" itemprop="description" content="淘宝工具,宝贝团营销,营销工具,限时打折,搭配套餐,满就送,卖家工具"> 
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />
+	<!--网站图标引入END-->
+
+	<title>宝贝团</title>
+		
+	<!--@Bootstrap v3.3.5 -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+
+	<!--@页面共同样式css  v1.0.0-->
+
+	<link rel="stylesheet" href="../css/common.css"/>
+
+	<!--@自定义css v1.0.0-->
+	<link rel="stylesheet" href="../css/watermark/wmEditor.css"/>
+
+	<!--@自定义css v1.0.0-->
+	<link rel="stylesheet" href="../css/lib/colpick.css"/>
+
+	<script type="text/javascript" src="../js/lib/vue/vue.js"></script>
+</head>
+<body>
+	<!--中部主体部分-->
+	<div class="wm-editor" id="wmEditor">
+		<div class="sidebar">
+			<ul class="toolbar">
+				<li>
+					<i class="bbt-icons">&#xe646;</i>文字
+				</li>
+				<li :class="{active: showMaps}" @click="openMaps">
+					<i class="bbt-icons">&#xe69a;</i>贴图
+				</li>
+				<li>
+					<i class="bbt-icons">&#xe7e1;</i>图片
+				</li>
+			</ul>
+		</div>
+		<div class="editor-container" :style="{paddingLeft: autoWdith}">
+			<div class="ctrl-bar">
+				<div class="pane-l">
+					<div class="undo-redo">
+						<i class="bbt-icons undo" @click="undo">&#xe607;</i>
+						<i class="bbt-icons redo" @click="redo">&#xe608;</i>
+					</div>
+					<div class="wm-resize">
+						<i class="bbt-icons" @click="reduceSize">&#xe609;</i>
+						<span class="size">{{editorSize + '%'}}</span>
+						<i class="bbt-icons" @click="addSize">&#xe70a;</i>
+					</div>	
+				</div>
+				<a href="javascript:;" class="btn btn-primary fr save">保存</a>
+			</div>
+			<div class="editor-wrap" :style="wrapAlignCenter" v-region>
+				<div class="editor-layout" :style="{width: editorStyle, height: editorStyle}">
+					<div class="editor-canvas">
+						<div v-for="(item, index) in editorChunks" :class="['editor-el', {'editor-el-img' : item.type == 'img', 'editor-el-text' : item.type == 'text', editing : isEditText === index}]" :contenteditable="isEditText === index" 
+						:style="[{width: (editorSize / 100 * item.width) + 'px',height: (editorSize / 100 * item.height) + 'px',top: (editorSize / 100 * item.top) + 'px',left: (editorSize / 100 * item.left) + 'px',transform: 'rotate('+ item.rotate +'deg)'}, item.type == 'img'?{'background-image': 'url(' + item.src + ')'}:{fontFamily: item.fontFamily, fontSize: (editorSize / 100 * item.fontSize) + 'px', fontWeight: item.fontWeight ? 'bold': 'normal', fontStyle: item.italic? 'italic': 'normal', color: '#' + item.color, textAlign: item.textAlign}]" @click.stop="showControls(index)"  v-move.el="{index: index}">{{item.type == 'text' ? item.textContent : ''}}</div>
+					</div>
+
+					<!-- 变换工具 -->
+					<div v-if="isShowControls" class="transform-controls" :data-sel="selEditorEl" :style="{width: controlsStyle.width + 'px', height: controlsStyle.height + 'px', left: controlsStyle.left + 'px', top: controlsStyle.top + 'px', transform: 'rotate(' + controlsStyle.rotate + 'deg)'}" v-move.transform="{index: selEditorEl, region: regionSelIndex.length > 1}" @dblclick="selectText">
+						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-lt" v-transform.lt></i>
+						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-mt" v-transform.mt></i>
+						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-rt" v-transform.rt></i>
+						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-lm" v-transform.lm></i>
+						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-rm" v-transform.rm></i>
+						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-lb" v-transform.lb></i>
+						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-mb" v-transform.mb></i>
+						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-rb" v-transform.rb></i>
+						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-rotate" v-transform.rotate><i class="bbt-icons">&#xe62a;</i></i>
+					</div>
+
+					<!-- 宽度角度提示 -->
+					<div v-if="isShowControls" class="transform-tips">
+						<span class="tips"><i>W：</i>{{transformTips.width}}px</span>
+						<span class="tips"><i>H：</i>{{transformTips.height}}px</span>
+						<span class="tips"><i>R：</i>{{transformTips.rotate}}°</span>
+					</div>
+
+					<!-- 工具条 -->
+					<div v-if="isShowToolbar" class="editor-toolbar-wrap" :style="toolbarStyle">
+						<div class="editor-toolbar">
+							<!-- 文字类素材的工具 -->
+							<div class="inline-block" v-if="editorChunks[selEditorEl].type === 'text'">
+								<div class="edit-text tool-icon" data-toggle="tooltip" data-placement="top" title="编辑文案" @click.stop="selectText">
+									<i class="bbt-icons">&#xe604;</i>
+								</div>
+								<i class="tool-cut-line"></i>
+								<div class="edit-colpick" :style="{backgroundColor: '#' + editorChunks[selEditorEl].color}" @mouseover.stop="openColpick($event)"></div>
+								<i class="tool-cut-line"></i>
+								<div class="edit-font-size">
+									<input type="text" class="form-control" v-mouseWheel v-model="textFontSize" v-pushfontsize @keyup.stop.del="textFontSize = 12">px
+								</div>
+								<i class="tool-cut-line"></i>
+								<div :class="['edit-text-align', 'tool-icon', {active: editorChunks[selEditorEl].textAlign === 'left'}]" @click="textAlign('left')">
+									<i class="bbt-icons">&#xe60c;</i>
+								</div>
+								<div :class="['edit-text-align', 'tool-icon', {active: editorChunks[selEditorEl].textAlign === 'center'}]" @click="textAlign('center')">
+									<i class="bbt-icons">&#xe60d;</i>
+								</div>
+								<div :class="['edit-text-align', 'tool-icon', {active: editorChunks[selEditorEl].textAlign === 'right'}]" @click="textAlign('right')">
+									<i class="bbt-icons">&#xe60b;</i>
+								</div>
+								<div :class="['tool-icon', 'edit-text-weight', {active: editorChunks[selEditorEl].fontWeight}]" @click="textFontWeight">
+									<i class="bbt-icons">&#xe674;</i>
+								</div>
+							</div>
+
+							<!-- 公共的工具 -->
+
+							<!-- 置顶置底 -->
+							<i class="tool-cut-line"></i>
+							<div class="edit-index tool-icon" @click="changeIndex('top')">
+								<i class="bbt-icons">&#xe7e4;</i>
+							</div>
+							<div class="edit-index tool-icon" @click="changeIndex('down')">
+								<i class="bbt-icons">&#xe75b;</i>
+							</div>
+							
+							<!-- 删除 -->
+							<i class="tool-cut-line"></i>
+							<div class="edit-delete tool-icon" @click="delEditorEl">
+								<i class="bbt-icons">&#xe61e;</i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div v-if="isShowRegion" class="region" :style="regionStyle"></div>
+			</div>
+		</div>
+		<transition name="show">
+			<div v-if="showMaps" class="wm-maps">
+				<div class="mpas-cont">
+					<i class="bbt-icons close-pane" @click="closeMaps">&#xe7e2;</i>
+					<ul class="filter-maps">
+						<li v-for="item in types">{{item}}</li>
+					</ul>
+					<div class="maps-container">
+						<ul class="maps">
+							<li v-for="(item, index) in maps" @click="addEditorEl(index)">
+								<img :src="item.preview">
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</transition>
+	</div>
+
+	<!--@JQuery v1.9.1-->
+
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	
+	<!--@Common 共同js v1.0.0-->
+
+	<script type="text/javascript" src="../js/common.js"></script>
+	
+	<script type="text/javascript" src="../js/lib/lodash/lodash.min.js"></script>
+
+	<script type="text/javascript" src="../js/lib/iScroll/iscroll.js"></script>
+
+	<script type="text/javascript" src="../js/watermark/wmEditor.js"></script>
+
+	<script type="text/javascript" src="../js/lib/colpick/colpick.js"></script>
+	
+</body>
+</html>

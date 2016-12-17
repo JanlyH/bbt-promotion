@@ -1,0 +1,141 @@
+.clndrmodel {
+	
+}
+
+.clmodel {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index:998;
+
+}
+
+.clndr-content {
+    width: 250px;
+	padding:0;
+    min-height:100px;
+    border:1px solid #ddd;
+    position: absolute;
+    top:60px;
+    left:0;
+    z-index:999;
+}
+
+.clndr-close {
+    position: absolute;
+    top:-10px;
+    right:-10px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background:#28ABE2 url('../../imgs/modelclose-small.png')no-repeat;
+    background-position: 3px 3px;
+    border-radius:50%;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.clndr-title {
+    width:100%;
+    height:30px;
+   background: #fff;
+    position:relative;
+
+}
+
+.clndr-title p{
+    width:100%;
+    text-align: center;
+    font-size:0.8em;
+    font-family:"Microsoft YaHei";
+    color:#333;
+    padding-top:4px;
+}
+
+.clndr-title img{
+    width:10px;
+    height:auto;
+    float:right;
+}
+
+
+.clndrtable {
+    font-size: 0.9em;
+   border-top:none;
+   position: relative;
+   top:0;
+   z-index:2;
+}
+
+.clndrtable th{
+   
+    height:30px;
+    color:#333;
+     padding:5px 0px;
+     text-align: center;
+     font-weight: 300;
+     font-size: 0.9em;
+     background: #F5F5F5;
+
+}
+
+.clndrtable  tr{
+     width:100%;
+}
+.clndrtable  tr td{
+    
+}
+.clndrtable  td{
+    text-align:center;
+    width:11%;
+   font-size:1.1em;
+    padding:12px 0px;
+   
+    background:#fff;
+    cursor: pointer;
+}
+
+.clndrtable .weakday {
+    color:#28ABE2;
+}
+.premontbtn {
+
+    position:absolute;
+    top:8px;
+    left:8px;
+    color:#fff;
+    font-size:22px;
+    font-family:"Microsoft YaHei";
+    cursor: pointer;
+    display: none;
+}
+
+.nextmontbtn {
+    position:absolute;
+    top:8px;
+    right:8px;
+    color:#fff;
+    font-size:22px;
+    font-family:"Microsoft YaHei";
+    cursor: pointer;
+}
+
+.nextmontbtn:hover,.premontbtn:hover{
+    text-decoration: none;
+}
+
+.nolocalmonth,.nextmonth,.premonth {
+    color:#dadedf;
+}
+
+.clndrtable  tr .recentmonth {
+     color:#dadedf;
+    
+     
+}
+
+.crmlocalday {
+    color:#28ABE2;
+}

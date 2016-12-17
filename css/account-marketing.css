@@ -1,0 +1,47 @@
+.batch-main-box {
+  width: 100%;
+  min-height: 500px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px; }
+
+.btn-recharge {
+  display: inline-block;
+  border: 1px solid #22a4ff;
+  color: #ff424f !important;
+  padding: 2px 31px;
+  margin-right: 200px;
+  font-size: 16px; }
+
+.btn-send {
+  padding: 3px 20px;
+  margin-right: 200px; }
+
+.btn-recharge:hover {
+  background-color: #22a4ff;
+  color: #fff !important; }
+
+.message-operation li {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid #ddd; }
+
+.message-operation li + li h4 {
+  margin-left: 25px;
+  margin-bottom: 15px;
+  display: block;
+  font-weight: bold; }
+
+.message-switch {
+  display: inline-block;
+  float: right;
+  margin-right: 125px;
+  height: 26px;
+  line-height: 26px; }
+
+.pag-header {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px; }

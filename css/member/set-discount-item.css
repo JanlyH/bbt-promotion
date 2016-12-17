@@ -1,0 +1,13 @@
+.batch-main-box {
+  width: 100%;
+  min-height: 500px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px; }
+
+.pag-header {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px; }

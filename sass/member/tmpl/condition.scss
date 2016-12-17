@@ -1,0 +1,63 @@
+@import './opt.scss';
+.condition-items{
+	&>li{
+		margin-bottom: 20px;
+	}
+	.item-title{
+		display: inline-block;
+		width: 120px;
+		text-align: right;
+		&.sm{
+			width: 70px;
+		}
+	}
+	.condition-details{
+		display: inline-block;
+		.form-radios{
+			display: inline-block;
+			float: left;
+			margin-top: 6px;
+			p+p{
+				margin-left: 20px;
+			}
+		}
+		.clearmargin{
+			margin-top: 0;
+		}
+		.form-checkbox{
+			p{
+				display: inline-block;
+				width: auto;
+			}
+			p+p{
+				margin-left: 20px;
+			}
+		}
+		.custom{
+			display: inline-block;
+			margin-left: 10px;
+		}
+		.select-list{
+			display: inline-block;
+			li{
+				position: relative;
+				display: inline-block;
+				margin: 0 5px;
+				padding: 5px 10px;
+				border: 1px solid #ddd;
+				@include border-radius(4px);
+				cursor: pointer;
+			}
+			li:hover, & li.active{
+				border: 1px solid #22a4ff;
+				background-color: #22a4ff;
+				color: #fff;
+			}
+		}
+	}
+	.location{
+		.form-radios{
+			margin-top: 0;
+		}
+	}
+}

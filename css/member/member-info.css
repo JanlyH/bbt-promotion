@@ -1,0 +1,212 @@
+.tips-content {
+  margin-bottom: 20px; }
+  .tips-content .tips-title {
+    margin-bottom: 10px; }
+  .tips-content .blue-warning {
+    float: left;
+    margin-right: 10px; }
+  .tips-content .tips-list li {
+    margin-left: 26px;
+    margin-bottom: 10px;
+    list-style-type: decimal; }
+
+.crm-main-content {
+  width: 100%;
+  min-height: 500px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px; }
+
+.pag-header {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px; }
+
+.imp-mb-tips {
+  color: #999;
+  margin-bottom: 20px; }
+
+.imp-steps {
+  padding: 0 50px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 50px; }
+  .imp-steps .download-icon, .imp-steps .upload-icon, .imp-steps .import-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(https://img.alicdn.com/imgextra/i2/17157061/TB2EOpDiVXXXXXkXpXXXXXXXXXX-17157061.png) no-repeat;
+    float: left;
+    margin-top: 2px;
+    margin-right: 3px; }
+  .imp-steps .step-item {
+    float: left;
+    position: relative;
+    width: 26%;
+    height: 110px;
+    text-align: center; }
+    .imp-steps .step-item .point {
+      display: inline-block;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      bottom: -26px;
+      left: 50%;
+      margin-left: -5px; }
+    .imp-steps .step-item .step1, .imp-steps .step-item .step2, .imp-steps .step-item .step3 {
+      display: inline-block;
+      width: 200px;
+      height: 110px;
+      padding: 10px; }
+    .imp-steps .step-item .step-number {
+      display: block;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      border-radius: 9px;
+      -webkit-border-radius: 9px;
+      -moz-border-radius: 9px;
+      -ms-border-radius: 9px;
+      background-color: #fff;
+      text-align: center; }
+    .imp-steps .step-item .step-info {
+      width: 100%;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      text-align: center; }
+    .imp-steps .step-item .step-btn {
+      position: relative;
+      width: 100%;
+      text-align: center; }
+      .imp-steps .step-item .step-btn a {
+        display: inline-block;
+        padding: 5px 15px;
+        color: #fff;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px; }
+      .imp-steps .step-item .step-btn .upload-file {
+        position: absolute;
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        top: 0;
+        left: 50%;
+        margin-left: -50px;
+        overflow: hidden;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        cursor: pointer !important; }
+    .imp-steps .step-item .step1 {
+      background-color: #fff2d5;
+      border: 1px solid #ffbead;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px; }
+      .imp-steps .step-item .step1 .step-number {
+        color: #ff734d; }
+      .imp-steps .step-item .step1 .step-info {
+        color: #ff734d; }
+      .imp-steps .step-item .step1 a {
+        background-color: #ff734d; }
+      .imp-steps .step-item .step1 a:hover {
+        background-color: #ff8767; }
+      .imp-steps .step-item .step1 .download-icon {
+        background-position: 0 -1270px; }
+      .imp-steps .step-item .step1 .point {
+        background-color: #ff734d; }
+    .imp-steps .step-item .step2 {
+      background-color: #d4f7fe;
+      border: 1px solid #85ddd7;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px; }
+      .imp-steps .step-item .step2 .step-number {
+        color: #1ebeb4; }
+      .imp-steps .step-item .step2 .step-info {
+        color: #1ebeb4; }
+      .imp-steps .step-item .step2 a {
+        background-color: #1ebeb4; }
+      .imp-steps .step-item .step2 a:hover {
+        background-color: #21d4c9; }
+      .imp-steps .step-item .step2 .upload-icon {
+        background-position: -16px -1270px; }
+      .imp-steps .step-item .step2 .point {
+        background-color: #1ebeb4; }
+    .imp-steps .step-item .step3 {
+      background-color: #d0efff;
+      border: 1px solid #8fd1ff;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px; }
+      .imp-steps .step-item .step3 .step-number {
+        color: #22a4ff; }
+      .imp-steps .step-item .step3 .step-info {
+        color: #22a4ff; }
+      .imp-steps .step-item .step3 a {
+        background-color: #22a4ff; }
+      .imp-steps .step-item .step3 a:hover {
+        background-color: #3cafff; }
+      .imp-steps .step-item .step3 .import-icon {
+        background-position: 0 -1285px; }
+      .imp-steps .step-item .step3 .point {
+        background-color: #22a4ff; }
+  .imp-steps .step-arrow {
+    background: url(https://img.alicdn.com/imgextra/i2/17157061/TB2EOpDiVXXXXXkXpXXXXXXXXXX-17157061.png) no-repeat;
+    float: left;
+    width: 11%;
+    height: 38px;
+    background-position: 32px -1303px;
+    margin-top: 35px; }
+
+.data-content {
+  width: 100%;
+  height: 110px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px; }
+  .data-content .sub-content + .sub-content {
+    border-left: 1px solid #ddd; }
+  .data-content .sub-content {
+    width: 50%;
+    height: 100%;
+    float: left;
+    text-align: center; }
+    .data-content .sub-content .number {
+      font-size: 34px;
+      color: #ff424f;
+      margin-top: 15px; }
+    .data-content .sub-content .title {
+      font-size: 16px; }
+
+.chart-content {
+  width: 100%; }
+  .chart-content .chart-box {
+    float: left;
+    width: 50%;
+    padding: 20px; }
+    .chart-content .chart-box .title {
+      margin-bottom: 10px;
+      font-size: 16px; }
+      .chart-content .chart-box .title .sub-title {
+        font-size: 12px;
+        color: #999;
+        margin-left: 20px; }
+    .chart-content .chart-box .chart {
+      width: 100%;
+      height: 400px;
+      padding-bottom: 20px; }
+      .chart-content .chart-box .chart.border-b {
+        border-bottom: 1px solid #ddd; }

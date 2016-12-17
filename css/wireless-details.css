@@ -1,0 +1,121 @@
+@charset "UTF-8";
+.full-selgoods-goodscc .full-goods-box{
+	position: relative;
+	display: inline-block;
+    vertical-align: middle;
+    width: 47%;
+    height: 146px;
+    margin: 10px 10px 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    cursor: pointer;
+    padding: 10px 10px;
+}
+.full-selgoods-goodscc .full-goods-hover:hover{
+	border: 1px solid #ddd;
+}
+.rmk-options .rmk-options-radios{
+	width: 20%;
+}
+.full-selgoods-goodscc .full-goods-box .full-goods-ttl{
+	height: 40px;
+	line-height: 20px;
+	margin-bottom: 35px;
+	padding: 0;
+	margin-left: 0;
+}
+.full-selgoods-goodscc .full-goods-hover:hover .full-goods-ttl{
+	margin-left: 0;
+}
+.full-selgoods-goodscc .full-goods-hover:hover .full-goods-img, .full-selgoods-goodscc .full-goods-box .full-goods-img{
+	margin: 0;
+}
+.wireless-item-release{
+	width: 68%;
+	float: left;
+	margin-left: 10px;
+}
+.full-selgoods-goodscc{
+	width: 100%;
+	text-align: left;
+	padding-bottom: 70px;
+}
+.full-selgoods-goodscc .full-goods-box.goods-seled{
+	border: 1px solid #44c1c3;
+}
+.wireless-item-status{
+	position: relative;
+	width: 100%;
+	height: 45px;
+	float: left;
+	overflow: hidden;
+}
+.wireless-item-release .preview-icon{
+	position: absolute;
+	right: 0;
+	top: 15px;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	float: right;
+	background-position: 5px -594px;
+}
+.wireless-item-release .preview-icon:hover{
+	background-position: 5px -623px;
+}
+.wireless-item-status .status-btn{
+	display: inline-block;
+	position: absolute;
+	top: 45px;
+	left: 0;
+	padding: 10px 45px;
+	color: #fff;
+}
+.full-goods-box.no-release .wireless-item-status .status-btn{
+	top: 25px;
+	padding: 0;
+	color: #28abe2;
+}
+.full-goods-box.no-release .wireless-item-status .status-btn:hover{
+	color: #31c2ff;
+}
+.full-goods-box.success .wireless-item-status .status-btn{
+	background-color: #ff9f2d;
+}
+.full-goods-box.fail .wireless-item-status .status-btn{
+	background-color: #44c1c3;
+}
+.full-goods-box.releasing .wireless-item-status .status-btn{
+	background-color: #ff424f;
+}
+.full-goods-box .status-text{
+	display: block;
+	margin-bottom: 5px;
+}
+.full-goods-box .status-text span{
+	display: block;
+	margin-top: 5px;
+}
+.full-goods-box.fail .status-text em{
+	color: #ff424f;
+}
+.full-goods-box.success .status-text em{
+	color: #11c986;
+}
+.full-goods-box.releasing .status-text em{
+	color: #ff9f2d;
+}
+.rmk-footer .rmk-footer-publish:hover{
+	background-color: #1bd693;
+}
+.rmk-footer-fixks .transform-mode{
+	float: left;
+	margin: 16px 25px 0 25px;
+}
+.rmk-footer-fixed .rmk-footer-fixbox{
+	width: 100%;
+}
+.rmk-options .rmk-options-ordeby{
+	margin-right: 33px;
+}

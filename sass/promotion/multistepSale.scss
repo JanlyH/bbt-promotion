@@ -1,0 +1,205 @@
+@import '../opt';
+$blue: #22a4ff;
+$red: #ff424f;
+@font-face {font-family: 'bbt';
+    src: url('../../fonts/bbt.eot'); /* IE9*/
+    src: url('../../fonts/bbt.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../../fonts/bbt.woff') format('woff'), /* chrome、firefox */
+    url('../../fonts/bbt.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../../fonts/bbt.svg#bbt') format('svg'); /* iOS 4.1- */
+}
+.bbt-icons{
+	font-family:"bbt" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.nav-title{
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 20px;
+	font-size: 14px;
+	.title-item{
+		width: 100px;
+		height: 32px;
+		line-height: 32px;
+		text-align: center;
+		background-color: #22a4ff;
+		color: #fff;
+		border-radius: 4px 4px 0 0;
+		margin-bottom: -1px;
+	}
+}
+.multistepSaleContent{
+	width: 100%;
+	min-height: 600px;
+	padding: 16px;
+	background-color: #fff;
+	.breadcrumb{
+		line-height: 30px;
+		margin-top: 0;
+	}
+	.page-header{
+		width: 100%;
+		margin: 0;
+	    margin-bottom: 15px;
+	    padding-bottom: 15px;
+	    border-bottom: 1px solid #ddd;
+	    font-size: 16px;
+	}
+	.form-data{
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		&.border{
+			border-bottom: 1px solid #ddd;
+		}
+		.date-input{
+			width: 180px;
+		}
+		.cdtion-item{
+			width: 100%;
+		}
+		.cdtion-item+.cdtion-item{
+			margin-top: 20px;
+		}
+		.cdtion-tit{
+			width: 100px;
+			text-align: right;
+			&.saleSlogan{
+				vertical-align: top;
+				padding-top: 8px;
+			}
+		}
+		.cdtion-set{
+			display: inline-block;
+			.tips{
+				padding-left: 10px;
+				color: #999;
+			}
+			.tellphone{
+				padding-right: 40px;
+			}
+			.discount-type{
+				p{
+					padding-right: 20px;
+				}
+			}
+		}
+		.tags{
+			margin-top: 10px;
+			&.inl-block{
+				display: inline-block;
+			}
+			li{
+				display: inline-block;
+				padding: 4px 15px;
+				text-align: center;
+				background-color: #f5f5f5;
+				border: 1px solid #ddd;
+				@include border-radius(4px);
+				cursor: pointer;
+				&:hover, &.active{
+					background-color: $blue;
+					color: #fff;
+					border-color: $blue;
+				}
+			}
+		}
+		.sale-item{
+			position: relative;
+			padding: 0 20px;
+			width: 940px;
+			margin-left: 30px;
+			border-left: 1px dashed #ddd;
+			&:hover{
+				.num{
+					background-color: $red;
+					@include transition(background-color, 0.1s)
+				}
+			}
+			.sale-detaile{
+				padding: 30px 10px 20px 10px;
+				border-bottom: 1px solid #ddd;
+			}
+			input{
+				margin: 0 5px;
+				text-align: center;
+				vertical-align: middle;
+			}
+			.num{
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				top: 0;
+				left: -15px;
+				text-align: center;
+				line-height: 30px;
+				color: #fff;
+				@include border-radius(15px);
+				background-color: #ccc;
+				font-size: 20px;
+				@include transition(background-color, 0.1s)
+			}
+			.close-btn{
+				position: absolute;
+				display: block;
+				width: 20px;
+				height: 20px;
+				text-align: center;
+				line-height: 18px;
+				right: 20px;
+				top: 10px;
+				cursor: pointer;
+				font-size: 20px;
+				font-weight: bold;
+				color: #aaa;
+				user-select: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				transform: rotate(0);
+				-webkit-transform: rotate(0);
+				-moz-transform: rotate(0);
+				-ms-transform: rotate(0);
+				@include transition(all, 0.3s);
+				&:hover{
+					color: $red;
+					transform: rotate(90deg);
+					-webkit-transform: rotate(90deg);
+					-moz-transform: rotate(90deg);
+					-ms-transform: rotate(90deg);
+					@include transition(all, 0.3s);
+				}
+			}
+			.hm{
+				display: inline-block;
+				position: relative;
+				span{
+					position: absolute;
+					top: 6px;
+					right: 10px;
+				}
+				input{
+					width: 56px;
+					padding-right: 20px;
+				}
+			}
+		}
+		.add-sale{
+			margin-top: 20px;
+			text-align: center;
+		}
+		.tips{
+			color: #999;
+		    margin-left: 60px;
+		    margin-bottom: 20px;
+		}
+	}
+	.ctrl-btns{
+		text-align: center;
+		.btn{
+			margin: 0 10px;
+		}
+	}
+}

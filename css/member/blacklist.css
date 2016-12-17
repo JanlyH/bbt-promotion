@@ -1,0 +1,79 @@
+.batch-main-box {
+  width: 100%;
+  min-height: 500px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px; }
+
+.pag-header {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px; }
+
+.blacklist-table a {
+  margin: 0 10px; }
+
+.condition-search {
+  margin-bottom: 15px; }
+
+.selall-del {
+  float: left; }
+  .selall-del .form-checkbox {
+    margin-left: 2px;
+    margin-right: 30px; }
+
+.search-blacklist {
+  float: right; }
+
+.tab-content {
+  margin-bottom: 25px; }
+
+.file-path-box {
+  cursor: pointer;
+  display: inline-block;
+  width: 500px;
+  float: left;
+  border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-right: 0; }
+
+#attachment {
+  width: 590px;
+  height: 34px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer; }
+
+.upload-blacklist {
+  margin-bottom: 25px; }
+  .upload-blacklist .upload-blacklist-type {
+    float: left;
+    margin-top: 5px; }
+  .upload-blacklist .manual-input {
+    margin-bottom: 20px; }
+    .upload-blacklist .manual-input .manual-content {
+      float: left;
+      width: 830px;
+      resize: vertical; }
+  .upload-blacklist .batch-upload {
+    margin-bottom: 20px; }
+    .upload-blacklist .batch-upload .file-upload {
+      position: relative;
+      float: left;
+      width: 830px; }
+    .upload-blacklist .batch-upload .upload-btn {
+      float: left;
+      border-radius: 0 4px 4px 0;
+      -webkit-border-radius: 0 4px 4px 0;
+      -moz-border-radius: 0 4px 4px 0; }
+    .upload-blacklist .batch-upload .batch-upload-tips {
+      float: left;
+      display: inline-block;
+      margin-top: 6px;
+      margin-left: 10px; }

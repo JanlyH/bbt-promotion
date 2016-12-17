@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		#group-send-msg-edit .tab-container {
+		  width: 100%;
+		  border: 0; }
+		  #group-send-msg-edit .tab-container .tab-content {
+		    display: block; }
+
+		#group-send-msg-edit .tabs-wraped {
+		  height: 36px;
+		  border-bottom: 1px solid #ddd;
+		  border-left: 1px solid #ddd; }
+		  #group-send-msg-edit .tabs-wraped li {
+		    float: left;
+		    height: 36px;
+		    width: 90px;
+		    line-height: 36px;
+		    background-color: #f5f5f5;
+		    border-top: 1px solid #ddd;
+		    text-align: center;
+		    border-right: 1px solid #ddd;
+		    border-bottom: 1px solid #ddd;
+		    margin-bottom: -1px;
+		    cursor: pointer;
+		    font-size: 14px; }
+		    #group-send-msg-edit .tabs-wraped li a {
+		      width: 100%;
+		      height: 100%;
+		      display: block; }
+		    #group-send-msg-edit .tabs-wraped li.active {
+		      background-color: #fff;
+		      border-top: 2px solid #22a4ff;
+		      border-bottom: 0; }
+		      #group-send-msg-edit .tabs-wraped li.active a {
+		        margin-top: -1px; }
+		    #group-send-msg-edit .tabs-wraped li:hover {
+		      background-color: #fff; }
+		  #group-send-msg-edit .tabs-wraped .tab-pane {
+		    position: relative;
+		    display: none; }
+
+		#group-send-msg-edit .msg-tmpl-items {
+		  margin-left: 20px; }
+		  #group-send-msg-edit .msg-tmpl-items li {
+		    width: 100%;
+		    padding-bottom: 5px;
+		    margin-bottom: 10px;
+		    border-bottom: 1px dashed #ddd;
+		    list-style-type: decimal; }
+		    #group-send-msg-edit .msg-tmpl-items li .msg-content {
+		      display: inline-block;
+		      width: 640px;
+		      height: 20px;
+		      line-height: 20px;
+		      overflow: hidden;
+		      text-overflow: ellipsis;
+		      white-space: nowrap;
+		      vertical-align: top; }
+		  #group-send-msg-edit .msg-tmpl-items .tooltip-inner {
+		    max-width: 680px;
+		    background-color: rgba(0, 0, 0, 0.8); }
+		  #group-send-msg-edit .msg-tmpl-items .tooltip.bottom .tooltip-arrow {
+		    border-bottom-color: rgba(0, 0, 0, 0.8); }
+	</style>
+</head>
+<body>
+	<div id="group-send-msg-edit">
+		<div class="tab-container">	
+			<ul class="tabs-wraped">
+				<li class="active"><a href="javascript:;">常用</a></li>
+				<li><a href="javascript:;">春节</a></li>
+				<li><a href="javascript:;">情人节</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane show">
+					<ul class="msg-tmpl-items">
+						<li><div class="msg-content" data-toggle="tooltip" data-placement="bottom" title="【宝贝团】亲爱的宝贝团公司会员，。。。。。。。。【宝贝团】亲爱的宝贝团公司会员，。。。。。。。。【宝贝团】亲爱的宝贝团公司会员，。。。。。。。。【宝贝团】亲爱的宝贝团公司会员，。。。。。。。。">【宝贝团】亲爱的宝贝团公司会员，。。。。。。。。</div><a href="javascript:;" class="btn-link fr mr15">使用</a></li>
+						<li>【宝贝团】亲爱的宝贝团公司会员，。。。。。。。。</li>
+						<li>【宝贝团】亲爱的宝贝团公司会员，。。。。。。。。</li>
+					</ul>
+				</div>
+				<div class="tab-pane">2</div>
+				<div class="tab-pane">3</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('#group-send-msg-edit').find('.tabs-wraped').tabPage();
+	</script>
+</body>
+</html>

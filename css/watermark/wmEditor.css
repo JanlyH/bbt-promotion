@@ -1,0 +1,519 @@
+.tips-content {
+  margin-bottom: 20px; }
+  .tips-content .tips-title {
+    margin-bottom: 10px; }
+  .tips-content .blue-warning {
+    float: left;
+    margin-right: 10px; }
+  .tips-content .tips-list li {
+    margin-left: 26px;
+    margin-bottom: 10px;
+    list-style-type: decimal;
+    color: #999; }
+
+html, body {
+  height: 100%; }
+
+.colpick {
+  z-index: 8; }
+
+.wm-editor {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  user-select: none; }
+  .wm-editor .sidebar {
+    position: fixed;
+    width: 80px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    background-color: #34373e;
+    z-index: 3; }
+    .wm-editor .sidebar .toolbar li {
+      position: relative;
+      width: 100%;
+      height: 80px;
+      padding: 5px 0;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #9fa4b1;
+      text-align: center;
+      cursor: pointer; }
+      .wm-editor .sidebar .toolbar li:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #22a4ff; }
+      .wm-editor .sidebar .toolbar li.active {
+        background-color: #282b30; }
+      .wm-editor .sidebar .toolbar li:hover:after, .wm-editor .sidebar .toolbar li.active:after {
+        width: 4px; }
+      .wm-editor .sidebar .toolbar li .bbt-icons {
+        display: block;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 40px; }
+  .wm-editor .wm-maps {
+    position: fixed;
+    width: 320px;
+    height: 100%;
+    top: 0;
+    left: 80px;
+    padding: 10px;
+    background-color: #282b30; }
+    .wm-editor .wm-maps .mpas-cont {
+      position: relative;
+      width: 100%;
+      height: 100%; }
+    .wm-editor .wm-maps .filter-maps {
+      width: 100%;
+      height: 70px;
+      padding-top: 20px;
+      text-align: center;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none; }
+      .wm-editor .wm-maps .filter-maps li {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0 5px;
+        font-size: 12px;
+        color: #fff;
+        background-color: #34373e;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        cursor: pointer; }
+        .wm-editor .wm-maps .filter-maps li:hover, .wm-editor .wm-maps .filter-maps li.active {
+          background-color: #22a4ff;
+          color: #fff; }
+    .wm-editor .wm-maps .maps-container {
+      width: 100%;
+      height: 100%;
+      height: calc(100vh - 70px);
+      padding-bottom: 20px;
+      overflow: hidden; }
+    .wm-editor .wm-maps .maps {
+      overflow: auto; }
+      .wm-editor .wm-maps .maps li {
+        display: inline-block;
+        width: 130px;
+        height: 130px;
+        padding: 5px;
+        margin: 10px;
+        cursor: pointer;
+        border: 1px dashed transparent;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none; }
+        .wm-editor .wm-maps .maps li:hover {
+          border-color: #525765; }
+        .wm-editor .wm-maps .maps li img {
+          max-width: 100%;
+          max-height: 100%; }
+    .wm-editor .wm-maps .close-pane {
+      position: absolute;
+      top: -10px;
+      right: -5px;
+      font-size: 22px;
+      color: #9fa4b1;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      transform: rotate(0);
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      -ms-transform: rotate(0); }
+      .wm-editor .wm-maps .close-pane:hover {
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg); }
+    .wm-editor .wm-maps .iScrollVerticalScrollbar {
+      position: absolute;
+      z-index: 2;
+      width: 7px;
+      bottom: 2px;
+      top: 70px;
+      right: -5px;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      -webkit-transition: opacity 0.3s ease-in-out;
+      -moz-transition: opacity 0.3s ease-in-out;
+      -ms-transition: opacity 0.3s ease-in-out; }
+    .wm-editor .wm-maps:hover .iScrollVerticalScrollbar {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+      -webkit-transition: opacity 0.3s ease-in-out;
+      -moz-transition: opacity 0.3s ease-in-out;
+      -ms-transition: opacity 0.3s ease-in-out; }
+    .wm-editor .wm-maps .iScrollIndicator {
+      box-sizing: border-box;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 3px;
+      width: 100%;
+      display: block; }
+    .wm-editor .wm-maps.show-enter-active, .wm-editor .wm-maps.show-leave-active {
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out; }
+    .wm-editor .wm-maps.show-enter, .wm-editor .wm-maps.show-leave-active {
+      transform: translate(-320px, 0);
+      -webkit-transform: translate(-320px, 0);
+      -moz-transform: translate(-320px, 0);
+      -ms-transform: translate(-320px, 0); }
+  .wm-editor .editor-container {
+    width: 100%;
+    transition: padding-left 0.3s ease-in-out;
+    -webkit-transition: padding-left 0.3s ease-in-out;
+    -moz-transition: padding-left 0.3s ease-in-out;
+    -ms-transition: padding-left 0.3s ease-in-out; }
+    .wm-editor .editor-container .ctrl-bar {
+      width: 100%;
+      height: 70px;
+      background-color: #fff;
+      padding: 20px; }
+      .wm-editor .editor-container .ctrl-bar .undo-redo {
+        display: inline-block;
+        margin-right: 30px;
+        vertical-align: middle; }
+      .wm-editor .editor-container .ctrl-bar .bbt-icons {
+        font-size: 26px;
+        color: #999;
+        cursor: pointer;
+        margin: 0 10px;
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none; }
+        .wm-editor .editor-container .ctrl-bar .bbt-icons:hover {
+          color: #22a4ff; }
+      .wm-editor .editor-container .ctrl-bar .save {
+        font-size: 16px;
+        width: 120px;
+        text-align: center; }
+    .wm-editor .editor-container .pane-l {
+      float: left; }
+    .wm-editor .editor-container .wm-resize {
+      display: inline-block;
+      vertical-align: middle; }
+      .wm-editor .editor-container .wm-resize .bbt-icons {
+        display: inline-block;
+        font-size: 16px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        border: 1px solid #999; }
+        .wm-editor .editor-container .wm-resize .bbt-icons:hover {
+          border-color: #22a4ff; }
+      .wm-editor .editor-container .wm-resize .size {
+        display: inline-block;
+        width: 50px;
+        text-align: center; }
+      .wm-editor .editor-container .wm-resize i, .wm-editor .editor-container .wm-resize span {
+        vertical-align: middle; }
+    .wm-editor .editor-container .editor-wrap {
+      cursor: default; }
+      .wm-editor .editor-container .editor-wrap .editor-layout {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjE4QjY3MkVFQUUyRTExRTY5Q0ExRDQwNEMzMjNFMUZCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjE4QjY3MkVGQUUyRTExRTY5Q0ExRDQwNEMzMjNFMUZCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MThCNjcyRUNBRTJFMTFFNjlDQTFENDA0QzMyM0UxRkIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MThCNjcyRURBRTJFMTFFNjlDQTFENDA0QzMyM0UxRkIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6bZ1cFAAAAKklEQVR42mL8//8/AzZw9uxZrOJMDCSCUQ3EABZc4W1sbDwaSvTTABBgAPnECIaRwiyRAAAAAElFTkSuQmCC");
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        -ms-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); }
+        .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls {
+          position: absolute;
+          z-index: 4;
+          border: 1px solid #fff; }
+          .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls:focus {
+            outline: none; }
+          .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls:before {
+            content: "";
+            box-sizing: content-box;
+            margin: -1px 0 0 -1px;
+            position: absolute;
+            border: 1px dashed #666;
+            cursor: move;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1; }
+          .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle {
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-top: -10px;
+            margin-left: -10px;
+            padding: 10px;
+            z-index: 5;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle:after {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 8px;
+              height: 8px;
+              left: 6px;
+              top: 6px;
+              border: 1px solid #666;
+              background-color: #fff; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-lt {
+              left: 0;
+              top: 0;
+              cursor: nwse-resize; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-mt {
+              left: 50%;
+              top: 0;
+              cursor: ns-resize; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-rt {
+              left: 100%;
+              top: 0;
+              cursor: nesw-resize; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-lm {
+              left: 0;
+              top: 50%;
+              cursor: ew-resize; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-rm {
+              left: 100%;
+              top: 50%;
+              cursor: ew-resize; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-lb {
+              left: 0;
+              top: 100%;
+              cursor: nesw-resize; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-mb {
+              left: 50%;
+              top: 100%;
+              cursor: ns-resize; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-rb {
+              left: 100%;
+              top: 100%;
+              cursor: nwse-resize; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-rotate {
+              cursor: pointer;
+              margin: 10px 0 0 -15px;
+              padding: 5px;
+              position: absolute;
+              left: 50%;
+              top: 100%;
+              z-index: 1; }
+              .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-rotate .bbt-icons {
+                position: relative;
+                background-color: #fff;
+                padding: 2px;
+                border-radius: 10px;
+                z-index: 2; }
+              .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-rotate:before, .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-rotate:after {
+                content: "";
+                border-left: 1px solid #fff;
+                cursor: default;
+                margin: -6px 0 0 -1px;
+                height: 15px;
+                width: 0;
+                overflow: hidden;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                pointer-events: none; }
+              .wm-editor .editor-container .editor-wrap .editor-layout .transform-controls .ed-handle.handle-rotate:after {
+                border: 0;
+                border-left: 1px dashed #666; }
+        .wm-editor .editor-container .editor-wrap .editor-layout .transform-tips {
+          position: absolute;
+          width: 90px;
+          right: 0;
+          top: -65px;
+          background-color: rgba(0, 0, 0, 0.6);
+          color: #fff;
+          padding: 5px;
+          border-radius: 4px;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          z-index: 5;
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none; }
+          .wm-editor .editor-container .editor-wrap .editor-layout .transform-tips .tips {
+            display: block;
+            font-size: 12px; }
+          .wm-editor .editor-container .editor-wrap .editor-layout .transform-tips i {
+            display: inline-block;
+            width: 20px;
+            text-align: right;
+            margin-right: 10px; }
+        .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap {
+          top: 50px;
+          left: 50px;
+          position: absolute;
+          z-index: 7; }
+          .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar {
+            position: relative;
+            height: 38px;
+            background: #fff;
+            border-radius: 3px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            padding: 4px;
+            cursor: default;
+            white-space: nowrap;
+            user-select: none; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .tool-cut-line {
+              display: inline-block;
+              width: 1px;
+              height: 24px;
+              background-color: #eee;
+              margin: 0 5px;
+              margin-top: 3px;
+              vertical-align: top; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-text {
+              height: 28px;
+              line-height: 28px;
+              text-align: center;
+              background-color: #fff;
+              padding: 3px; }
+              .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-text i {
+                font-size: 22px;
+                cursor: pointer;
+                float: left;
+                margin-top: -1px; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-colpick {
+              position: relative;
+              display: inline-block;
+              width: 18px;
+              height: 18px;
+              background-color: #fff;
+              border: 1px solid #ddd;
+              margin: 5px 5px 0 5px;
+              cursor: pointer;
+              vertical-align: top; }
+              .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-colpick:after {
+                content: '';
+                position: absolute;
+                border: 2px solid transparent;
+                border-bottom-color: #666;
+                border-right-color: #666;
+                height: 0;
+                width: 0;
+                bottom: 1px;
+                right: 1px; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-font-size {
+              display: inline-block;
+              margin-right: 3px;
+              vertical-align: top; }
+              .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-font-size input {
+                display: inline-block;
+                width: 50px;
+                height: 30px;
+                line-height: 30px;
+                margin: 0 5px;
+                text-align: center;
+                padding: 6px; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-text-align {
+              height: 26px;
+              padding: 5px;
+              cursor: pointer;
+              margin-right: 3px;
+              margin-top: 2px;
+              vertical-align: top; }
+              .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-text-align .bbt-icons {
+                display: inline-block; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-text-weight {
+              height: 26px;
+              padding: 5px;
+              cursor: pointer;
+              vertical-align: top;
+              margin-right: 3px;
+              margin-top: 2px; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-delete {
+              cursor: pointer;
+              padding: 5px;
+              height: 26px;
+              margin-top: 2px;
+              vertical-align: top; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .edit-index {
+              cursor: pointer;
+              padding: 5px;
+              height: 26px;
+              margin-top: 2px;
+              vertical-align: top; }
+            .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .tool-icon {
+              display: inline-block; }
+              .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .tool-icon:hover, .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .tool-icon.active {
+                background-color: #ececec; }
+                .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .tool-icon:hover .bbt-icons, .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .tool-icon.active .bbt-icons {
+                  color: #666; }
+              .wm-editor .editor-container .editor-wrap .editor-layout .editor-toolbar-wrap .editor-toolbar .tool-icon .bbt-icons {
+                color: #999; }
+      .wm-editor .editor-container .editor-wrap .region {
+        background: rgba(0, 196, 204, 0.15);
+        border: 1px solid #00c4cc;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        cursor: default;
+        position: absolute;
+        z-index: 6; }
+      .wm-editor .editor-container .editor-wrap .editor-canvas {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; }
+        .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el {
+          position: absolute;
+          cursor: default;
+          border: 1px dashed transparent;
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none; }
+          .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el:hover, .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el.sel {
+            border: 1px dashed #fff; }
+          .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el.editor-el-img {
+            background-size: 100% 100%; }
+          .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el.editor-el-text {
+            overflow: hidden; }
+            .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el.editor-el-text.editing {
+              z-index: 6;
+              overflow: initial;
+              outline: none; }

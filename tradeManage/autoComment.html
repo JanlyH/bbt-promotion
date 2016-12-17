@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<!--关键字-->
+	<meta name="keywords" content="淘宝工具,宝贝团营销,营销工具,限时打折,搭配套餐,满就送,卖家工具">	
+	<!--网站描述-->
+	<meta name="description" itemprop="description" content="淘宝工具,宝贝团营销,营销工具,限时打折,搭配套餐,满就送,卖家工具"> 
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />
+	<!--网站图标引入END-->
+
+	<title>宝贝团</title>
+		
+	<!--@Bootstrap v3.3.5 -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+
+	<!--@页面共同样式css  v1.0.0-->
+
+	<link rel="stylesheet" href="../css/common.css"/>
+
+	<!--@自定义css v1.0.0-->
+	<link rel="stylesheet" href="../css/tradeManage/tradeManage.css"/>
+
+
+</head>
+<body>
+	<!--顶部head-->
+	<div class="containertitle">
+		<div class="containerbox">
+			<div class="bbrow">
+				 <div class="bb-index-logo"><a href="javascript:;"><img src="../imgs/bblogo.png" alt="index_logo"><span>高级版</span></a></div>
+				 <div class="bb-right-nav">
+				 	<div class="bb-right-free">
+				 		<a href="javascript:;" class="bb-discount">续费有礼</a>
+				 	</div>
+				 	
+				 		<ul class="bb-right-navcontent">
+				 			<li ><a href="javascript:;" class="bb-right-opera">卖家中心</a></li>
+				 			<li ><a href="javascript:;" class="bb-right-opera">联系客服</a></li>
+				 			<li class="bb-usernav">
+				 				<a href="javascript:;" class="bb-right-opera">宝贝团科技</a><i><img src="../imgs/down_allow.png"/></i>
+				 				<!--顶部head 用户信息模态框-->
+								<div class="bb-usermodel">
+									<div class="bb-user-row">
+										<i class="bb-user-love"></i>
+										<i class="bb-user-love"></i>
+										<i class="bb-user-love"></i>
+										<a href="javascript:;" class="bb-user-cheats">升级秘籍  先到先得</a>
+									</div>
+									<div class="bb-user-row">
+										<i class="bb-user-crown"></i>
+										<a href="javascript:;" class="bb-user-crowntips" title="超级全能版  还可使用102天">超级全能版  还可使用102天</a>
+										<a href="javascript:;" class='bb-user-renew'>续费</a>
+									</div>
+									<div class="bb-user-row">
+										<i class="bb-user-envelope"></i>
+										<a href="javascript:;" class="bb-user-crowntips" title="短信余额1000条，只够用一周啦！">短信余额1000条，只够用一周啦！</a>
+										<a href="javascript:;" class='bb-user-recharge'>充值</a>
+									</div>
+									<div class="bb-user-row bb-user-operabtn">
+										<a href="javascript:;" class="bb-user-myshop">进入店铺</a>
+										<a href="javascript:;" class="bb-user-logout">退出</a>
+									</div>
+								</div>
+								<!--顶部head 用户信息模态框 END-->
+				 			</li>
+				 		</ul>
+				 </div>
+			</div>
+		</div>
+		
+	</div>
+	<!--顶部head END-->
+
+
+	
+	<!--中部主体部分-->
+	<div class="container-content">
+		<div class="container-mid">
+			<!--左边导航栏 -->
+			<div class="bb-content-nav">
+				<dl class="bb-content-list">
+					<!--当前页面为首页时dt加上{bb-dt-active}样式-->
+					<dt class="bb-dt-active"><a href="./index.html" class="bb-contentnav-indexlink"><i class="bb-contentnav-index"></i><span>首页</span></a></dt>
+				</dl>
+				<!--init-status 为初始化参数，没实际效果，记录页面初始化时需要展开的list-->
+				<!--list-active 为记录当前展开的list列表，实现再点击后收起-->
+				<dl class="bb-content-list">
+					<dt><a href="./goodsman.html"><i class="bb-contentnav-goods"></i><span>宝贝管理</span></a></dt>
+				</dl>
+				<dl class="bb-content-list">
+					<dt><a href="./promotion/activitylist.html"><i class="bb-contentnav-pro"></i><span>促销管理</span><em class="bb-content-allow"></a></em></dt>
+					<dd class="normal"><a href="./promotion/activitylist.html">活动列表</a></dd>
+					<dd class="normal"><a href="./promotion/limittimediscount.html">限时折扣</a></dd>
+					<dd class="normal"><a href="javascript:;">阶梯折扣</a></dd>
+					<dd class="normal"><a href="./promotion/fullgive.html">满就送</a></dd>
+
+					<dd class="normal"><a href="javascript:;">多级包邮</a></dd>
+				
+				</dl>
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-renovation"></i><span>装修素材</span><em class="bb-content-allow"></em></a></dt>
+					<dd class="normal"><a href="javascript:;">发布列表</a></dd>
+					<dd class="normal"><a href="./renovation/rmk.html">关联销售模版</a></dd>
+					<dd class="normal"><a href="javascript:;">搭配套餐模版</a></dd>
+					<dd class="normal"><a href="javascript:;">团购模版</a></dd>
+					<dd class="normal"><a href="javascript:;">优惠卷</a></dd>
+					<dd class="normal"><a href="javascript:;">客服模版</a></dd>
+					<dd class="normal"><a href="javascript:;">分类模版</a></dd>
+					<dd class="normal"><a href="javascript:;">店铺海报</a></dd>
+					<dd class="normal"><a href="javascript:;">主图视频</a></dd>
+					<dd class="normal"><a href="javascript:;">促销水印</a></dd>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-trading"></i><span>交易管理</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-wireless"></i><span>无线营销</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-user"></i><span>会员营销</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-share"></i><span>站外推广</span></a></dt>
+				</dl>
+				
+			</div>
+
+			<!--左边导航栏 END-->
+
+			<!--右边内容-->
+
+			<div class="container-content-frame">
+
+				<!-- 交易管理页面内容 -->
+				<div class="tradeManage-content">
+					<div class="page-header stopBadComment-header">
+						<a href="javascript:;" class="btn-link">交易评价管理</a> — 自动评价设置
+					</div>
+					<div class="stopBadComment tab-container">
+						<ul class="tabs-wraped" id="pageTab">
+							<li class="active"><a href="javascript:;">自动评价设置</a></li>
+							<li><a href="javascript:;">中差评提醒</a></li>
+							<li><a href="javascript:;">中差评关怀</a></li>
+						</ul>
+						<div class="tab-content">
+
+							<!-- 自动评价设置 -->
+							<div class="tab-pane show">
+								<div class="form-item">
+									<div class="tips-content">
+										<div class="tips-title"><i class="blue-warning"></i><h4 class="text-danger">温馨提示：</h4></div>
+										<ul class="tips-list">
+											<li>商城卖家不支持自动评价，请不要开启。</li>
+											<li>自动评价开启后系统会在20分钟内进行评价，并对最近15天的评价进行处理。</li>
+											<li>中差评短信发送记录，<a href="javascript:;" class="btn-link" target="_blank">点我查看</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit">自动评价：</h4>
+									<div class="item-detailes">
+										<span class="switch-bar switch-off">
+											<i class="switch-btn switch-btn-off"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-item">
+									<h4 class="item-tit mt0">通知时机：</h4>
+									<ul class="item-detailes form-radios">
+										<li class="mb10">
+											<p ttp="radios"><i></i>交易成功（买家确认收货）后立即评价</p>
+										</li>
+										<li class="mb10">
+											<p ttp="radios"><i></i>交易成功后延迟7天评价</p>
+										</li>
+										<li class="mb10">
+											<p ttp="radios"><i></i>在评价期限前8小时抢评</p>
+										</li>
+										<li class="mb10">
+											<p ttp="radios"><i></i>只在买家评价后才回评</p>
+										</li>
+									</ul>
+								</div>
+
+								<div class="form-item">
+									<h4 class="item-tit mt0">评价类型：</h4>
+									<ul class="item-detailes list-inline form-radios">
+										<li class="mb10">
+											<p ttp="radios"><i></i><span class="comment-stats good">好评</span></p>
+										</li>
+										<li>
+											<p ttp="radios"><i></i><span class="comment-stats soso">中评</span></p>
+										</li>
+										<li>
+											<p ttp="radios"><i></i><span class="comment-stats poor">差评</span></p>
+										</li>
+										<li class="ml20"><span class="tips">（提示：推荐默认给好评，提升店铺形象哦！）</span></li>
+									</ul>
+								</div>
+
+								<div class="form-item">
+									<h4 class="item-tit">黑名单：</h4>
+									<ul class="item-detailes form-radios">
+										<li class="mb10">
+											<div class="form-checkbox sel-btn">
+												<p ttp="checkbox"><i></i></p>
+											</div>
+											<div class="detaile-info">
+												给我
+												<div class="dropdown">
+													<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">中差评<span class="caret"></span></a>
+													<ul class="dropdown-menu" aria-labelledby="dLabel">
+														<li>中差评</li>
+														<li>差评</li>
+													</ul>
+												</div>
+												的买家自动拉黑
+												<a href="javascript:;" class="btn-link ml10">管理黑名单</a>
+											</div>
+										</li>
+										<li class="mb10">
+											<p ttp="radios"><i></i>不评价黑名单中的用户</p>
+										</li>
+										<li class="mb10">
+											<p ttp="radios"><i></i>黑名单中的买家默认给</p>
+											<div class="dropdown">
+												<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">差评<span class="caret"></span></a>
+												<ul class="dropdown-menu" aria-labelledby="dLabel">
+													<li><span class="comment-stats good">好评</span></li>
+													<li><span class="comment-stats soso">中评</span></li>
+													<li><span class="comment-stats poor">差评</span></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+
+								<div class="form-item">
+									<h4 class="item-tit">评价过滤：</h4>
+									<ul class="item-detailes">
+										<li class="mb10">
+											<div class="form-checkbox sel-btn">
+												<p ttp="checkbox"><i></i></p>
+											</div>
+											<div class="detaile-info">
+												不自动回评所有<span class="text-danger">收到的好评</span>率低于
+												<input type="text" class="form-control input-mini">%的买家
+											</div>
+										</li>
+										<li class="mb10">
+											<div class="form-checkbox sel-btn">
+												<p ttp="checkbox"><i></i></p>
+											</div>
+											<div class="detaile-info">
+												不自动回评所有<span class="text-danger">给出的好评</span>率低于
+												<input type="text" class="form-control input-mini">%的买家
+											</div>
+										</li>
+									</ul>
+								</div>
+
+								<div class="form-item">
+									<h4 class="item-tit">评价内容：</h4>
+									<ul class="item-detailes">
+										<li>
+											<div class="textarea-content tab-container commentTab">
+												<ul class="tabs-wraped" id="commentTab">
+													<li class="active"><a href="javascript:;"><span class="comment-stats good">好评内容</span></a></li>
+													<li><a href="javascript:;"><span class="comment-stats soso">中评内容</span></a></li>
+													<li><a href="javascript:;"><span class="comment-stats poor">差评内容</span></a></li>
+												</ul>
+												<div class="tab-content">
+													<div class="tab-pane show">
+														<textarea class="form-control" value="1"></textarea>
+													</div>
+													<div class="tab-pane">
+														<textarea class="form-control" value="2"></textarea>
+													</div>
+													<div class="tab-pane">
+														<textarea class="form-control" value="3"></textarea>
+													</div>
+												</div>
+											</div>
+											<div class="tips-text tips-box">温馨提示：<br>淘宝要求评价内容中不能包含"http,www,丫的,尼玛,妈的,房事"等敏感词,否则会评价失败。</div>
+										</li>
+									</ul>
+
+								</div>
+
+								<div class="ctrl-btns">
+									<a href="javascript:;" class="btn btn-primary">保存</a>
+									<a href="javascript:;" class="btn btn-success">保存并开启</a>
+								</div>
+							</div>
+
+							<!-- 中差评提醒 -->
+							<div class="tab-pane">
+								<div class="form-item">
+									<div class="tips-content">
+										<div class="tips-title"><i class="blue-warning"></i><h4 class="text-danger">温馨提示：</h4></div>
+										<ul class="tips-list">
+											<li>应运营商要求，所有发送的短信会自动在首尾加上【店铺名称】和“退订回T”，其字数自动计入短信字数。</li>
+											<li>中差评提醒短信发送记录，<a href="javascript:;" class="btn-link" target="_blank">点我查看</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit">中差评提醒：</h4>
+									<div class="item-detailes">
+										<span class="switch-bar switch-off">
+											<i class="switch-btn switch-btn-off"></i>
+										</span>
+									</div>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit mt0">提醒时机：</h4>
+									<div class="item-detailes">
+										收到中差评之后，发送短信给<span class="text-danger">自己</span>，提醒有中差评需要处理。
+									</div>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit">提醒号码：</h4>
+									<div class="item-detailes">
+										<input type="text" class="form-control input-large" placeholder="">
+										<a href="javascript:;" class="btn btn-primary">测试</a>
+									</div>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit">短信内容：</h4>
+									<ul class="item-detailes">
+										<li>
+											<div class="textarea-content">
+												<textarea class="form-control"></textarea>
+												<h5>自动替换：<a href="javascript:;" class="btn-link" target="_blank">【买家名称】</a><a href="javascript:;" class="btn-link" target="_blank">【中评/差评】</a></h5>
+												<div class="fr">
+													<span class="text-danger">当前字数</span>/短信字数
+													<span class="text-danger">18</span>/67
+												</div>
+											</div>
+											<div class="tips-text tips-box">温馨提示：<br>总字数超过67个字符（含标点符号）会分成两条短信发送噢，因每个用户自动替换的文案字数不同，所以系统当前显示字数不包含替换字数，亲们计算当前字数时，需把店铺替换文案字数计算在内噢。</div>
+										</li>
+									</ul>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit">发送时间：</h4>
+									<ul class="item-detailes detaile-info">
+										<li>
+											每天的 <span class="text-danger">9:00 至 22:00</span>，其余时间将自动顺延
+										</li>
+									</ul>
+									<h4 class="item-tit">短信余额：</h4>
+									<ul class="item-detailes detaile-info">
+										<li>
+											25条
+											<a href="javascript:;" class="btn btn-danger recharge-btn ml10" target="_blank">充值</a>
+										</li>
+									</ul>
+								</div>
+								<div class="ctrl-btns">
+									<a href="javascript:;" class="btn btn-primary">保存</a>
+									<a href="javascript:;" class="btn btn-success">保存并开启</a>
+								</div>
+							</div>
+
+							<!-- 中差评关怀 -->
+							<div class="tab-pane">
+								<div class="form-item">
+									<div class="tips-content">
+										<div class="tips-title"><i class="blue-warning"></i><h4 class="text-danger">温馨提示：</h4></div>
+										<ul class="tips-list">
+											<li>应运营商要求，所有发送的短信会自动在首尾加上【店铺名称】和“退订回T”，其字数自动计入短信字数。</li>
+											<li>中差评短信发送记录，<a href="javascript:;" class="btn-link" target="_blank">点我查看</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit">中差评关怀：</h4>
+									<div class="item-detailes">
+										<span class="switch-bar switch-off">
+											<i class="switch-btn switch-btn-off"></i>
+										</span>
+									</div>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit mt0">关怀时机：</h4>
+									<div class="item-detailes">
+										收到中差评之后，发送短信给<span class="text-danger">买家</span>，请求买家修改评价。
+									</div>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit mt0">接收号码：</h4>
+									<div class="item-detailes">
+										买家交易中所留的手机号码
+									</div>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit">短信内容：</h4>
+									<ul class="item-detailes">
+										<li>
+											<div class="textarea-content">
+												<textarea class="form-control"></textarea>
+												<h5>自动替换：<a href="javascript:;" class="btn-link" target="_blank">【买家名称】</a><a href="javascript:;" class="btn-link" target="_blank">【中评/差评】</a></h5>
+												<div class="fr">
+													<span class="text-danger">当前字数</span>/短信字数
+													<span class="text-danger">18</span>/67
+												</div>
+											</div>
+											<div class="tips-text tips-box">温馨提示：<br>总字数超过67个字符（含标点符号）会分成两条短信发送噢，因每个用户自动替换的文案字数不同，所以系统当前显示字数不包含替换字数，亲们计算当前字数时，需把店铺替换文案字数计算在内噢。</div>
+										</li>
+									</ul>
+								</div>
+								<div class="form-item">
+									<h4 class="item-tit">发送时间：</h4>
+									<ul class="item-detailes detaile-info">
+										<li>
+											每天的 <span class="text-danger">9:00 至 22:00</span>，为避免打扰顾客休息，其余时间将自动顺延
+										</li>
+									</ul>
+									<h4 class="item-tit">短信余额：</h4>
+									<ul class="item-detailes detaile-info">
+										<li>
+											25条
+											<a href="javascript:;" class="btn btn-danger recharge-btn ml10" target="_blank">充值</a>
+										</li>
+									</ul>
+								</div>
+								<div class="ctrl-btns">
+									<a href="javascript:;" class="btn btn-primary">保存</a>
+									<a href="javascript:;" class="btn btn-success">保存并开启</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 交易管理页面内容-end -->
+			</div>
+		</div>
+	
+		<!-- 页脚 -->
+
+		<!-- 侧边工具条 -->
+		<div class="fixedtool">
+			<ul class="toolitems">
+				<li class="to-top"></li>
+				<li class="service">
+					<div class="tool-pane">
+						<ul class="clearfix">
+							<li>
+								<h5 class="tool-subtitle">在线客服：</h5>
+								<a href="javascript:;" class="wangwang-icon"></a>
+								<a href="javascript:;" class="wangwang-icon"></a>
+								<a href="javascript:;" class="wangwang-icon"></a>
+								<a href="javascript:;" class="wangwang-icon"></a>
+							</li>
+							<li>
+								<h5 class="tool-subtitle">产品建议：</h5>
+								<a href="javascript:;" class="wangwang-icon"></a>
+								<h5 class="tool-subtitle complain">投诉：</h5>
+								<a href="javascript:;" class="wangwang-icon"></a>
+							</li>
+							<li>
+								联系电话：0755 - 29196879
+							</li>
+							<li>
+								服务时间：9:00-21:00（周六日9:00-18:00）
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="FAQ">
+					<div class="tool-pane">
+						<ul class="clearfix">
+							<li>
+								<div class="sub-title"><h4 class="fl">新手指南</h4><a href="javascript:;" class="btn-link fr">更多</a></div>
+								<a href="javascript:;" class="btn-link" target="_blank">如何创建短信群发？</a>
+								<a href="javascript:;" class="btn-link" target="_blank">如何创建营销活动？</a>
+							</li>
+							<li>
+								<div class="sub-title"><h4 class="fl">功能详解</h4><a href="javascript:;" class="btn-link fr">更多</a></div>
+								<a href="javascript:;" class="btn-link" target="_blank">定向短信群发的分组问题？</a>
+								<a href="javascript:;" class="btn-link" target="_blank">活动暂停与重新启动？</a>
+							</li>
+							<li>
+								<div class="sub-title"><h4 class="fl">FAQ帮助</h4><a href="javascript:;" class="btn-link fr">更多</a></div>
+								<a href="javascript:;" class="btn-link" target="_blank">如何快速创建活动？</a>
+								<a href="javascript:;" class="btn-link" target="_blank">创建的活动怎么调整宝贝？</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="QR-code">
+					<div class="tool-pane">
+						<img src="../imgs/wx.png">
+					</div>
+				</li>
+				<li class="more-product">
+					<div class="tool-pane">
+						<div class="sub-title">配套产品</div>
+						<a href="javascript:;" class="product-item ju"><i></i>聚数据</a>
+						<a href="javascript:;" class="product-item seo"><i></i>标题优化</a>
+						<a href="javascript:;" class="product-item dnjy"><i></i>大牛交易</a>
+						<a href="javascript:;" class="product-item dncx"><i></i>大牛促销</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	
+
+	<!--@JQuery v1.9.1-->
+
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+	<!--@Common 共同js v1.0.0-->
+
+	<script type="text/javascript" src="../js/common.js"></script>
+
+	<script type="text/javascript" src="../js/echarts.min.js"></script>
+	<script>
+		$('#pageTab').tabPage();
+		$('#commentTab').tabPage();
+	</script>
+</body>
+</html>

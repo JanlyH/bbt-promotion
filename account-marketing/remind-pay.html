@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<!--关键字-->
+	<meta name="keywords" content="">	
+	<!--网站描述-->
+	<meta name="description" itemprop="description" content=""> 
+
+	<!--网站图标引入-->
+
+	<!-- <link rel="shortcut icon" type="/image/x-icon" href="/favicon.ico" /> 
+	<link href="./favicon.ico" type="/image/x-icon" rel="icon">-->
+
+	<!--网站图标引入END-->
+
+	<title>宝贝团--手动短信关怀</title>
+		
+	<!--@Bootstrap v3.3.5 -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+
+	<!--@页面共同样式css  v1.0.0-->
+
+	<link rel="stylesheet" href="../css/common.css"/>
+	
+	<!-- main样式 -->
+	<link rel="stylesheet" href="../css/member/remind-pay.css"/>
+	
+
+
+</head>
+<body>
+	<!--顶部head-->
+	<div class="containertitle">
+		<div class="containerbox">
+			<div class="bbrow">
+				 <div class="bb-index-logo"><a href="javascript:;"><img src="../imgs/bblogo.png" alt="index_logo"><span>高级版</span></a></div>
+				 <div class="bb-right-nav">
+				 	<div class="bb-right-free">
+				 		<a href="javascript:;" class="bb-discount">续费有礼</a>
+				 	</div>
+				 	
+				 		<ul class="bb-right-navcontent">
+				 			<li ><a href="javascript:;" class="bb-right-opera">卖家中心</a></li>
+				 			<li ><a href="javascript:;" class="bb-right-opera">联系客服</a></li>
+				 			<li class="bb-usernav">
+				 				<a href="javascript:;" class="bb-right-opera">宝贝团科技</a><i><img src="../imgs/down_allow.png"/></i>
+				 				<!--顶部head 用户信息模态框-->
+								<div class="bb-usermodel">
+									<div class="bb-user-row">
+										<i class="bb-user-love"></i>
+										<i class="bb-user-love"></i>
+										<i class="bb-user-love"></i>
+										<a href="javascript:;" class="bb-user-cheats">升级秘籍  先到先得</a>
+									</div>
+									<div class="bb-user-row">
+										<i class="bb-user-crown"></i>
+										<a href="javascript:;" class="bb-user-crowntips" title="超级全能版  还可使用102天">超级全能版  还可使用102天</a>
+										<a href="javascript:;" class='bb-user-renew'>续费</a>
+									</div>
+									<div class="bb-user-row">
+										<i class="bb-user-envelope"></i>
+										<a href="javascript:;" class="bb-user-crowntips" title="短信余额1000条，只够用一周啦！">短信余额1000条，只够用一周啦！</a>
+										<a href="javascript:;" class='bb-user-recharge'>充值</a>
+									</div>
+									<div class="bb-user-row bb-user-operabtn">
+										<a href="javascript:;" class="bb-user-myshop">进入店铺</a>
+										<a href="javascript:;" class="bb-user-logout">退出</a>
+									</div>
+								</div>
+								<!--顶部head 用户信息模态框 END-->
+				 			</li>
+				 		</ul>
+				 	
+				 	
+				 	
+				 	
+				 </div>
+			</div>
+		</div>
+	</div>
+	<!--顶部head END-->
+
+	<!--中部主体部分-->
+	<div class="container-content">
+		<div class="container-mid">
+			<!--左边导航栏 -->
+			<div class="bb-content-nav navfixed">
+				<dl class="bb-content-list">
+					<!--当前页面为首页时dt加上{bb-dt-active}样式-->
+					<dt><a href="../index.html" class="bb-contentnav-indexlink"><i class="bb-contentnav-index"></i><span>首页</span></a></dt>
+				</dl>
+				<!--init-status 为初始化参数，没实际效果，记录页面初始化时需要展开的list-->
+				<!--list-active 为记录当前展开的list列表，实现再点击后收起-->
+				<dl class="bb-content-list">
+					<dt><a href="../goodsman.html"><i class="bb-contentnav-goods"></i><span>宝贝管理</span></a></dt>
+				</dl>
+				<dl class="bb-content-list init-status list-active">
+					<dt><a href="javascript:;"><i class="bb-contentnav-pro"></i><span>促销管理</span><em class="bb-content-allow"></em></a></dt>
+					<dd class="normal"><a href="./activitylist.html">活动列表</a></dd>
+					<dd class="active"><a href="./limittimediscount.html">限时折扣</a></dd>
+					<dd class="normal"><a href="javascript:;">阶梯折扣</a></dd>
+					<dd class="normal"><a href="./fullgive.html">满就送</a></dd>
+					<dd class="normal"><a href="javascript:;">多级包邮</a></dd>
+				</dl>
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-renovation"></i><span>装修素材</span><em class="bb-content-allow"></em></a></dt>
+					<dd class="normal"><a href="javascript:;">发布列表</a></dd>
+					<dd class="normal"><a href="../renovation/rmk.html">关联销售模版</a></dd>
+					<dd class="normal"><a href="javascript:;">搭配套餐模版</a></dd>
+					<dd class="normal"><a href="javascript:;">团购模版</a></dd>
+					<dd class="normal"><a href="javascript:;">优惠卷</a></dd>
+					<dd class="normal"><a href="javascript:;">客服模版</a></dd>
+					<dd class="normal"><a href="javascript:;">分类模版</a></dd>
+					<dd class="normal"><a href="javascript:;">店铺海报</a></dd>
+					<dd class="normal"><a href="javascript:;">主图视频</a></dd>
+					<dd class="normal"><a href="javascript:;">促销水印</a></dd>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-trading"></i><span>交易管理</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-wireless"></i><span>无线营销</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-user"></i><span>会员营销</span></a></dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt><a href="javascript:;"><i class="bb-contentnav-share"></i><span>站外推广</span></a></dt>
+				</dl>
+			</div>
+
+			<!--右边内容-->
+
+			<div class="container-content-frame">
+				<div class="crm-main-content">
+					<div class="pag-header">
+						<a href="javascript:;" class="btn-link">会员首页</a> — <a href="javascript:;" class="btn-link">会员关怀</a> — 催付提醒
+					</div>
+					<div class="intro-remind">
+						<div class="msg-category clearfix">
+							<div class="reminder active"><span>催付提醒</span></div>
+							<div class="deliver"><span>发货通知</span></div>
+							<div class="receipt"><span>收货提醒</span></div>
+							<div class="after-sale"><span>售后关怀</span></div>
+						</div>
+						<div class="sub-category">
+							<ul class="clearfix">
+								<li class="active reminder-list">
+									<div class="sub-category-head">
+										<h3 class="sub-category-tit">催付提醒</h3>
+										<span class="config-state">（未开启）</span>
+									</div>
+								</li>
+								<li class="reminder-list">
+									<div class="sub-category-head">
+										<h3 class="sub-category-tit">二次催付</h3>
+										<span class="config-state on">（已开启）</span>
+									</div>
+								</li>
+								<li class="logistics-list">
+									<div class="sub-category-head">
+										<h3 class="sub-category-tit">已付款关怀</h3>
+										<span class="config-state on">（已开启）</span>
+									</div>
+								</li>
+								<li class="logistics-list">
+									<div class="sub-category-head">
+										<h3 class="sub-category-tit">延迟发货</h3>
+										<span class="config-state">（未开启）</span>
+									</div>
+								</li>
+								<li class="logistics-list">
+									<div class="sub-category-head">
+										<h3 class="sub-category-tit">发货提醒</h3>
+										<span class="config-state on">（已开启）</span>
+									</div>
+								</li>
+								<li class="evaluate-list">
+									<div class="sub-category-head">
+										<h3 class="sub-category-tit">到货提醒</h3>
+										<span class="config-state">（未开启）</span>
+									</div>
+								</li>
+								<li class="evaluate-list">
+									<div class="sub-category-head">
+										<h3 class="sub-category-tit">签收提醒</h3>
+										<span class="config-state">（未开启）</span>
+									</div>
+								</li>
+								<li class="evaluate-list">
+									<div class="sub-category-head">
+										<h3 class="sub-category-tit">确认收货</h3>
+										<span class="config-state">（未开启）</span>
+									</div>
+								</li>
+								<li class="evaluate-list">
+									<div class="sub-category-head">
+										<h3 class="sub-category-tit">顾客唤醒</h3>
+										<span class="config-state">（未开启）</span>
+									</div>
+								</li>
+							</ul>
+							<i class="category-slide-bar"></i>
+						</div>
+					</div>
+					<div class="tab-content def-cds-remind">
+
+						<!-- 催付提醒 -->
+						<div class="sub-tab clearfix" style="display: block;">
+							<div class="remind-title">
+								<h3 class="title">催付提醒</h3>
+								<span class="text-danger">自动对下单未付款买家发送短信提醒。未付款的订单在3小时内最易挽回。</span>
+							</div>
+							<ul class="condition-items">
+								<li>
+									<span class="item-title">订单金额：</span>
+									<div class="condition-details">
+										在<input type="text" class="form-control input-small" placeholder="">元至<input type="text" class="form-control input-small" placeholder="">元之间
+									</div>
+								</li>
+								<li>
+									<span class="item-title">未付款时长：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">10分钟</li>
+											<li>20分钟</li>
+											<li>30分钟</li>
+											<li>1小时</li>
+											<li>2小时</li>
+											<li>3小时</li>
+											<li>6小时</li>
+											<li>12小时</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<span class="item-title">发送短信时间：</span>
+									<div class="condition-details">每天的<span class="text-danger">9:00至21:00</span>，为避免打扰顾客休息，其余时间将自动顺延</div>
+								</li>
+								<li>
+									<span class="item-title">黑名单过滤：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">过滤</li>
+											<li>不过滤</li>
+										</ul>
+										<a href="javascript:;" class="btn-link">管理黑名单</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 二次催付 -->
+						<div class="sub-tab clearfix hide">
+							<div class="remind-title">
+								<h3 class="title">二次催付</h3>
+								<span class="text-danger">首次催付后未付款，再次发送短信提醒，挽回可能流失的订单</span>
+							</div>
+							<ul class="condition-items">
+								<li>
+									<span class="item-title">订单金额：</span>
+									<div class="condition-details">
+										在<input type="text" class="form-control input-small" placeholder="">元至<input type="text" class="form-control input-small" placeholder="">元之间
+									</div>
+								</li>
+								<li>
+									<span class="item-title">未付款时长：</span>
+									<div class="condition-details">
+										在首次催付
+										<div class="dropdown">
+											<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">6小时<span class="caret"></span></a>
+											<ul class="dropdown-menu" aria-labelledby="dLabel">
+												<li>6小时</li>
+												<li>12小时</li>
+												<li>24小时</li>
+												<li>48小时</li>
+											</ul>
+										</div>
+										后仍未付款，进行二次催付
+									</div>
+								</li>
+								<li>
+									<span class="item-title">发送短信时间：</span>
+									<div class="condition-details">每天的<span class="text-danger">9:00至21:00</span>，为避免打扰顾客休息，其余时间将自动顺延</div>
+								</li>
+								<li>
+									<span class="item-title">黑名单过滤：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">过滤</li>
+											<li>不过滤</li>
+										</ul>
+										<a href="javascript:;" class="btn-link">管理黑名单</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 已付款关怀 -->
+						<div class="sub-tab clearfix hide">
+							<div class="remind-title">
+								<h3 class="title">已付款关怀</h3>
+								<span class="text-danger">买家付款后自动短信告知会尽快发货，提醒买家注意交易安全防止诈骗</span>
+							</div>
+							<ul class="condition-items">
+								<li>
+									<span class="item-title">订单金额：</span>
+									<div class="condition-details">
+										在<input type="text" class="form-control input-small" placeholder="">元至<input type="text" class="form-control input-small" placeholder="">元之间
+									</div>
+								</li>
+								<li>
+									<span class="item-title">发送短信时间：</span>
+									<div class="condition-details">每天的<span class="text-danger">9:00至21:00</span>，为避免打扰顾客休息，其余时间将自动顺延</div>
+								</li>
+								<li>
+									<span class="item-title">黑名单过滤：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">过滤</li>
+											<li>不过滤</li>
+										</ul>
+										<a href="javascript:;" class="btn-link">管理黑名单</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 延迟发货 -->
+						<div class="sub-tab clearfix hide">
+							<div class="remind-title">
+								<h3 class="title">延迟发货</h3>
+								<span class="text-danger">买家付款后未及时发货，自动短信致歉安抚并告知实际情况</span>
+							</div>
+							<ul class="condition-items">
+								<li>
+									<span class="item-title">订单金额：</span>
+									<div class="condition-details">
+										在<input type="text" class="form-control input-small" placeholder="">元至<input type="text" class="form-control input-small" placeholder="">元之间
+									</div>
+								</li>
+								<li>
+									<span class="item-title">未付款时长：</span>
+									<div class="condition-details">
+										在首次催付
+										<div class="dropdown">
+											<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">6小时<span class="caret"></span></a>
+											<ul class="dropdown-menu" aria-labelledby="dLabel">
+												<li>6小时</li>
+												<li>12小时</li>
+												<li>24小时</li>
+												<li>48小时</li>
+											</ul>
+										</div>
+										后仍未付款，进行二次催付
+									</div>
+								</li>
+								<li>
+									<span class="item-title">发送短信时间：</span>
+									<div class="condition-details">每天的<span class="text-danger">9:00至21:00</span>，为避免打扰顾客休息，其余时间将自动顺延</div>
+								</li>
+								<li>
+									<span class="item-title">黑名单过滤：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">过滤</li>
+											<li>不过滤</li>
+										</ul>
+										<a href="javascript:;" class="btn-link">管理黑名单</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 发货提醒 -->
+						<div class="sub-tab clearfix hide">
+							<div class="remind-title">
+								<h3 class="title">发货提醒</h3>
+								<span class="text-danger">自动通知买家已发货，提醒买家关注快递信息</span>
+							</div>
+							<ul class="condition-items">
+								<li>
+									<span class="item-title">订单金额：</span>
+									<div class="condition-details">
+										在<input type="text" class="form-control input-small" placeholder="">元至<input type="text" class="form-control input-small" placeholder="">元之间
+									</div>
+								</li>
+								<li>
+									<span class="item-title">发送短信时间：</span>
+									<div class="condition-details">每天的<span class="text-danger">9:00至21:00</span>，为避免打扰顾客休息，其余时间将自动顺延</div>
+								</li>
+								<li>
+									<span class="item-title">黑名单过滤：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">过滤</li>
+											<li>不过滤</li>
+										</ul>
+										<a href="javascript:;" class="btn-link">管理黑名单</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 到货提醒 -->
+						<div class="sub-tab clearfix hide">
+							<div class="remind-title">
+								<h3 class="title">到货提醒</h3>
+								<span class="text-danger">快递到达买家城市，自动发送短信提醒，若快递正在派件，则取消发送</span>
+							</div>
+							<ul class="condition-items">
+								<li>
+									<span class="item-title">订单金额：</span>
+									<div class="condition-details">
+										在<input type="text" class="form-control input-small" placeholder="">元至<input type="text" class="form-control input-small" placeholder="">元之间
+									</div>
+								</li>
+								<li>
+									<span class="item-title">同城快递：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">过滤</li>
+											<li>不过滤</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<span class="item-title">发送短信时间：</span>
+									<div class="condition-details">每天的<span class="text-danger">9:00至21:00</span>，为避免打扰顾客休息，其余时间将自动顺延</div>
+								</li>
+								<li>
+									<span class="item-title">黑名单过滤：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">过滤</li>
+											<li>不过滤</li>
+										</ul>
+										<a href="javascript:;" class="btn-link">管理黑名单</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 签收提醒 -->
+						<div class="sub-tab clearfix hide">
+							<div class="remind-title">
+								<h3 class="title">签收提醒</h3>
+								<span class="text-danger">当快递被签收后，提醒买家确认收货并给予好评，有问题可联系客服</span>
+							</div>
+							<ul class="condition-items">
+								<li>
+									<span class="item-title">订单金额：</span>
+									<div class="condition-details">
+										在<input type="text" class="form-control input-small" placeholder="">元至<input type="text" class="form-control input-small" placeholder="">元之间
+									</div>
+								</li>
+								<li>
+									<span class="item-title">未发货时长：</span>
+									<div class="condition-details">
+										买家付款后
+										<div class="dropdown">
+											<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">6小时<span class="caret"></span></a>
+											<ul class="dropdown-menu" aria-labelledby="dLabel">
+												<li>1小时</li>
+												<li>3小时</li>
+												<li>6小时</li>
+												<li>12小时</li>
+												<li>24小时</li>
+												<li>48小时</li>
+												<li>72小时</li>
+											</ul>
+										</div>
+										后仍未确认收货的订单
+									</div>
+								</li>
+								<li>
+									<span class="item-title">发送短信时间：</span>
+									<div class="condition-details">每天的<span class="text-danger">9:00至21:00</span>，为避免打扰顾客休息，其余时间将自动顺延</div>
+								</li>
+								<li>
+									<span class="item-title">黑名单过滤：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">过滤</li>
+											<li>不过滤</li>
+										</ul>
+										<a href="javascript:;" class="btn-link">管理黑名单</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 确认收货 -->
+						<div class="sub-tab clearfix hide">
+							<div class="remind-title">
+								<h3 class="title">确认收货</h3>
+								<span class="text-danger">买家确认收货后，自动发短信提醒买家给予好评或告知售后服务内容</span>
+							</div>
+							<ul class="condition-items">
+								<li>
+									<span class="item-title">订单金额：</span>
+									<div class="condition-details">
+										在<input type="text" class="form-control input-small" placeholder="">元至<input type="text" class="form-control input-small" placeholder="">元之间
+									</div>
+								</li>
+								<li>
+									<span class="item-title">未发货时长：</span>
+									<div class="condition-details">
+										买家收货后
+										<div class="dropdown">
+											<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">6小时<span class="caret"></span></a>
+											<ul class="dropdown-menu" aria-labelledby="dLabel">
+												<li>6小时</li>
+												<li>12小时</li>
+												<li>24小时</li>
+												<li>48小时</li>
+											</ul>
+										</div>
+										后仍未给予评价的订单
+									</div>
+								</li>
+								<li>
+									<span class="item-title">发送短信时间：</span>
+									<div class="condition-details">每天的<span class="text-danger">9:00至21:00</span>，为避免打扰顾客休息，其余时间将自动顺延</div>
+								</li>
+								<li>
+									<span class="item-title">黑名单过滤：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">过滤</li>
+											<li>不过滤</li>
+										</ul>
+										<a href="javascript:;" class="btn-link">管理黑名单</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 顾客唤醒 -->
+						<div class="sub-tab clearfix hide">
+							<div class="remind-title">
+								<h3 class="title">顾客唤醒</h3>
+								<span class="text-danger">当顾客超过一定时间没有再来购物时，自动发短信进行问候、营销和关怀</span>
+							</div>
+							<ul class="condition-items">
+								<li>
+									<span class="item-title">上次订单金额：</span>
+									<div class="condition-details">
+										在<input type="text" class="form-control input-small" placeholder="">元至<input type="text" class="form-control input-small" placeholder="">元之间
+									</div>
+								</li>
+								<li>
+									<span class="item-title">未再购物时长：</span>
+									<div class="condition-details">
+										上次下单后<input type="text" class="form-control input-small" placeholder="">天仍未再来购物<span class="text-danger ml15">最少间隔15天</span>
+									</div>
+								</li>
+								<li>
+									<span class="item-title">发送短信时间：</span>
+									<div class="condition-details">每天的<span class="text-danger">9:00至21:00</span>，为避免打扰顾客休息，其余时间将自动顺延</div>
+								</li>
+								<li>
+									<span class="item-title">黑名单过滤：</span>
+									<div class="condition-details">
+										<ul class="select-list">
+											<li class="active">过滤</li>
+											<li>不过滤</li>
+										</ul>
+										<a href="javascript:;" class="btn-link">管理黑名单</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="msg-set-content clearfix">
+						<div class="msg-config">
+							<div class="tips-content">
+								<div class="tips-title"><i class="blue-warning"></i><h4 class="text-danger">温馨提示：</h4></div>
+								<ul class="tips-list">
+									<li>短信中的链接地址前后需加空格，以免用户访问该链接时出错。</li>
+									<li>短信防屏蔽： 尽量不要写双11、狂欢价、促销等，用谐音试试。</li>
+									<li>根据国家及淘宝有关规定，短信须审核通过后才可发送。</li>
+								</ul>
+							</div>
+							<div class="config-option clearfix">
+								<h4 class="config-option-tit">短信内容：</h4>
+								<div class="panel panel-default config-option-content">
+									<div class="panel-heading">
+										可插入：<a href="javascript:;" class="btn-link margin-r15">【店铺名称】</a>
+										<a href="javascript:;" class="btn-link margin-l10">【买家姓名】</a>
+										<a href="javascript:;" class="btn-link margin-l10">【下单日期】</a>
+										<a href="javascript:;" class="btn-link margin-l10">【订单链接】</a>
+										<a href="javascript:;" class="btn-link fr">使用短信模板</a>
+									</div>
+									<div class="msg-content panel-body text-center">
+										<textarea class="form-control" rows="3"></textarea>
+									</div>
+									<div class="panel-footer">
+										<span>签名：</span>
+										<div class="dropdown">
+											<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">淘宝<span class="caret"></span></a>
+											<ul class="dropdown-menu" aria-labelledby="dLabel">
+												<li>淘宝</li>
+												<li>天猫</li>
+											</ul>
+										</div>
+										<a href="javascript:;" class="btn-link create-sign">创建签名</a>
+										<span>已输入<span class="text-danger">79</span>个字，共<span class="text-danger">2</span>条短信</span>
+										<a href="javascript:;" class="btn-link rule" data-html="true" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="1. 70字算一条短信收费，超过70字按67字每条算<br>2. 一个汉字、字母或标点算一个字<br>3. 自动转换内容以实际发送为准，有可能超过默认字数<br>4. 受短信运营商限制，签名和退订回T，包含在字数中">计费规则</a>
+									</div>
+								</div>
+								<div class="ctrl-content">
+									<a href="javascript:;" class="btn btn-primary">保存并开启</a>
+								</div>
+							</div>
+						</div>
+						<div class="msg-preview">
+							<div class="preview-box">
+								<div class="preview-content">
+									<p>短信内容预览</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="javascript:;" class="bb-slide-switch mid-slide-left" direction="slideLeft"></a>
+			</div>
+		</div>
+
+	</div>
+
+	<!--@JQuery v1.9.1-->
+
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+	<!--@bootstrap 下拉组件-->
+
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+	<!--@Common 共同js v1.0.0-->
+
+	<script type="text/javascript" src="../js/common.js"></script>
+
+	<script type="text/javascript" src="../js/remind-pay.js"></script>
+
+	<script>
+		
+	</script>
+</body>
+</html>

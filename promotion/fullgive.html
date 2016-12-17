@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<!--关键字-->
+	<meta name="keywords" content="">
+	<!--网站描述-->
+	<meta name="description" itemprop="description" content="">
+
+	<!--网站图标引入-->
+
+	<!-- <link rel="shortcut icon" type="/image/x-icon" href="/favicon.ico" />
+	<link href="./favicon.ico" type="/image/x-icon" rel="icon">
+	-->
+	<!--网站图标引入END-->
+
+	<title>宝贝团--满送</title>
+
+	<!--@Bootstrap v3.3.5 -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+
+	<!--@页面共同样式css  v1.0.0-->
+
+	<link rel="stylesheet" href="../css/common.css"/>
+
+	<!--@日历控件样式 v1.0.0-->
+
+	<link rel="stylesheet" href="../css/clndr.css"/>
+
+	<!--@自定义css v1.0.0-->
+
+	<link rel="stylesheet" href="../css/full_g_1105.css"/>
+
+</head>
+<body>
+	<!--顶部head-->
+	<div class="containertitle">
+		<div class="containerbox">
+			<div class="bbrow">
+				<div class="bb-index-logo">
+					<a href="javascript:;">
+						<img src="../imgs/bblogo.png" alt="index_logo">
+						<span>高级版</span>
+					</a>
+				</div>
+				<div class="bb-right-nav">
+					<div class="bb-right-free">
+						<a href="javascript:;" class="bb-discount">续费有礼</a>
+					</div>
+
+					<ul class="bb-right-navcontent">
+						<li >
+							<a href="javascript:;" class="bb-right-opera">卖家中心</a>
+						</li>
+						<li >
+							<a href="javascript:;" class="bb-right-opera">联系客服</a>
+						</li>
+						<li class="bb-usernav">
+							<a href="javascript:;" class="bb-right-opera">宝贝团科技</a> <i><img src="../imgs/down_allow.png"/></i> 
+							<!--顶部head 用户信息模态框-->
+							<div class="bb-usermodel">
+								<div class="bb-user-row"> <i class="bb-user-love"></i>
+									<i class="bb-user-love"></i>
+									<i class="bb-user-love"></i>
+									<a href="javascript:;" class="bb-user-cheats">升级秘籍  先到先得</a>
+								</div>
+								<div class="bb-user-row">
+									<i class="bb-user-crown"></i>
+									<a href="javascript:;" class="bb-user-crowntips" title="超级全能版  还可使用102天">超级全能版  还可使用102天</a>
+									<a href="javascript:;" class='bb-user-renew'>续费</a>
+								</div>
+								<div class="bb-user-row">
+									<i class="bb-user-envelope"></i>
+									<a href="javascript:;" class="bb-user-crowntips" title="短信余额1000条，只够用一周啦！">短信余额1000条，只够用一周啦！</a>
+									<a href="javascript:;" class='bb-user-recharge'>充值</a>
+								</div>
+								<div class="bb-user-row bb-user-operabtn">
+									<a href="javascript:;" class="bb-user-myshop">进入店铺</a>
+									<a href="javascript:;" class="bb-user-logout">退出</a>
+								</div>
+							</div>
+							<!--顶部head 用户信息模态框 END-->
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--顶部head END-->
+
+	<!--中部主体部分-->
+	<div class="container-content">
+		<div class="container-mid">
+			<!--左边导航栏 -->
+			<div class="bb-content-nav">
+				<dl class="bb-content-list">
+					<!--当前页面为首页时dt加上{bb-dt-active}样式-->
+					<dt>
+						<a href="../index.html" class="bb-contentnav-indexlink">
+							<i class="bb-contentnav-index"></i>
+							<span>首页</span>
+						</a>
+					</dt>
+				</dl>
+				<!--init-status 为初始化参数，没实际效果，记录页面初始化时需要展开的list-->
+				<!--list-active 为记录当前展开的list列表，实现再点击后收起-->
+				<dl class="bb-content-list">
+					<dt>
+						<a href="../goodsman.html">
+							<i class="bb-contentnav-goods"></i>
+							<span>宝贝管理</span>
+						</a>
+					</dt>
+				</dl>
+				<dl class="bb-content-list init-status list-active">
+					<dt>
+						<a href="javascript:;">
+							<i class="bb-contentnav-pro"></i>
+							<span>促销管理</span> <em class="bb-content-allow"></em>
+						</a>
+					</dt>
+					<dd class="normal">
+						<a href="./activitylist.html">活动列表</a>
+					</dd>
+					<dd class="normal">
+						<a href="./limittimediscount.html">限时折扣</a>
+					</dd>
+					<dd class="normal">
+						<a href="javascript:;">阶梯折扣</a>
+					</dd>
+					<dd class="active">
+						<a href="./fullgive.html">满就送</a>
+					</dd>
+
+					<dd class="normal">
+						<a href="javascript:;">多级包邮</a>
+					</dd>
+
+				</dl>
+				<dl class="bb-content-list">
+					<dt>
+						<a href="javascript:;">
+							<i class="bb-contentnav-renovation"></i>
+							<span>装修素材</span> <em class="bb-content-allow"></em>
+						</a>
+					</dt>
+					<dd class="normal">
+						<a href="javascript:;">发布列表</a>
+					</dd>
+					<dd class="normal">
+						<a href="../renovation/rmk.html">关联销售模版</a>
+					</dd>
+					<dd class="normal">
+						<a href="javascript:;">搭配套餐模版</a>
+					</dd>
+					<dd class="normal">
+						<a href="javascript:;">团购模版</a>
+					</dd>
+					<dd class="normal">
+						<a href="javascript:;">优惠卷</a>
+					</dd>
+					<dd class="normal">
+						<a href="javascript:;">客服模版</a>
+					</dd>
+					<dd class="normal">
+						<a href="javascript:;">分类模版</a>
+					</dd>
+					<dd class="normal">
+						<a href="javascript:;">店铺海报</a>
+					</dd>
+					<dd class="normal">
+						<a href="javascript:;">主图视频</a>
+					</dd>
+					<dd class="normal">
+						<a href="javascript:;">促销水印</a>
+					</dd>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt>
+						<a href="javascript:;">
+							<i class="bb-contentnav-trading"></i>
+							<span>交易管理</span>
+						</a>
+					</dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt>
+						<a href="javascript:;">
+							<i class="bb-contentnav-wireless"></i>
+							<span>无线营销</span>
+						</a>
+					</dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt>
+						<a href="javascript:;">
+							<i class="bb-contentnav-user"></i>
+							<span>会员营销</span>
+						</a>
+					</dt>
+				</dl>
+
+				<dl class="bb-content-list">
+					<dt>
+						<a href="javascript:;">
+							<i class="bb-contentnav-share"></i>
+							<span>站外推广</span>
+						</a>
+					</dt>
+				</dl>
+
+			</div>
+
+			<!--右边内容-->
+
+			<div class="container-content-frame">
+
+				<!--满就送 STEP 1 -->
+				<div class="full-container" >
+					<div class="full-box">
+						<div class="prodise-cbox-head">
+							<p class="prodise-cbox-title">
+								<span>促销活动</span>
+								— 创建满就送
+							</p>
+							<p class="prodise-cbox-titlenav">
+								<i>①</i>
+								基本信息  >
+								<span>
+									<i>②</i>
+									设置级别信息    >
+								</span>
+								<i>③</i>
+								设置活动范围
+							</span>
+						</p>
+					</div>
+					<div class="prodise-disinfo-row">
+						<p class="prodise-disinfo-lv1ttl">活动名称：</p>
+						<div class="prodise-disinfo-lv1input">
+							<input type="text" class="form-control" autocomplete="off" id="activityname"/>
+						</div>
+
+						<ul class="prodise-disinfo-selul">
+							<li class="active">
+								<a href="javascript:;">超级满就送</a>
+							</li>
+							<li>
+								<a href="javascript:;">新品促销</a>
+							</li>
+							<li>
+								<a href="javascript:;">多买多送</a>
+							</li>
+							<li>
+								<a href="javascript:;">新店开张</a>
+							</li>
+						</ul>
+
+					</div>
+
+					<div class="prodise-disinfo-row">
+						<p class="prodise-disinfo-lv1ttl">活动时间：</p>
+						<div class="prodise-disinfo-lv1input" id="as">
+							<p class="prodise-date" id="pro-start-day">
+								<span></span>
+								<i></i>
+							</p>
+
+						</div>
+						<i class="prodise-disinfo-date">-</i>
+						<div class="prodise-disinfo-lv1input">
+							<p class="prodise-date" id="pro-end-day">
+								<span></span>
+								<i></i>
+							</p>
+						</div>
+						<ul class="prodise-disinfo-dtime">
+							<li class="active">
+								<a href="javascript:;">3天</a>
+							</li>
+							<li>
+								<a href="javascript:;">7天</a>
+							</li>
+							<li>
+								<a href="javascript:;">15天</a>
+							</li>
+							<li>
+								<a href="javascript:;">30天</a>
+							</li>
+							<li>
+								<a href="javascript:;">产品到期时间</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="prodise-disinfo-row full-textarea">
+						<p class="prodise-disinfo-lv1ttl">活动备注：</p>
+						<textarea name="activityremarks" class="form-control full-activity-remarks"></textarea>
+					</div>
+
+					<div class="prodise-disinfo-row">
+						<p class="prodise-disinfo-lv1ttl">优惠对象：</p>
+						<div class="prodise-disinfo-lv1input">
+							<div class="dropdown">
+								<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									智能排序
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dLabel">
+									<li>123456</li>
+									<li>123456</li>
+									<li>123456</li>
+								</ul>
+							</div>
+						</div>
+						<div class="prodise-disinfo-switch">
+							<div class="form-checkbox">
+								<p class="form-checkbox-pp" ttp="checkbox" name="fulllimit">
+									<i></i>
+									打折/减价
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="prodise-disinfo-row">
+						<p class="prodise-disinfo-lv1ttl">模版展示：</p>
+
+						<div class="prodise-disinfo-disobject">
+							<div class="form-checkbox">
+								<p class="form-checkbox-pp" ttp="checkbox" name="fulllimit">
+									<i></i>
+									宝贝详情页面显示活动信息
+								</p>
+							</div>
+
+						</div>
+						<p class="prodise-disinfo-lv1ttl">消息提醒：</p>
+						<div class="prodise-disinfo-disobject prodise-disinfo-long">
+
+							<div class="form-checkbox">
+								<p class="form-checkbox-pp" ttp="checkbox" name="fulllimit">
+									<i></i>
+									开启活动到期短信提醒（默认提前12小时）
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="full-step1-preshow">
+						<p class="full-step1-preshow-head">预览效果</p>
+						<div class="full-s1preshow-box clearfix">
+							<ul class="full-s1preshow-nav step1nav">
+								<li class="active">
+									<a href="javascript:;">模版一</a>
+								</li>
+								<li>
+									<a href="javascript:;">模版二</a>
+								</li>
+								<li>
+									<a href="javascript:;">模版三</a>
+								</li>
+								<li>
+									<a href="javascript:;">模版四</a>
+								</li>
+							</ul>
+							<div class="full-s1preshow-ccbox">
+								<div>
+				<table border="0" cellspacing="0" cellpadding="0" style="font-size: 14px;line-height: 23px;border:1px solid #dfdfdf;background-color: white; width: 100%; font-family: Microsoft YaHei ;">
+					<tbody>
+						<tr>
+							<td width="80" align="center">
+								<img border="0" title="新品促销" src="http://img02.taobaocdn.com/imgextra/i2/17157061/TB23iG5cFXXXXaQXXXXXXXXXXXX-17157061.png" style="border:0; max-width: 150px;height: 92px;"></td>
+							<td width="20"></td>
+							<td align="left">
+								<div style="width: 100%" class="mjs-activity-container">
+									<ul>
+										<li class="mjs-activity-title" style="line-height: 23px;color: #999999;font-size: 14px;padding:8px 0 4px 0">
+											<span style="font-weight: bold;color: #000000; margin-right: 50px; font-size: 18px;">新品促销</span>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											    活动日期：
+											    2015-12-09 09:56:31
+											    -
+											    2015-12-24 09:56:31
+										</li>
+										<li class="mjs-activity-item" style="font-size: 14px; width: 100%">
+											单笔订单满
+											<span style="color: #FF0000; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">10000</span>
+											元,打
+											<span style="color: #FF0000; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">9.0</span>
+											折
+										</li>
+										<li class="mjs-activity-remark" style="color: #999999;font-size: 14px;padding:2px 0 2px 0 ">活动备注</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+							</div>
+
+							<div class="full-s1preshow-ccbox" style="display:none;"></div>
+
+							<div class="full-s1preshow-ccbox" style="display:none;"></div>
+
+							<div class="full-s1preshow-ccbox" style="display:none;"></div>
+						</div>
+					</div>
+
+				</div>
+				<div class="full-step1-btnframe">
+					<a href="javascript:;" class="full-step1-prebtn">返回</a>
+					<a href="javascript:;" class="full-step1-nextbtn">下一步</a>
+				</div>
+
+			</div>
+			<!--满就送 STEP 1 END-->
+
+			<!--满就送 STEP 2-->
+			<div class="full-activity-set"  style="display:none;">
+				<div class="full-box">
+					<div class="prodise-cbox-head">
+						<p class="prodise-cbox-title">
+							<span>促销活动</span>
+							— 创建满就送
+						</p>
+						<p class="prodise-cbox-titlenav">
+							<a href="javascript:;">
+								<i>①</i>
+								基本信息  >
+							</a>
+							<span>
+								<i>②</i>
+								设置级别信息    >
+							</span>
+							<i>③</i>
+							设置活动范围
+						</span>
+					</p>
+				</div>
+
+				<div class="full-discount-lev">
+					<div class="full-discount-head">
+						<p>
+							优惠等级
+							<span>1</span>
+						</p>
+						<a href="javascript:;" class="deldiscount">
+							<i></i>
+							删除
+						</a>
+					</div>
+					<div class="full-discount-smallrow">
+						<p class="full-smallrow-title">买家消费满：</p>
+						<div class="full-smallrow-inp">
+							<input type="text" class="form-control full-smallrow-inpufrm"/>
+							<div class="full-check-sm">
+								<p class="full-radios radios-active" ttp="radios" name="yuan" value="4">
+									<i></i>
+									元
+								</p>
+								<p class="full-radios" ttp="radios" value="8" name="pisces">
+									<i></i>
+									件
+								</p>
+							</div>
+						</div>
+						<div class="form-checkbox">
+							<p class="form-checkbox-pp" ttp="checkbox" name="fulllimit">
+								<i></i>
+								上不封顶
+							</p>
+						</div>
+						<a href="javascript:;" class="form-problem"></a>
+					</div>
+					<div class="full-discount-highrow">
+						<p class="full-highrow-head">优惠方式：</p>
+						<div class="full-highrow-sklrow">
+							<div class="full-highrow-slpo">
+								<div class="form-checkbox full-highrow-cb">
+									<p class="form-checkbox-pp" ttp="checkbox" name="sfdiscount">
+										<i></i>
+										打折/减价
+									</p>
+								</div>
+								<div class="form-checkbox full-highrow-cb">
+									<p class="form-checkbox-pp" ttp="checkbox" name="gifts">
+										<i></i>
+										送礼品
+									</p>
+								</div>
+								<div class="form-checkbox full-highrow-cb">
+									<p class="form-checkbox-pp" ttp="checkbox" name="discovery">
+										<i></i>
+										包邮
+									</p>
+								</div>
+								<div class="form-checkbox full-highrow-cb">
+									<p class="form-checkbox-pp" ttp="checkbox" name="discovery">
+										<i></i>
+										送流量
+									</p>
+								</div>
+							</div>
+							<!--
+									<div class="full-highrow-srow">
+							<div class="form-checkbox full-highrow-cb">
+								<p class="form-checkbox-pp" ttp="checkbox" name="sfdiscount">
+									<i></i>
+									打折/减价
+								</p>
+							</div>
+							<div class="full-highrow-disorz">
+								<div class="full-highrow-sm">
+									<p class="full-radios radios-active" ttp="radios" name="yuan" value="4">
+										<i></i>
+										减
+									</p>
+									<div class="full-highrow-dis">
+										<input type="text" class="form-control" autocomplete="off"/>
+										<p class="full-highrow-unit">元</p>
+									</div>
+									<p class="full-radios" ttp="radios" value="8" name="pisces">
+										<i></i>
+										打
+									</p>
+									<div class="full-highrow-dis">
+										<input type="text" class="form-control" autocomplete="off" disabled="disabled"/>
+										<p class="full-highrow-unit">折</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						-->
+						<!--
+									<div class="full-highrow-srow">
+						<div class="form-checkbox full-highrow-cb">
+							<p class="form-checkbox-pp" ttp="checkbox" name="gifts">
+								<i></i>
+								送礼品
+							</p>
+						</div>
+						<div class="full-highrow-gift">
+							<p class="full-highrow-selgift">礼品名称：</p>
+							<div class="full-highrow-giftname">
+								<input type="text" class="form-control" autocomplete="off"/>
+							</div>
+							<p class="full-highrow-seltips">（最多8个字）</p>
+
+						</div>
+						<div class="full-highrow-giftselect">
+							<p class="full-highrow-selfont">选择礼品</p>
+							<p class="full-highrow-selcontent">巧克力</p>
+						</div>
+
+					</div>
+					-->
+					<!--
+									<div class="full-highrow-srow">
+					<div class="form-checkbox full-highrow-cb">
+						<p class="form-checkbox-pp" ttp="checkbox" name="discovery">
+							<i></i>
+							包邮
+						</p>
+					</div>
+					<div class="full-highrow-discovey">
+						<p class="full-highrow-selzonefont">选择区域：</p>
+						<p class="full-highrow-selzone"></p>
+					</div>
+
+				</div>
+				-->
+				<!--
+									<div class="full-highrow-srow">
+				<div class="form-checkbox full-highrow-cb">
+					<p class="form-checkbox-pp" ttp="checkbox" name="discovery">
+						<i></i>
+						送流量
+					</p>
+				</div>
+				<div class="full-highrow-discovey">
+					<p class="full-highrow-selzonefont">选择区域：</p>
+					<p class="full-highrow-selzone"></p>
+				</div>
+
+			</div>
+			-->
+		</div>
+
+	</div>
+</div>
+<!--添加优惠等级-->
+<a href="javascript:;" class="fuu-adddiscount">
+	<span>
+		<i></i>
+		添加优惠等级
+	</span>
+</a>
+<div class="prodise-disinfo-row full-textarea">
+	<p class="prodise-disinfo-lv1ttl">活动备注：</p>
+	<textarea name="activityremarks" class="form-control full-activity-remarks"></textarea>
+</div>
+
+<div class="full-step1-preshow full-step2-preshow">
+	<p class="full-step1-preshow-head">预览效果</p>
+	<div class="full-s1preshow-box clearfix">
+		<ul class="full-s1preshow-nav step2nav">
+			<li class="active">
+				<a href="javascript:;">模版一</a>
+			</li>
+			<li>
+				<a href="javascript:;">模版二</a>
+			</li>
+			<li>
+				<a href="javascript:;">模版三</a>
+			</li>
+			<li>
+				<a href="javascript:;">模版四</a>
+			</li>
+		</ul>
+		<div class="full-s1preshow-ccbox">
+			<div>
+				<table border="0" cellspacing="0" cellpadding="0" style="font-size: 14px;line-height: 23px;border:1px solid #dfdfdf;background-color: white; width: 100%; font-family: Microsoft YaHei ;">
+					<tbody>
+						<tr>
+							<td width="80" align="center">
+								<img border="0" title="新品促销" src="http://img02.taobaocdn.com/imgextra/i2/17157061/TB23iG5cFXXXXaQXXXXXXXXXXXX-17157061.png" style="border:0; max-width: 150px;height: 92px;"></td>
+							<td width="20"></td>
+							<td align="left">
+								<div style="width: 100%" class="mjs-activity-container">
+									<ul>
+										<li class="mjs-activity-title" style="line-height: 23px;color: #999999;font-size: 14px;padding:8px 0 4px 0">
+											<span style="font-weight: bold;color: #000000; margin-right: 50px; font-size: 18px;">新品促销</span>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											    活动日期：
+											    2015-12-09 09:56:31
+											    -
+											    2015-12-24 09:56:31
+										</li>
+										<li class="mjs-activity-item" style="font-size: 14px; width: 100%">
+											单笔订单满
+											<span style="color: #FF0000; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">10000</span>
+											元,打
+											<span style="color: #FF0000; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">9.0</span>
+											折
+										</li>
+										<li class="mjs-activity-remark" style="color: #999999;font-size: 14px;padding:2px 0 2px 0 ">活动备注</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="full-s1preshow-ccbox" style="display:none;"></div>
+
+		<div class="full-s1preshow-ccbox" style="display:none;"></div>
+
+		<div class="full-s1preshow-ccbox" style="display:none;"></div>
+
+	</div>
+</div>
+</div>
+
+<div class="full-step2-btnbox">
+<a href="javascript:;" class="full-step2-prebtn">返回</a>
+<a href="javascript:;" class="full-step2-nextbtn">下一步</a>
+</div>
+
+</div>
+<!--满就送 STEP 2 END-->
+<!--满就送 STEP 3 -->
+<div class="full-selgoods" style="display:none;">
+<div class="full-box">
+<div class="prodise-cbox-head">
+	<p class="prodise-cbox-title">
+		<span>促销活动</span>
+		— 创建满就送
+	</p>
+	<p class="prodise-cbox-titlenav">
+		<a href="javascript:;">
+			<i>①</i>
+			基本信息  >
+		</a>
+		<a href="javascript:;">
+			<span>
+				<i>②</i>
+				设置级别信息    >
+			</a>
+		</span>
+		<span>
+			<i>③</i>
+			设置活动范围
+		</span>
+	</p>
+</div>
+<div class="full-selgoods-nav">
+	<ul class="full-selgoods-list">
+		<li class="active">
+			<a href="javascript:;">部分宝贝参加</a>
+		</li>
+		<li>
+			<a href="javascript:;">全店宝贝参加</a>
+		</li>
+	</ul>
+	<p class="fuu-selgoods-numstips">
+		已选择
+		<span>0</span>
+		个宝贝
+	</p>
+</div>
+<div class="full-selgoods-options">
+	<div class="full-selgoods-search">
+		<input type="text" class="form-control" autocomplete="off" placeholder="请输入关键字/链接/编码/ID"/>
+		<a href="javascript:;" class="full-selgoods-serbtn"></a>
+	</div>
+	<div class="form-checkbox">
+		<p class="form-checkbox-pp" ttp="checkbox" name="fulllimit">
+			<i></i>
+			隐藏已加入的宝贝
+		</p>
+	</div>
+	<div class="form-checkbox">
+		<p class="form-checkbox-pp" ttp="checkbox" name="fulllimit">
+			<i></i>
+			隐藏已打折的宝贝
+		</p>
+	</div>
+</div>
+<div class="full-selgoods-goodscc" id="selgods">
+	<!--宝贝 {循环体}-->
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+	<!--宝贝 {循环体 END}-->
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+	<div class="full-goods-box full-goods-hover">
+		<div class="full-goods-img">
+			<img src="../imgs/goods/gd1.png"/>
+		</div>
+		<p class="full-goods-price">¥149.00</p>
+		<a href="javascript:;" class="full-goods-ttl">amii极简修身高领针织打底衫</a>
+		<i></i>
+	</div>
+
+</div>
+</div>
+<div class="full-publish-btn full-fixed">
+<div class="full-fixed-bbo">
+	<div class="full-fixed-shotip">
+
+		<div class="full-fixed-sty">
+			<a href="javascript:;" class="full-publish-prebtn">上一步</a>
+			<div class="form-checkbox">
+				<p class="form-checkbox-pp" ttp="checkbox" name="selgoodsall">
+					<i></i>
+					全选
+				</p>
+			</div>
+
+			<a href="javascript:;" class="full-publish-publish">发布</a>
+			<p class="full-publish-seled">
+				已加入：
+				<span>5</span>
+				/185
+			</p>
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+
+<a href="javascript:;" class="bb-slide-switch mid-slide-left" direction="slideLeft"></a>
+</div>
+</div>
+
+</div>
+
+<!--@JQuery v1.9.1-->
+
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+<!--@bootstrap 下拉组件-->
+
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+<!--@clndr 日历组件 v1.0.0-->
+
+<script type="text/javascript" src="../js/pclndr.js"></script>
+
+<!--@ccdialog 确认框-->
+
+<script type="text/javascript" src="../js/ccdialog.js"></script>
+
+<!--@Common 共同js v1.0.0-->
+
+<script type="text/javascript" src="../js/common.js"></script>
+
+<!--@bbindex  本页js-->
+
+<script type="text/javascript" src="../js/full.js"></script>
+
+
+</body>
+</html>

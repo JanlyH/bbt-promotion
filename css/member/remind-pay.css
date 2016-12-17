@@ -1,0 +1,286 @@
+@charset "UTF-8";
+.crm-main-content {
+  width: 100%;
+  min-height: 500px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px; }
+
+.pag-header {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px; }
+
+.condition-items > li {
+  margin-bottom: 20px; }
+
+.condition-items .item-title {
+  display: inline-block;
+  width: 120px;
+  text-align: right; }
+  .condition-items .item-title.sm {
+    width: 70px; }
+
+.condition-items .condition-details {
+  display: inline-block; }
+  .condition-items .condition-details .form-radios {
+    display: inline-block;
+    float: left;
+    margin-top: 6px; }
+    .condition-items .condition-details .form-radios p + p {
+      margin-left: 20px; }
+  .condition-items .condition-details .clearmargin {
+    margin-top: 0; }
+  .condition-items .condition-details .form-checkbox p {
+    display: inline-block;
+    width: auto; }
+  .condition-items .condition-details .form-checkbox p + p {
+    margin-left: 20px; }
+  .condition-items .condition-details .custom {
+    display: inline-block;
+    margin-left: 10px; }
+  .condition-items .condition-details .select-list {
+    display: inline-block; }
+    .condition-items .condition-details .select-list li {
+      position: relative;
+      display: inline-block;
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      cursor: pointer; }
+    .condition-items .condition-details .select-list li:hover, .condition-items .condition-details .select-list li.active {
+      border: 1px solid #22a4ff;
+      background-color: #22a4ff;
+      color: #fff; }
+
+.condition-items .location .form-radios {
+  margin-top: 0; }
+
+.tips-content {
+  margin-bottom: 20px; }
+  .tips-content .tips-title {
+    margin-bottom: 10px; }
+  .tips-content .blue-warning {
+    float: left;
+    margin-right: 10px; }
+  .tips-content .tips-list li {
+    margin-left: 26px;
+    margin-bottom: 10px;
+    list-style-type: decimal; }
+
+.msg-config {
+  float: left;
+  width: 70%;
+  padding-right: 10px; }
+
+.msg-preview {
+  float: left;
+  width: 30%; }
+
+.config-option .config-option-tit {
+  float: left;
+  width: 100%;
+  text-align: left;
+  padding-right: 10px;
+  margin-bottom: 10px; }
+
+.config-option .config-option-content {
+  float: left;
+  width: 100%; }
+
+.config-option-content .list-inline {
+  margin-bottom: 10px; }
+
+.msg-config .config-option {
+  margin-bottom: 20px; }
+
+.msg-config .panel {
+  margin-bottom: 0; }
+
+.msg-content.panel-body {
+  height: 100px;
+  padding: 0; }
+
+.msg-content.panel-body textarea {
+  height: 100%;
+  border: 0;
+  resize: none; }
+
+.msg-config .panel .rule {
+  float: right;
+  margin-top: 5px; }
+
+.test-phone h4 {
+  margin-top: 7px; }
+
+.test-phone input {
+  width: 200px; }
+
+.msg-preview .preview-box {
+  width: 250px;
+  height: 510px;
+  margin: 0 auto;
+  background-image: url(https://img.alicdn.com/imgextra/i1/17157061/TB2PTy9jXXXXXcuXpXXXXXXXXXX-17157061.png);
+  background-position: center; }
+
+.msg-preview .preview-box .preview-content {
+  width: 211px;
+  height: 350px;
+  padding: 5px;
+  float: left;
+  margin-top: 88px;
+  margin-left: 20px; }
+
+.msg-config .send-config input {
+  margin: 0 3px;
+  margin-bottom: 5px;
+  text-align: center; }
+
+.msg-config .send-config h4 {
+  margin-top: 7px; }
+
+.msg-config .create-sign {
+  margin-left: 10px;
+  margin-right: 30px; }
+
+/* 开关样式 */
+.switch-bar {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 26px;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  cursor: pointer; }
+
+.switch-btn {
+  display: inline-block;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: #fcfcfc;
+  top: 1px;
+  left: 0px;
+  border-radius: 11px;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px; }
+
+.switch-btn-on {
+  border: 1px solid transparent;
+  box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.4); }
+
+.switch-btn-off {
+  border: 1px solid #ccc;
+  box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.15); }
+
+.switch-on {
+  background-color: #11c986; }
+
+.switch-off {
+  background-color: #fcfcfc;
+  border: 1px solid #ccc; }
+
+.msg-category {
+  margin-bottom: 5px; }
+
+.msg-category div {
+  float: left;
+  padding: 0 3px;
+  text-align: center;
+  font-size: 18px; }
+
+.msg-category div span {
+  display: block;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  background-color: #eee; }
+
+.msg-category div.active span {
+  background-color: #22a4ff;
+  color: #fff; }
+
+.msg-category .reminder {
+  width: 22.2%; }
+
+.msg-category .deliver {
+  width: 33.3%; }
+
+.msg-category .receipt {
+  width: 33.3%; }
+
+.msg-category .after-sale {
+  width: 11.1%; }
+
+.sub-category {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px; }
+
+.sub-category .category-slide-bar {
+  position: absolute;
+  display: block;
+  width: 11.1%;
+  height: 2px;
+  bottom: -1px;
+  left: 0;
+  background-color: #22a4ff; }
+
+.sub-category li {
+  float: left;
+  text-align: center;
+  margin-bottom: -1px;
+  padding: 8px 0;
+  cursor: pointer;
+  width: 11.1%; }
+
+.sub-category li .sub-category-tit {
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px; }
+
+.sub-category li .config-state {
+  font-size: 14px; }
+
+.sub-category li .config-state.on {
+  color: #fa2960; }
+
+.sub-category li + li .sub-category-head {
+  border-left: 1px solid #ddd; }
+
+.msg-category-introduce {
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd; }
+
+.def-cds-remind {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px; }
+  .def-cds-remind .remind-title {
+    padding: 10px;
+    background-color: #f5f5f5;
+    margin-bottom: 10px; }
+    .def-cds-remind .remind-title .title {
+      margin-right: 10px; }
+
+.condition-details input {
+  margin: 0 5px; }
+
+.ctrl-content {
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px; }

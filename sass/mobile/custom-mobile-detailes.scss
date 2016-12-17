@@ -1,0 +1,361 @@
+@import '../opt';
+@mixin cantSel{
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+};
+/* html{
+  overflow: hidden;
+} */
+@font-face {font-family: 'mobile';
+    src: url('../../fonts/mobile.eot'); /* IE9*/
+    src: url('../../fonts/mobile.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../../fonts/mobile.woff') format('woff'), /* chrome、firefox */
+    url('../../fonts/mobile.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../../fonts/mobile.svg#mobile') format('svg'); /* iOS 4.1- */
+}
+body{
+  background-color: #f5f5f5;
+}
+.custom-mobile-icon{
+    font-family:"mobile" !important;
+    font-size:12px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.custom-mobile-container{
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  z-index: 23;
+  .mask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    @include opacity(.95);
+    @include cantSel;
+  }
+  .custom-mobile-content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+  }
+  .detailes-header{
+    margin-bottom: 5px;
+  }
+}
+.custom-mobile-detailes{
+  position: relative;
+  width: 750px;
+  min-height: 630px;
+  top: 50px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  @include box-shadow(0, 0, 10px, .4);
+  @include cantSel;
+  .custom-module{
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
+    &.edit{
+      border: 2px solid #f50;
+    }
+    .moudule-ctrl{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      cursor: default;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      transition: opacity 0.2s ease-in-out;
+      -webkit-transition: opacity 0.2s ease-in-out;
+      -moz-transition: opacity 0.2s ease-in-out;
+      -ms-transition: opacity 0.2s ease-in-out;
+      background-color: rgba(255, 255, 255, .5);
+    }
+    &:hover{
+      .moudule-ctrl{
+        opacity: 1;
+        filter: alpha(opacity=100);
+        transition: opacity 0.2s ease-in-out;
+        -webkit-transition: opacity 0.2s ease-in-out;
+        -moz-transition: opacity 0.2s ease-in-out;
+        -ms-transition: opacity 0.2s ease-in-out;
+      }
+    }
+    .ctrl-items{
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 0;
+      li{
+        display: inline-block;
+        width: 16px;
+        height: 18px;
+        line-height: 18px;
+        background-color: rgba(0, 0, 0, .5);
+        font-size: 12px;
+        margin: 0 2px;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+        i{
+          display: block;
+          width: 16px;
+          height: 18px;
+          line-height: 18px;
+          text-align: center;
+          font-style: normal;
+          @include cantSel;
+        }
+        &:hover{
+          background-color: rgba(0, 0, 0, .8);
+        }
+      }
+    }
+    .module-default{
+      width: 100%;
+      height: 100px;
+      line-height: 100px;
+      font-size: 16px;
+      color: #999;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      @include cantSel;
+      border-bottom: 1px solid #ddd;
+      &:hover{
+        background-color: #f5f5f5;
+      }
+    }
+    .module-content{
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .tips-content{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-style: 14px;
+    font-weight: bold;
+    background-color: #ffedd0;
+    border: 1px dashed #f50;
+    color: #f50;
+    text-align: center;
+  }
+}
+.module-edit-container{
+  position: fixed;
+  width: 280px;
+  height: 100%;
+  top: 0;
+  right: 0px;
+  background-color: #fff;
+  z-index: 1;
+  .module-edit-content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid #ddd;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .container-tit{
+    width: 100%;
+    padding-bottom: 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+  }
+  .opt-item{
+    margin-bottom: 20px;
+    .opt-tit{
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #999;
+    }
+  }
+  .opt-confirm{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    bottom: 0;
+    right: 0;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    div{
+      float: left;
+      width: 50%;
+      cursor: pointer;
+      &:hover{
+        background-color: #f9f9f9;
+      }
+    }
+    .confirm{
+      border-left: 1px solid #ddd;
+      color: #f50;
+    }
+  }
+  &.left{
+    left: 0;
+    right: auto;
+    .module-edit-content{
+      position: relative;
+      padding: 10px 0;
+      padding-left: 10px;
+      border: 0;
+      border-right: 1px solid #ddd;
+    }
+    .tit-container{
+      padding: 0 10px;
+    }
+    .container-tit{
+        margin-bottom: 10px;
+    }
+  }
+  .items-list{
+    font-size: 0;
+    padding: 0;
+    li{
+        position: relative;
+        display: inline-block;
+        margin: 10px 5px;
+        cursor: pointer;
+        font-size: 14px;
+        border: 1px solid transparent;
+        &.active, &:hover{
+            background-color: #f50;
+            color: #fff;
+            .item-pic:after{
+              content: '';
+              position: absolute;
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              top: 0;
+              right: 0;
+              background: url(http://img03.taobaocdn.com/imgextra/i3/17157061/TB2BLFldpXXXXblXXXXXXXXXXXX-17157061.png) no-repeat center;
+            }
+        }
+        &.underway .publish-status:after{
+          content: '正在发布...';
+          color: #ffa229;
+        }
+        &.success .publish-status:after{
+          content: '发布成功';
+          color: #11c986;
+        }
+        &.fail{
+          .publish-status:after{
+            content: '发布失败';
+            color: #ff424f;
+          }
+          &:hover{
+            .publish-status{
+              display: none;
+            }
+            .fail-reason{
+              display: block;
+            }
+          }
+        }
+        &.underway, &.success, &.fail{ 
+          .publish-status{
+            position: absolute;
+            width: 100%;
+            height: 24px;
+            top: 92px;
+            left: 0;
+            line-height: 24px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            &:after{
+              position: relative;
+              width: 100%;
+              height: 24px;
+              top: 0;
+              left: 0;
+              text-align: center;
+              font-size: 12px;
+            }
+          }
+        }
+    }
+  }
+  .item-pic{
+    position: relative;
+    width: 115px;
+    height: 115px;
+    background-color: #fff;
+    img{
+      max-width: 115px;
+      max-height: 115px;
+    }
+  }
+  .item-title{
+    width: 115px;
+    height: 20px;
+    padding: 0 5px;
+    line-height: 20px;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  #items-container{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .filter-items{
+    width: 100%;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    .input-search{
+      width: 100%;
+    }
+  }
+  .tips-text{
+    color: #999;
+  }
+  .insetImg{
+    cursor: pointer;
+  }
+  .inset-img{
+    margin-bottom: 120px;
+  }
+  .fail-reason{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 142px;
+    padding: 8px;
+    line-height: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 12px;
+    @include text-shadow(1px, 1px, 2px, 0.5)
+    z-index: 2;
+  }
+}

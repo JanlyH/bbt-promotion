@@ -1,0 +1,143 @@
+@charset "UTF-8";
+.msg-recharge{
+	background-color: #fff;
+	border: 1px solid #ddd;
+	width: 100%;
+	min-height: 800px;
+	padding: 10px;
+}
+.msg-description{
+	padding: 10px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #ddd;
+}
+.msg-description h2{
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.description-item+.description-item{
+	margin-top: 15px;
+}
+.description-item h4{
+	float: left;
+	width: 16%;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 30px;
+}
+.description-item .shortly-info, .description-item .sell-points{
+	float: left;
+	width: 84%;
+}
+.description-item .shortly-info, .description-item .sell-points li span{
+	color: #31708f;
+	font-size: 16px;
+}
+.description-item .sell-points{
+	list-style-type: disc;
+	color: #ff424f;
+	padding-left: 20px;
+}
+.description-item .sell-points li{
+	float: left;
+	width: 50%;
+	margin-bottom: 10px;
+}
+.price-list-tit h1, .first-recharge{
+	display: block;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.price-list-tit h1{
+	font-weight: bold;
+}
+.price-list-tit{
+	margin-bottom: 30px;
+}
+.price-item li{
+	float: left;
+	width: 300px;
+	height: 270px;
+	text-align: center;
+	position: relative;
+	margin: 0 10px;
+}
+.price-item li>a{
+	display: inline-block;
+}
+.price-item .price-item-box{
+	width: 300px;
+	height: 150px;
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.price-item li.normal:hover .price-item-box{
+	border-color: #22a4ff;
+}
+.price-item-tit{
+	padding-right: 17px;
+	margin-bottom: 10px;
+}
+.price-item-tit em{
+	float: left;
+	font-size: 16px;
+}
+.price-item-tit .msg-unit-price{
+	float: right;
+	font-size: 12px;
+	color: #999;
+}
+.msg-price{
+	padding-bottom: 5px;
+	border-bottom: 1px dashed #ddd;
+	font-size: 22px;
+}
+.msg-price strong{
+	font-size: 40px;
+	margin-right: 5px;
+}
+.favorable-info{
+	padding-top: 10px;
+}
+.price-item li .popover{
+	width: 300px;
+	max-width: 300px;
+	top: 198px;
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,0);
+    box-shadow: 0 5px 10px rgba(0,0,0,0);
+    background-color: #fffae1;
+	border-color: #ffc88c;
+}
+.price-item li .popover>.arrow:after{
+	border-bottom-color: #fffae1;
+}
+.price-item li .popover>.arrow{
+	border-bottom-color: #ffc88c;
+	left: 50%;
+}
+.price-item li.recommend .price-item-box{
+	border-color: #ff424f;
+}
+.price-item li.recommend .price-item-box:after{
+	content: " ";
+	display: block;
+	width: 25px;
+	height: 29px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-position: 0 -1019px;
+}
+.price-item li.normal .recharge-btn{
+	display: none;
+}
+.price-item li.normal:hover .recharge-btn{
+	display: block;
+}

@@ -1,0 +1,50 @@
+@mixin border-radius($radius){
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+}
+@mixin box-shadow($x, $y, $weight, $opacity){
+	box-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-webkit-box-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-moz-box-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-ms-box-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+}
+@mixin text-shadow($x, $y, $weight, $opacity){
+	text-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-webkit-text-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-moz-text-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+	-ms-text-shadow: $x $y $weight rgba(0, 0, 0, $opacity);
+}
+@mixin opacity($val){
+	opacity: $val;
+	filter:alpha(opacity= $val * 100);
+}
+@mixin transition($type, $time){
+	transition: $type $time ease-in-out;
+	-webkit-transition: $type $time ease-in-out;
+	-moz-transition: $type $time ease-in-out;
+	-ms-transition: $type $time ease-in-out;
+}
+@mixin transform($type){
+	transform: $type;
+	-webkit-transform: $type;
+	-moz-transform: $type;
+	-ms-transform: $type;
+}
+@mixin clearfix(){
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+@mixin user-select-none{
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}

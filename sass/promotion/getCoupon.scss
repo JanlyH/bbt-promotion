@@ -1,0 +1,347 @@
+@import '../opt';
+@mixin font-dpr($font-size){
+    font-size: $font-size;
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+@mixin border($size, $color){
+    border: $size solid $color;
+    [data-dpr="2"] & {
+        border: $size*2 solid $color;
+    }
+    [data-dpr="3"] & {
+        border: $size*3 solid $color;
+    }
+}
+@mixin clearfix{
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+html, body{
+    font-family: Microsoft Yahei, sans-serif;
+}
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+ul, li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+div, p, span, ul, li, a{
+    box-sizing: border-box;
+}
+em, i, strong{
+    font-style: normal;
+}
+body{
+    background-color: #f9f9f9;
+}
+.get-coupon{
+    max-width: 540px\9;
+    max-width: 10rem;
+    margin: 0 auto;
+    .link{
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+    }
+    .main-coupon{
+        position: relative;
+        width: 504px\9;
+        height: 166px\9;
+        width: 9.333333rem;
+        height: 3.066667rem;
+        margin: 0 auto;
+        margin-top: 20px\9;
+        margin-bottom: 20px\9;
+        margin-top: 0.533333rem;
+        @include clearfix;
+        overflow: hidden;
+        margin-bottom: 0.533333rem;
+        .coupon-detaile{
+            position: relative;
+            float: left;
+            box-sizing: border-box;
+            width: 80%;
+            height: 100%;
+            padding: 10px\9;
+            padding: 0.266667rem;
+            background-color: #ff4444;
+            color: #fff;
+            border-right: 1px dashed #fff;
+            [data-dpr="2"] &{
+                border-right: 2px dashed #fff;
+            }
+            [data-dpr="3"] &{
+                border-right: 3px dashed #fff;
+            }
+            .coupon-type{
+                float: left;
+                height: 70px\9;
+                height: 1.333333rem;
+                line-height: 70px\9;
+                line-height: 1.333333rem;
+                @include font-dpr(30px);
+            }
+            .usable-detaile{
+                float: right;
+                @include font-dpr(12px);
+                margin-top: 0.133333rem;
+                div{
+                    line-height: 26px\9;
+                    height: 0.48rem;
+                    line-height: 26px\9;
+                    line-height: 0.48rem;
+                }
+            }
+            .issue-detaile{
+                float: left;
+                width: 100%;
+                li{
+                    margin-bottom: 7px\9;
+                    margin-bottom: 0.133333rem;
+                }
+                i{
+                    margin: 0.066667rem;
+                }
+            }
+            .jag{
+                position: absolute;
+                width: 0.426667rem;
+                height: 0.426667rem;
+                right: -0.213333rem;
+                background-color: #f9f9f9;
+                @include border-radius(0.426667rem);
+                z-index: 2;
+                &.top{
+                    top: -0.213333rem;
+                }
+                &.bot{
+                    bottom: -0.213333rem;
+                }
+            }
+        }
+        .main-detaile{
+            height: 1.333333rem;
+            width: 100%;
+        }
+        .coupon-button{
+            float: left;
+            display: table;
+            padding: 0 5%;
+            width: 20%;
+            height: 100%;
+            line-height: 3.066667rem;
+            background-color: #ffd200;
+            text-align: center;
+            @include font-dpr(20px);
+            span{
+                display: table-cell;
+                width: 0.666667rem;
+                height: 3.066667rem;
+                color: #333;
+                line-height: 1;
+                vertical-align: middle;
+            }
+        }
+    }
+    .more-coupon{
+        width: 504px\9;
+        width: 9.333333rem;
+        margin: 0 auto;
+        .title{
+            padding: 15px 0\9;
+            padding: 0.2rem 0;
+            color: #666;
+            @include font-dpr(14px);
+            margin-bottom: 20px\9;
+            margin-bottom: 0.266667rem;
+            border-bottom: 1px solid #ddd;
+            [data-dpr="2"] &{
+                border-bottom: 2px solid #ddd;
+            }
+            [data-dpr="3"] &{
+                border-bottom: 3px solid #ddd;
+            }
+        }
+    }
+    .own-coupon{
+        position: relative;
+        width: 100%;
+        height: 135px\9;
+        height: 2.5rem;
+        background-color: #fff;
+        @include box-shadow(0.026667rem, 0.026667rem, 0.106667rem, 0.15);
+        margin-bottom: 14px\9;
+        margin-bottom: 0.266667rem;
+        .coupon-detaile{
+            float: left;
+            width: 380px\9;
+            width: 7.066667rem;
+            height: 100%;
+            padding: 15px\9;
+            padding: 0.2rem;
+            .coupon-type{
+                @include font-dpr(22px);
+                color: #ff4444;
+                height: 50%;
+            }
+            li{
+                color: #999;
+                height: 25%;
+            }
+        }
+        .coupon-button{
+            float: left;
+            display: table;
+            width: 120px\9;
+            width: 2.266667rem;
+            height: 100%;
+            background-color: #ff4444;
+            padding: 0 4.5%;
+            color: #fff;
+            @include font-dpr(18px);
+            text-align: center;
+            border-left: 1px dashed #fff;
+            [data-dpr="2"] &{
+                border-left: 2px dashed #fff;
+            }
+            [data-dpr="3"] &{
+                border-left: 3px dashed #fff;
+            }
+            span{
+                display: table-cell;
+                vertical-align: middle;
+                line-height: 1;
+            }
+        }
+    }
+}
+.guidance-mask{
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+.nick-popup-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10000;
+    .pop-title{
+        @include font-dpr(12px);
+        color: #666;
+        vertical-align: middle;
+    }
+    .nick-popup{
+        position: absolute;
+        width: 460px\9;
+        width: 8rem;
+        left: 50%;
+        top: 200px\9;
+        top: 2.666667rem;
+        margin-left: -230px\9;
+        margin-left: -4rem;
+        padding: 40px 20px\9;
+        padding: 0.533333rem 0.266667rem;
+        background-color: #fff;
+        text-align: center;
+        @include border-radius(0.053333rem);
+    }
+    .input-text{
+        border: 1px solid #ddd;
+        height: 32px\9;
+        line-height: 32px\9;
+        height: 0.426667rem;
+        line-height: 0.426667rem;
+        padding: 6px 10px\9;
+        padding: 0.08rem 0.133333rem;
+        vertical-align: middle;
+        border-color: #ddd;
+        outline: none;
+        @include font-dpr(12px);
+        @include border-radius(0.053333rem);
+        [data-dpr="2"] &{
+            border: 2px solid #ddd;
+        }
+        [data-dpr="3"] &{
+            border: 3px solid #ddd;
+        }
+        &:focus{
+            @include transition(border-color, 0.2s);
+            border-color: #f50;
+        }
+    }
+    .pop-foot{
+        margin-top: 40px\9;
+        margin-top: 0.533333rem;
+        text-align: center;
+        a{
+            display: inline-block;
+            padding: 5px 15px\9;
+            padding: 0.133333rem 0.333333rem;
+            margin: 0 20px\9;
+            margin: 0 0.266667rem;
+            @include border-radius(0.053333rem);
+            @include font-dpr(12px);
+        }
+        .btn-cancel{
+            border: 1px solid #ddd;
+            [data-dpr="2"] &{
+                border: 2px solid #ddd;
+            }
+            [data-dpr="3"] &{
+                border: 3px solid #ddd;
+            }
+            background-color: #f5f5f5;
+            color: #666;
+        }
+        .btn-ok{
+            background-color: #f50;
+            color: #fff;
+        }
+    }
+}
+.tipsmodle {
+  cursor: pointer;
+  position: fixed;
+  background: #22a4ff;
+  left: 50%;
+  bottom: 40%;
+  opacity: 0.9;
+  border-radius: 0.08rem;
+  display: none;
+  z-index: 100000;
+}
+
+.tipsmodle p {
+  @include font-dpr(14px);
+  padding: 20px 30px\9;
+  padding: 0.533333rem 0.8rem;
+  color: #fff; 
+}
