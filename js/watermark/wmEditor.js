@@ -15,6 +15,7 @@ var WmEditor = new Vue({
         regionSelIndex: [],                                                     // 框选选中的元素的index值组成的数组
         types: ['全部', '主题', '图形', '角标', '按钮'],
         textFontSize: '',                                                       // 用于观察用户修改文案字体大小
+        showCanvasCopy: false,
         maps: [{
                 preview: 'https://img.alicdn.com/imgextra/i2/17157061/TB2Gi6ndHaI.eBjSspaXXXIKpXa-17157061.png',
                 type: '折扣水印',
@@ -208,7 +209,6 @@ var WmEditor = new Vue({
                                 return false;
                             }
                             el.textContent = val;
-                            this.pushCache();
                         }, 300)
                     )
                 })
@@ -438,7 +438,7 @@ var WmEditor = new Vue({
                             WmEditor.editorChunks[binding.value.index].left = left / (WmEditor.editorSize / 100);
                         }
                     }
-                }, 20)).mouseup(function() {
+                }, 10)).mouseup(function() {
                     if (isPushCache) { WmEditor.pushCache()};
                     falg = false;
                     isPushCache = false;
@@ -694,14 +694,16 @@ var WmEditor = new Vue({
             }
         },
 
-        // 字体大小改变存记录
-        pushfontsize: {
+        // 字体大小、文案改变存记录，
+        pushcache: {
             inserted: function(el){
                 var oldVal, newVal;
                 $(el).focus(function(){
-                    oldVal = $(this).val();
+                    var text = $(this).val() || $(this).text();
+                    oldVal = text;
                 }).blur(function(){
-                    newVal = $(this).val();
+                    var text = $(this).val() || $(this).text();
+                    newVal = text;
                     if (oldVal !== newVal) {
                         WmEditor.pushCache()
                     }

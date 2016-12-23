@@ -499,6 +499,12 @@ html, body {
         width: 100%;
         height: 100%;
         overflow: hidden; }
+        .wm-editor .editor-container .editor-wrap .editor-canvas.copy {
+          position: fixed;
+          width: 800px;
+          height: 800px;
+          top: 9999px;
+          left: 9999px; }
         .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el {
           position: absolute;
           cursor: default;
@@ -512,7 +518,8 @@ html, body {
           .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el.editor-el-img {
             background-size: 100% 100%; }
           .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el.editor-el-text {
-            overflow: hidden; }
+            overflow: hidden;
+            line-height: 1; }
             .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el.editor-el-text.editing {
               z-index: 6;
               overflow: initial;
