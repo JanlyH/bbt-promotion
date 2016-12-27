@@ -519,7 +519,9 @@ html, body {
             background-size: 100% 100%; }
           .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el.editor-el-text {
             overflow: hidden;
-            line-height: 1; }
+            line-height: 1;
+            white-space: normal;
+            word-wrap: break-word; }
             .wm-editor .editor-container .editor-wrap .editor-canvas .editor-el.editor-el-text.editing {
               z-index: 6;
               overflow: initial;

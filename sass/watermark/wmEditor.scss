@@ -538,6 +538,8 @@ html, body{
 					&.editor-el-text{
 						overflow: hidden;
 						line-height: 1;
+						white-space: normal;
+					    word-wrap: break-word;
 						&.editing{
 							z-index: 6;
 							overflow: initial;

@@ -150,8 +150,21 @@ var WmEditor = new Vue({
         // 添加文字到画布
         addTextContent: function(){
             var textObj = {
-                
+                type: 'text',
+                width: 64 / (this.editorSize / 100),
+                height: 16 / (this.editorSize / 100),
+                top: 150 / (this.editorSize / 100),
+                left: 130 / (this.editorSize / 100),
+                rotate: 0,
+                fontFamily: 'Microsoft YaHei',
+                fontSize: 14 / (this.editorSize / 100),
+                fontWeight: false,
+                italic: false,
+                color: '333333',
+                textAlign: 'left',
+                textContent: '输入文字'
             }
+            this.editorChunks.push(textObj);
         },
 
         // 删除编辑器里的元素
