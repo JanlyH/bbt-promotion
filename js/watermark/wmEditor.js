@@ -203,14 +203,14 @@ var WmEditor = new Vue({
                         selection.addRange(range);
                     };
 
-                    $(obj).on('keyup', _.debounce(function(){
+                    /*$(obj).on('keyup', _.debounce(function(){
                             var val = $(this).text();
                             if ($(this).text() == '') {
                                 return false;
                             }
                             el.textContent = val;
                         }, 300)
-                    )
+                    )*/
                 })
             }
         },
@@ -279,7 +279,7 @@ var WmEditor = new Vue({
         // 存操作记录
         pushCache: function(){
             if (this.currentCache < this.cache.length - 1) {
-                this.cache.splice(this.currentCache, this.cache.length - this.currentCache - 1);
+                this.cache = this.cache.slice(0, this.currentCache + 1);
                 // _.dropRight(this.cache,  this.cache.length - this.currentCache - 1)
             }
             var obj = JSON.stringify(this.editorChunks)
@@ -290,7 +290,8 @@ var WmEditor = new Vue({
         // 撤销
         undo: function(){
             if (this.currentCache > 0) {
-                this.editorChunks = this.cache[this.currentCache - 1]
+                var obj = JSON.stringify(this.cache[this.currentCache - 1]);
+                this.editorChunks = JSON.parse(obj);
                 this.currentCache -= 1;
                 this.isShowControls = false;
                 this.isShowToolbar = false;
@@ -300,7 +301,8 @@ var WmEditor = new Vue({
         // 重做
         redo: function(){
             if (this.currentCache < this.cache.length - 1) {
-                this.editorChunks = this.cache[this.currentCache + 1]
+                var obj = JSON.stringify(this.cache[this.currentCache + 1]);
+                this.editorChunks = JSON.parse(obj);
                 this.currentCache += 1;
                 this.isShowControls = false;
                 this.isShowToolbar = false;
@@ -371,7 +373,7 @@ var WmEditor = new Vue({
                     left: Math.min.apply(null, lefts) * scale,
                     rotate: 0
                 }
-            }else{
+            }else if (that.editorChunks[that.selEditorEl]){
                 return {
                     width: that.editorSize / 100 * that.editorChunks[that.selEditorEl].width,
                     height: that.editorSize / 100 * that.editorChunks[that.selEditorEl].height,
