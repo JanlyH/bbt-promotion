@@ -147,6 +147,13 @@ var WmEditor = new Vue({
             this.cache.push(JSON.parse(obj));
         },
 
+        // 添加文字到画布
+        addTextContent: function(){
+            var textObj = {
+                
+            }
+        },
+
         // 删除编辑器里的元素
         delEditorEl: function(e){
             var that = this;
@@ -202,18 +209,17 @@ var WmEditor = new Vue({
                         selection.removeAllRanges();
                         selection.addRange(range);
                     };
-
-                    /*$(obj).on('keyup', _.debounce(function(){
-                            var val = $(this).text();
-                            if ($(this).text() == '') {
-                                return false;
-                            }
-                            el.textContent = val;
-                        }, 300)
-                    )*/
                 })
             }
         },
+
+        //编辑文本
+        editText: _.debounce(function(e){
+            var target = e.target,
+                el = this.editorChunks[this.selEditorEl];
+            el.textContent = target.textContent;
+            this.pushCache();
+        }, 300),
 
         // 打开颜色选择器
         openColpick: function(e){

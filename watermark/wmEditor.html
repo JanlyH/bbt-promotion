@@ -33,14 +33,14 @@
 		<div class="sidebar">
 			<ul class="toolbar">
 				<li>
-					<i class="bbt-icons">&#xe646;</i>文字
+					<i class="bbt-icons" @click="addTextContent">&#xe646;</i>文字
 				</li>
 				<li :class="{active: showMaps}" @click="openMaps">
 					<i class="bbt-icons">&#xe69a;</i>贴图
 				</li>
-				<li>
+				<!-- <li>
 					<i class="bbt-icons">&#xe7e1;</i>图片
-				</li>
+				</li> -->
 			</ul>
 		</div>
 		<div class="editor-container" :style="{paddingLeft: autoWdith}">
@@ -65,8 +65,7 @@
 						:style="[{width: item.width + 'px',height: item.height + 'px',top: item.top + 'px',left: item.left + 'px',transform: 'rotate('+ item.rotate +'deg)'}, item.type == 'img'?{'background-image': 'url(' + item.src + ')'}:{fontFamily: item.fontFamily, fontSize: item.fontSize + 'px', fontWeight: item.fontWeight ? 'bold': 'normal', fontStyle: item.italic? 'italic': 'normal', color: '#' + item.color, textAlign: item.textAlign}]" @click.stop="showControls(index)"  v-move.el="{index: index}">{{item.type == 'text' ? item.textContent : ''}}</div>
 					</div>
 					<div class="editor-canvas">
-						<div v-pushcache v-for="(item, index) in editorChunks" :class="['editor-el', {'editor-el-img' : item.type == 'img', 'editor-el-text' : item.type == 'text', editing : isEditText === index}]" :contenteditable="isEditText === index" 
-						:style="[{width: (editorSize / 100 * item.width) + 'px',height: (editorSize / 100 * item.height) + 'px',top: (editorSize / 100 * item.top) + 'px',left: (editorSize / 100 * item.left) + 'px',transform: 'rotate('+ item.rotate +'deg)'}, item.type == 'img'?{'background-image': 'url(' + item.src + ')'}:{fontFamily: item.fontFamily, fontSize: (editorSize / 100 * item.fontSize) + 'px', fontWeight: item.fontWeight ? 'bold': 'normal', fontStyle: item.italic? 'italic': 'normal', color: '#' + item.color, textAlign: item.textAlign}]" @click.stop="showControls(index)"  v-move.el="{index: index}">{{item.type == 'text' ? item.textContent : ''}}</div>
+						<div v-pushcache v-for="(item, index) in editorChunks" :class="['editor-el', {'editor-el-img' : item.type == 'img', 'editor-el-text' : item.type == 'text', editing : isEditText === index}]" :contenteditable="isEditText === index" :style="[{width: (editorSize / 100 * item.width) + 'px',height: (editorSize / 100 * item.height) + 'px',top: (editorSize / 100 * item.top) + 'px',left: (editorSize / 100 * item.left) + 'px',transform: 'rotate('+ item.rotate +'deg)'}, item.type == 'img'?{'background-image': 'url(' + item.src + ')'}:{fontFamily: item.fontFamily, fontSize: (editorSize / 100 * item.fontSize) + 'px', fontWeight: item.fontWeight ? 'bold': 'normal', fontStyle: item.italic? 'italic': 'normal', color: '#' + item.color, textAlign: item.textAlign}]" @click.stop="showControls(index)" @keyup="editText($event)"  v-move.el="{index: index}" v-text="item.type == 'text' ? item.textContent : ''"></div>
 					</div>
 
 					<!-- 变换工具 -->
@@ -173,7 +172,7 @@
 
 	<script type="text/javascript" src="../js/lib/iScroll/iscroll.js"></script>
 
-	<script type="text/javascript" src="../js/lib/html2canvas/html2canvas.min.js"></script>
+	<!-- <script type="text/javascript" src="../js/lib/html2canvas/html2canvas.min.js"></script> -->
 
 	<script type="text/javascript" src="../js/watermark/wmEditor.js"></script>
 
