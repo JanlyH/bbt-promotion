@@ -4,9 +4,9 @@ var WmEditor = new Vue({
     data: {
         showMaps: false,                                                        // 控制显示左侧水印列表
         editorSize: 50,                                                         // 当前画布百分比
-        autoWdith: '80px',                                                      
+        autoWdith: '80px',
         isShowControls: false,                                                  // 控制显示变换工具
-        isShowRegion: false,                                                    // 控制显示框选  
+        isShowRegion: false,                                                    // 控制显示框选
         isShowToolbar: false,                                                   // 控制显示元素工具条
         isEditText: '',                                                         // 是否在编辑文案
         controlsStyle: '',                                                      // 变换工具的样式
