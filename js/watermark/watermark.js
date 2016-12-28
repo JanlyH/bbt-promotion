@@ -98,7 +98,60 @@ var WMconponents = {
     * @描述：已投放的宝贝组件； 
     */
     itemsJoined: {
-        template: '#items-joined'
+        template: '#items-joined',
+        data: function(){
+            return {
+                publishStatus: ['全部状态', '投放成功', '投放失败', '正在投放', '退出失败'],
+                currentStatus: 0,
+                items: [
+                    {
+                        src: 'https://img.alicdn.com/bao/uploaded/i2/269169475/TB2YNt0XLPB11BjSsppXXcjYVXa_!!269169475.jpg',
+                        url: 'https://www.taobao.com/',
+                        title: 'vcruan 2016秋冬刺绣帽衫加绒卫衣女宽松套头连帽外套韩版潮学生',
+                        price: 168,
+                        status: 0,
+                        time: '2016-12-12  23:22:59',
+                        planName: '20161111',
+                        planDetailes: 'https://www.taobao.com/'
+                    },
+                    {
+                        src: 'https://img.alicdn.com/bao/uploaded/i2/269169475/TB2YNt0XLPB11BjSsppXXcjYVXa_!!269169475.jpg',
+                        url: 'https://www.taobao.com/',
+                        title: 'vcruan 2016秋冬刺绣帽衫加绒卫衣女宽松套头连帽外套韩版潮学生',
+                        price: 168,
+                        status: 1,
+                        time: '2016-12-12  23:22:59',
+                        planName: '20161111',
+                        planDetailes: 'https://www.taobao.com/'
+                    },
+                    {
+                        src: 'https://img.alicdn.com/bao/uploaded/i2/269169475/TB2YNt0XLPB11BjSsppXXcjYVXa_!!269169475.jpg',
+                        url: 'https://www.taobao.com/',
+                        title: 'vcruan 2016秋冬刺绣帽衫加绒卫衣女宽松套头连帽外套韩版潮学生',
+                        price: 168,
+                        status: 2,
+                        time: '2016-12-12  23:22:59',
+                        planName: '20161111',
+                        planDetailes: 'https://www.taobao.com/'
+                    },
+                    {
+                        src: 'https://img.alicdn.com/bao/uploaded/i2/269169475/TB2YNt0XLPB11BjSsppXXcjYVXa_!!269169475.jpg',
+                        url: 'https://www.taobao.com/',
+                        title: 'vcruan 2016秋冬刺绣帽衫加绒卫衣女宽松套头连帽外套韩版潮学生',
+                        price: 168,
+                        status: 3,
+                        time: '2016-12-12  23:22:59',
+                        planName: '20161111',
+                        planDetailes: 'https://www.taobao.com/'
+                    }
+                ]
+            }
+        },
+        methods: {
+            changeStatus: function(index){
+                this.currentStatus = index;
+            }
+        }
     },
 }
 
@@ -106,9 +159,9 @@ var WMconponents = {
 var Watermark = new Vue({
     el: '#watermark',
     data: {
-        currentView: WMconponents.allWM,
+        currentView: WMconponents.itemsJoined,
         nav: ['已投放的水印', '可投放的水印', '已投放的宝贝'],
-        isActive: 1
+        isActive: 2
     },
     methods: {
         changeTab: function(index){
