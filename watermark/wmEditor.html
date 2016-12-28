@@ -70,14 +70,14 @@
 
 					<!-- 变换工具 -->
 					<div v-if="isShowControls" class="transform-controls" :data-sel="selEditorEl" :style="{width: controlsStyle.width + 'px', height: controlsStyle.height + 'px', left: controlsStyle.left + 'px', top: controlsStyle.top + 'px', transform: 'rotate(' + controlsStyle.rotate + 'deg)'}" v-move.transform="{index: selEditorEl, region: regionSelIndex.length > 1}" @dblclick="selectText">
-						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-lt" v-transform.lt></i>
-						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-mt" v-transform.mt></i>
-						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-rt" v-transform.rt></i>
+						<i v-if="regionSelIndex.length <= 1 && editorChunks[selEditorEl].type === 'img'" class="ed-handle handle-lt" v-transform.lt></i>
+						<i v-if="regionSelIndex.length <= 1 && editorChunks[selEditorEl].type === 'img'" class="ed-handle handle-mt" v-transform.mt></i>
+						<i v-if="regionSelIndex.length <= 1 && editorChunks[selEditorEl].type === 'img'" class="ed-handle handle-rt" v-transform.rt></i>
 						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-lm" v-transform.lm></i>
 						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-rm" v-transform.rm></i>
-						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-lb" v-transform.lb></i>
-						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-mb" v-transform.mb></i>
-						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-rb" v-transform.rb></i>
+						<i v-if="regionSelIndex.length <= 1 && editorChunks[selEditorEl].type === 'img'" class="ed-handle handle-lb" v-transform.lb></i>
+						<i v-if="regionSelIndex.length <= 1 && editorChunks[selEditorEl].type === 'img'" class="ed-handle handle-mb" v-transform.mb></i>
+						<i v-if="regionSelIndex.length <= 1 && editorChunks[selEditorEl].type === 'img'" class="ed-handle handle-rb" v-transform.rb></i>
 						<i v-if="regionSelIndex.length <= 1" class="ed-handle handle-rotate" v-transform.rotate><i class="bbt-icons">&#xe62a;</i></i>
 					</div>
 
@@ -103,7 +103,7 @@
 									<input type="text" class="form-control" v-mouseWheel v-model="textFontSize" v-pushcache @keyup.stop.del="textFontSize = 12">px
 								</div>
 								<i class="tool-cut-line"></i>
-								<div :class="['edit-text-align', 'tool-icon', {active: editorChunks[selEditorEl].textAlign === 'left'}]" @click="textAlign('left')">
+								<!-- <div :class="['edit-text-align', 'tool-icon', {active: editorChunks[selEditorEl].textAlign === 'left'}]" @click="textAlign('left')">
 									<i class="bbt-icons">&#xe60c;</i>
 								</div>
 								<div :class="['edit-text-align', 'tool-icon', {active: editorChunks[selEditorEl].textAlign === 'center'}]" @click="textAlign('center')">
@@ -111,7 +111,7 @@
 								</div>
 								<div :class="['edit-text-align', 'tool-icon', {active: editorChunks[selEditorEl].textAlign === 'right'}]" @click="textAlign('right')">
 									<i class="bbt-icons">&#xe60b;</i>
-								</div>
+								</div> -->
 								<div :class="['tool-icon', 'edit-text-weight', {active: editorChunks[selEditorEl].fontWeight}]" @click="textFontWeight">
 									<i class="bbt-icons">&#xe674;</i>
 								</div>

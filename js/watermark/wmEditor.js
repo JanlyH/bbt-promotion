@@ -43,7 +43,7 @@ var WmEditor = new Vue({
                         fontWeight: false,
                         italic: false,
                         color: 'fff',
-                        textAlign: 'center',
+                        textAlign: 'left',
                         textContent: '双12秒杀'
                     },
                     {
@@ -58,7 +58,7 @@ var WmEditor = new Vue({
                         fontWeight: false,
                         italic: false,
                         color: 'fff',
-                        textAlign: 'center',
+                        textAlign: 'left',
                         textContent: '￥'
                     },
                     {
@@ -73,7 +73,7 @@ var WmEditor = new Vue({
                         fontWeight: false,
                         italic: false,
                         color: 'fff',
-                        textAlign: 'center',
+                        textAlign: 'left',
                         textContent: '199'
                     }
                 ]
@@ -472,7 +472,7 @@ var WmEditor = new Vue({
         transform: {
             inserted: function(el, binding){
                 var parent = el.parentNode,
-                    parentRect = parent.getBoundingClientRect(),
+                    parentRect,
                     scale = WmEditor.editorSize / 100,
                     currentEl,
                     isScale = false, parentX, parentY, pointerX, pointerY, parentH, parentW, convasX, convasY, originX, originY;
@@ -481,6 +481,7 @@ var WmEditor = new Vue({
                     isScale = true;
                     pointerX = e.pageX;
                     pointerY = e.pageY;
+                    parentRect = el.parentNode.getBoundingClientRect();
                     parentX = parentRect.left + $(window).scrollLeft();
                     parentY = parentRect.top + $(window).scrollTop();
                     parentW = parentRect.width;
@@ -612,9 +613,15 @@ var WmEditor = new Vue({
                         }
                     }
                 }, 20)).mouseup(function() {
-                    if (isScale) {WmEditor.pushCache(); WmEditor.isShowToolbar = true};
+                    if (isScale) {
+                        WmEditor.pushCache(); 
+                        WmEditor.isShowToolbar = true;
+                    };
                     isScale = false;
                 });
+            },
+            updata: function(el){
+                el.parentNode.dataset.rect = el.parentNode.getBoundingClientRect();
             }
         },
 
