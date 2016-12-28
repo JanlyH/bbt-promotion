@@ -144,7 +144,7 @@
 						</div>
 						<div class="tab-wraped">
 							<ul class="nav-items" v-for="(item, index) in nav">
-								<li :class="{active: isActive == index}" @click="changeTab(index)">{{item}}</li>
+								<li :class="{active: isActive == index}" @click="changeTab(index)" v-text="item"></li>
 							</ul>
 							<a href="javascript:;" class="btn btn-primary design">设计新水印</a>
 						</div>
@@ -303,7 +303,52 @@
 
 	<!-- 已投放宝贝的html模板 -->
 	<script type="text/x-template" id="items-joined">
-		<div>222</div>
+		<div class="items-joined">
+			<div class="search-bar">
+				<div class="search-item">投放状态：
+					<div class="dropdown">
+						<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{publishStatus[currentStatus]}}<span class="caret"></span></a>
+						<ul class="dropdown-menu" aria-labelledby="dLabel">
+							<li v-for="(item, index) in publishStatus" v-text="item" @click="changeStatus(index)"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="search-item">所属计划：<input type="text" placeholder="输入计划名称" class="input-large form-control"></div>
+				<div class="search-item">宝贝信息：<input type="text" placeholder="宝贝名称、链接、ID" class="input-large form-control"></div>
+				<a href="javascript:;" class="btn btn-primary">查询</a>
+			</div>
+			<div class="joined-table">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>宝贝主图</td>
+							<td width="30%">宝贝标题</td>
+							<td>宝贝价格</td>
+							<td>所属计划</td>
+							<td>投放状态</td>
+							<td>成功投放时间</td>
+							<td>操作</td>
+						</tr>
+						<tr v-for="(item, index) in items">
+							<td><a :href="item.url" target="_blank"><img :src="item.src + '_60x60.jpg'" class="item-img"></a></td>
+							<td class="t-left"><a class="btn-link" target="_blank" :href="item.url" v-text="item.title"></a></td>
+							<td><span class="text-danger" v-text="item.price"></span></td>
+							<td v-text="item.planName"></td>
+							<td>
+								<span :class="{'text-success': item.status === 1, 'text-danger': item.status === 0}">
+									<span v-if="item.status === 0">投放失败</span>
+									<span v-if="item.status === 1">投放成功</span>
+									<span v-if="item.status === 2">正在投放</span>
+									<span v-if="item.status === 3">退出失败</span>
+								</span>
+							</td>
+							<td v-text="item.time"></td>
+							<td><a :href="item.planDetailes" class="btn-link">计划详情</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</script>
 
 <!-- **************************************************************************************************************组件分割线 -->

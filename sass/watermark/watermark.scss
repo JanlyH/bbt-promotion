@@ -16,7 +16,9 @@ $wmbg: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGX
 	    font-size: 16px;
 	    border-bottom: 1px solid #ddd;
 	}
-
+	.dropdown-menu{
+		min-width: 120px;
+	}
 	// 组件切换特效
 	
 	.component-fade-enter-active, .component-fade-leave-active{
@@ -74,17 +76,17 @@ $wmbg: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGX
 			margin-right: 15px;
 		}
 	}
-	.usedWatermark{
-		.search-bar{
-			margin-bottom: 20px;
-			padding-bottom: 20px;
-			border-bottom: 1px solid #eee;
-			.search-item{
-				display: inline-block;
-				margin-right: 30px;
-				vertical-align: middle;
-			}
+	.search-bar{
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #eee;
+		.search-item{
+			display: inline-block;
+			margin-right: 30px;
+			vertical-align: middle;
 		}
+	}
+	.usedWatermark{
 		.wm-list{
 			.wm-item{
 				display: inline-block;
@@ -260,7 +262,7 @@ $wmbg: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGX
 			}
 		}
 	}
-
+	
 	// 弹窗样式
 	.pop-cover{
 		display: block;
@@ -307,6 +309,15 @@ $wmbg: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGX
 	.wm-editor{
 		width: 800px;
 		height: 400px;
+	}
+
+	// 已投放
+	.items-joined{
+		.joined-table{
+			.item-img{
+				
+			}
+		}
 	}
 }
 

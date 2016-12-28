@@ -24,6 +24,8 @@
     padding-bottom: 15px;
     font-size: 16px;
     border-bottom: 1px solid #ddd; }
+  .watermark-cont .dropdown-menu {
+    min-width: 120px; }
   .watermark-cont .component-fade-enter-active, .watermark-cont .component-fade-leave-active {
     transition: opacity .3s ease-in-out;
     -webkit-transition: opacity .3s ease-in-out;
@@ -74,11 +76,11 @@
       float: right;
       margin-top: 8px;
       margin-right: 15px; }
-  .watermark-cont .usedWatermark .search-bar {
+  .watermark-cont .search-bar {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #eee; }
-    .watermark-cont .usedWatermark .search-bar .search-item {
+    .watermark-cont .search-bar .search-item {
       display: inline-block;
       margin-right: 30px;
       vertical-align: middle; }
