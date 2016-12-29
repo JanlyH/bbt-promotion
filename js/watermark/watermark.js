@@ -101,56 +101,100 @@ var WMconponents = {
         template: '#items-joined',
         data: function(){
             return {
-                publishStatus: ['全部状态', '投放成功', '投放失败', '正在投放', '退出失败'],
+                publishStatus: ['全部状态', '投放失败', '投放成功', '正在投放', '退出失败'],
                 currentStatus: 0,
-                items: [
-                    {
-                        src: 'https://img.alicdn.com/bao/uploaded/i2/269169475/TB2YNt0XLPB11BjSsppXXcjYVXa_!!269169475.jpg',
-                        url: 'https://www.taobao.com/',
-                        title: 'vcruan 2016秋冬刺绣帽衫加绒卫衣女宽松套头连帽外套韩版潮学生',
-                        price: 168,
-                        status: 0,
-                        time: '2016-12-12  23:22:59',
-                        planName: '20161111',
-                        planDetailes: 'https://www.taobao.com/'
-                    },
-                    {
-                        src: 'https://img.alicdn.com/bao/uploaded/i2/269169475/TB2YNt0XLPB11BjSsppXXcjYVXa_!!269169475.jpg',
-                        url: 'https://www.taobao.com/',
-                        title: 'vcruan 2016秋冬刺绣帽衫加绒卫衣女宽松套头连帽外套韩版潮学生',
-                        price: 168,
-                        status: 1,
-                        time: '2016-12-12  23:22:59',
-                        planName: '20161111',
-                        planDetailes: 'https://www.taobao.com/'
-                    },
-                    {
-                        src: 'https://img.alicdn.com/bao/uploaded/i2/269169475/TB2YNt0XLPB11BjSsppXXcjYVXa_!!269169475.jpg',
-                        url: 'https://www.taobao.com/',
-                        title: 'vcruan 2016秋冬刺绣帽衫加绒卫衣女宽松套头连帽外套韩版潮学生',
-                        price: 168,
-                        status: 2,
-                        time: '2016-12-12  23:22:59',
-                        planName: '20161111',
-                        planDetailes: 'https://www.taobao.com/'
-                    },
-                    {
-                        src: 'https://img.alicdn.com/bao/uploaded/i2/269169475/TB2YNt0XLPB11BjSsppXXcjYVXa_!!269169475.jpg',
-                        url: 'https://www.taobao.com/',
-                        title: 'vcruan 2016秋冬刺绣帽衫加绒卫衣女宽松套头连帽外套韩版潮学生',
-                        price: 168,
-                        status: 3,
-                        time: '2016-12-12  23:22:59',
-                        planName: '20161111',
-                        planDetailes: 'https://www.taobao.com/'
-                    }
-                ]
+                items: [],
+                page: 0,
+                busy: false,
+                itemList: []
+            }
+        },
+        mounted: function(){
+            
+        },
+        computed: {
+            getItems: {
+                get: function(){
+                    return this.itemList
+                },
+                set: function(arr){
+                    this.itemList = [].concat(arr);
+                }
             }
         },
         methods: {
-            changeStatus: function(index){
+            changeStatus: function(index, item){
                 this.currentStatus = index;
+                if (index === 0) {
+                    this.getItems = this.items;
+                }else{
+                    this.getItems = this.items.filter(function(item){
+                        return item.status + 1 === index
+                    });
+                }
+                // this.statusFilter()
+            },
+            statusFilter: function(){
+                if (this.currentStatus === 0) {
+                    this.getItems = this.items;
+                }else{
+                    this.getItems = this.items.filter(function(item){
+                        return item.status + 1 === this.currentStatus
+                    });
+                }
+            },
+            loadmore: function(){
+                var that = this;
+                if (that.page > 0) {
+                    that.busy = true;
+                    $.ajax({
+                        url: '/getItems.json',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            page: that.page
+                        }
+                    })
+                    .done(function(data) {
+                        if (data.status === 1 && data.data.items.length !== 0) {
+                            that.items = that.items.concat(data.data.items);
+                            if (that.currentStatus === 0) {
+                                that.getItems = that.items;
+                            }else{
+                                that.getItems = that.items.filter(function(item){
+                                    return item.status + 1 === that.currentStatus
+                                });
+                            }
+                            // that.statusFilter();
+                            that.page += 1;
+                            that.$nextTick(function(){
+                                that.busy = false;
+                            })
+                        }
+                        if (data.data.items.length === 0) {
+                            that.busy = true;
+                        }
+                    })
+                }
+            },
+            textFilter: function(items, filter){
+                return items.filter(function(item){
+                    item.indexOf(filter) !== -1;
+                })
             }
+        },
+        created: function(){
+            var that = this;
+            $.ajax({
+                url: '/getItems.json',
+                type: 'GET',
+                dataType: 'json'
+            })
+            .done(function(data) {
+                that.items = data.data.items;
+                that.getItems = that.items;
+                that.page += 1;
+            })
         }
     },
 }

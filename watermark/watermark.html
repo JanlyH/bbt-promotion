@@ -150,7 +150,7 @@
 						</div>
 						<transition name="component-fade" mode="out-in">
 							<keep-alive>
-								<component :is="currentView"></component>
+								<component :is="currentView" ref="currentComponent"></component>
 							</keep-alive>
 						</transition>
 					</div>
@@ -309,7 +309,7 @@
 					<div class="dropdown">
 						<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{publishStatus[currentStatus]}}<span class="caret"></span></a>
 						<ul class="dropdown-menu" aria-labelledby="dLabel">
-							<li v-for="(item, index) in publishStatus" v-text="item" @click="changeStatus(index)"></li>
+							<li v-for="(item, index) in publishStatus" v-text="item" @click="changeStatus(index, item)"></li>
 						</ul>
 					</div>
 				</div>
@@ -317,7 +317,7 @@
 				<div class="search-item">宝贝信息：<input type="text" placeholder="宝贝名称、链接、ID" class="input-large form-control"></div>
 				<a href="javascript:;" class="btn btn-primary">查询</a>
 			</div>
-			<div class="joined-table">
+			<div class="joined-table" v-infinite-scroll="loadmore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
 				<table class="table">
 					<tbody>
 						<tr>
@@ -329,7 +329,7 @@
 							<td>成功投放时间</td>
 							<td>操作</td>
 						</tr>
-						<tr v-for="(item, index) in items">
+						<tr v-for="(item, index) in getItems">
 							<td><a :href="item.url" target="_blank"><img :src="item.src + '_60x60.jpg'" class="item-img"></a></td>
 							<td class="t-left"><a class="btn-link" target="_blank" :href="item.url" v-text="item.title"></a></td>
 							<td><span class="text-danger" v-text="item.price"></span></td>
@@ -355,7 +355,8 @@
 
 
 	<!--@JQuery v1.9.1-->
-
+	<script type="text/javascript" src="../js/lib/mock/mock.js"></script>
+	<script type="text/javascript" src="../js/test/mockConfig.js"></script>
 	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
 
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
@@ -365,6 +366,7 @@
 	<script type="text/javascript" src="../js/common.js"></script>
 	
 	<script type="text/javascript" src="../js/lib/vue/vue.js"></script>
+	<script type="text/javascript" src="../js/lib/vue-infinite-scroll/vue-infinite-scroll.js"></script>
 	<script type="text/javascript" src="../js/watermark/watermark.js"></script>
 	
 </body>
