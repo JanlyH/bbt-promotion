@@ -140,11 +140,12 @@
 						<div class="page-header">
 							<a href="javascript:;" class="btn-link">宝贝管理</a> — <a href="javascript:;" class="btn-link">主图水印</a> — 投放水印
 						</div>
-						<transition name="component-fade" mode="out-in">
+						<router-view></router-view>
+						<!-- <transition name="component-fade" mode="out-in">
 							<keep-alive>
 								<component :is="currentView" ref="currentComponent"></component>
 							</keep-alive>
-						</transition>
+						</transition> -->
 					</div>
 				<!-- 水印图标页面-end -->
 			</div>
@@ -269,12 +270,37 @@
 				</li>
 			</ul>
 		</div>
+		<div class="items-wrap">
+			<div class="title">选择投放宝贝</div>
+			<div class="item-list"></div>
+		</div>
+		<div class="publish-bar">
+			<a href="javascript:;" class="next-step" @click="goNext">下一步</a>
+		</div>
 	</div>
 </script>
 
-<script type="text/x-template" id="publish-step2">
+<script type="text/x-template" id="publish-step2" ref="component">
 	<div class="publish-step2">
-		2
+		<div class="title">主图预览调整<span class="ml20 text-tips">温馨提示：可以移动和拖拽水印位置及图片大小</span></div>
+		<div class="wm-preview">
+			<div class="showcase">
+				<div class="current-item" :style="{backgroundImage: 'url(' + currentItem.itemImg + '_400x400.jpg)'}">
+					<img :src="currentItem.wmImg" class="wm-img" :class="{moving: isMoving}" :style="currentItemStyle" v-move>
+				</div>
+				<div class="btn-group">
+					<a href="javascript:;" class="btn btn-default mr20">还原调整</a>
+					<a href="javascript:;" class="btn btn-primary">保存调整</a>
+				</div>
+			</div>
+			<div class="items-wrap">
+				<ul class="item-list">
+					<li :class="{active: currentItem.itemImg === item.itemImg}" v-for="(item, index) in items" :style="{backgroundImage: 'url(' + item.itemImg + '_100x100.jpg)'}">
+						<div class="wm-img-cont"><img :src="item.wmImg" :style="{left: item.wmLeft / 8  + 'px', top: item.wmTop / 8 + 'px'}"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </script>
 
@@ -299,7 +325,9 @@
 	<script type="text/javascript" src="../js/common.js"></script>
 	
 	<script type="text/javascript" src="../js/lib/vue/vue.js"></script>
+	<script type="text/javascript" src="../js/lib/vue/vue-router.js"></script>
 	<script type="text/javascript" src="../js/lib/vue-infinite-scroll/vue-infinite-scroll.js"></script>
+	<script type="text/javascript" src="../js/lib/lodash/lodash.min.js"></script>
 	<script type="text/javascript" src="../js/watermark/wmPublish.js"></script>
 	
 </body>

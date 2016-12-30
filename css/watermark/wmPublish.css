@@ -12,9 +12,11 @@
     color: #999; }
 
 .publish-main-cont {
+  position: relative;
   min-height: 600px;
   background-color: #fff;
-  padding: 16px; }
+  padding: 16px;
+  padding-bottom: 60px; }
   .publish-main-cont .page-header {
     width: 100%;
     margin: 0;
@@ -29,28 +31,110 @@
     -ms-transition: opacity 0.2s ease-in-out; }
   .publish-main-cont .pop-mask-enter, .publish-main-cont .pop-mask-leave {
     opacity: 0; }
-  .publish-main-cont .publish-step1 .title {
-    font-size: 16px;
+  .publish-main-cont .publish-step1 .wm-detailes {
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee; }
+    .publish-main-cont .publish-step1 .wm-detailes .wm-img {
+      float: left;
+      width: 300px;
+      height: 300px;
+      background-color: #f5f5f5;
+      margin-right: 20px; }
+      .publish-main-cont .publish-step1 .wm-detailes .wm-img img {
+        max-width: 100%;
+        max-height: 100%; }
+    .publish-main-cont .publish-step1 .wm-detailes .wm-options {
+      float: left; }
+      .publish-main-cont .publish-step1 .wm-detailes .wm-options li {
+        margin-bottom: 16px; }
+        .publish-main-cont .publish-step1 .wm-detailes .wm-options li .opt-title {
+          width: 120px;
+          text-align: right;
+          color: #999; }
+          .publish-main-cont .publish-step1 .wm-detailes .wm-options li .opt-title.top {
+            vertical-align: top; }
+        .publish-main-cont .publish-step1 .wm-detailes .wm-options li .activity-intro {
+          display: inline-block;
+          width: 500px; }
+  .publish-main-cont .publish-step1 .items-wrap {
     margin-bottom: 20px; }
-  .publish-main-cont .publish-step1 .wm-detailes .wm-img {
+  .publish-main-cont .publish-step2 .showcase {
     float: left;
     width: 300px;
-    height: 300px;
-    background-color: #f5f5f5;
-    margin-right: 20px; }
-    .publish-main-cont .publish-step1 .wm-detailes .wm-img img {
-      max-width: 100%;
-      max-height: 100%; }
-  .publish-main-cont .publish-step1 .wm-detailes .wm-options {
-    float: left; }
-    .publish-main-cont .publish-step1 .wm-detailes .wm-options li {
-      margin-bottom: 16px; }
-      .publish-main-cont .publish-step1 .wm-detailes .wm-options li .opt-title {
-        width: 120px;
-        text-align: right;
-        color: #999; }
-        .publish-main-cont .publish-step1 .wm-detailes .wm-options li .opt-title.top {
-          vertical-align: top; }
-      .publish-main-cont .publish-step1 .wm-detailes .wm-options li .activity-intro {
-        display: inline-block;
-        width: 500px; }
+    margin-right: 40px; }
+    .publish-main-cont .publish-step2 .showcase .current-item {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-repeat: no-repeat;
+      margin-bottom: 12px; }
+      .publish-main-cont .publish-step2 .showcase .current-item .wm-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        cursor: move; }
+      .publish-main-cont .publish-step2 .showcase .current-item .moving {
+        border: 1px dashed #ddd; }
+    .publish-main-cont .publish-step2 .showcase .btn-group {
+      text-align: center; }
+  .publish-main-cont .publish-step2 .items-wrap {
+    float: left;
+    width: 628px; }
+    .publish-main-cont .publish-step2 .items-wrap .item-list li {
+      float: left;
+      width: 114px;
+      height: 114px;
+      padding: 5px;
+      border: 2px solid transparent;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      margin: 0 5px;
+      margin-bottom: 12px; }
+      .publish-main-cont .publish-step2 .items-wrap .item-list li:hover {
+        border-color: #eee; }
+      .publish-main-cont .publish-step2 .items-wrap .item-list li.active, .publish-main-cont .publish-step2 .items-wrap .item-list li.active:hover {
+        border-color: #22a4ff; }
+      .publish-main-cont .publish-step2 .items-wrap .item-list li img {
+        position: absolute;
+        width: 100%;
+        height: 100%; }
+      .publish-main-cont .publish-step2 .items-wrap .item-list li .wm-img-cont {
+        width: 100%;
+        height: 100%;
+        position: relative; }
+  .publish-main-cont .title {
+    font-size: 16px;
+    margin-bottom: 20px; }
+    .publish-main-cont .title .text-tips {
+      font-size: 14px; }
+  .publish-main-cont .publish-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd; }
+    .publish-main-cont .publish-bar .next-step {
+      float: right;
+      padding: 0 20px;
+      min-width: 150px;
+      height: 58px;
+      line-height: 58px;
+      font-size: 16px;
+      color: #fff;
+      text-align: center;
+      background-color: #22a4ff;
+      transition: all 0.3s;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s; }
+      .publish-main-cont .publish-bar .next-step:hover {
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        background-color: #0096ff; }

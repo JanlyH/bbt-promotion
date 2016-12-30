@@ -2,9 +2,11 @@
 @import "../tips";
 
 .publish-main-cont{
+	position: relative;
 	min-height: 600px;
 	background-color: #fff;
 	padding: 16px;
+	padding-bottom: 60px;
 	.page-header{
 		width: 100%;
 	    margin: 0;
@@ -23,11 +25,10 @@
 		opacity: 0;
 	}
 	.publish-step1{
-		.title{
-			font-size: 16px;
-			margin-bottom: 20px;
-		}
 		.wm-detailes{
+			margin-bottom: 20px;
+			padding-bottom: 40px;
+			border-bottom: 1px solid #eee;
 			.wm-img{
 				float: left;
 				width: 300px;
@@ -56,6 +57,108 @@
 						width: 500px;
 					}
 				}
+			}
+		}
+		.items-wrap{
+			margin-bottom: 20px;
+		}
+	}
+	.publish-step2{
+		.showcase{
+			float: left;
+			width: 300px;
+			margin-right: 40px;
+			.current-item{
+				position: relative;
+				width: 300px;
+				height: 300px;
+				background-repeat: no-repeat;
+				margin-bottom: 12px;
+				.wm-img{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					cursor: move;
+				}
+				.moving{
+					border: 1px dashed #ddd;
+				}
+			}
+			.btn-group{
+				text-align: center;
+			}
+		}
+		.items-wrap{
+			float: left;
+			width: 628px;
+			.item-list{
+				li{
+					float: left;
+					width: 114px;
+					height: 114px;
+					padding: 5px;
+					border: 2px solid transparent;
+					background-position: 50% 50%;
+					background-repeat: no-repeat;
+					cursor: pointer;
+					margin: 0 5px;
+					margin-bottom: 12px;
+					&:hover{
+						border-color: #eee;
+					}
+					&.active, &.active:hover{
+						border-color: #22a4ff;
+					}
+					img{
+						position: absolute;
+						width: 100%;
+						height: 100%;
+					}
+					.wm-img-cont{
+						width: 100%;
+						height: 100%;
+						position: relative;
+					}
+				}
+			}
+		}
+	}
+	.title{
+		font-size: 16px;
+		margin-bottom: 20px;
+		.text-tips{
+			font-size: 14px;
+		}
+	}
+	.publish-bar{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 60px;
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+		.next-step{
+			float: right;
+			padding: 0 20px;
+			min-width: 150px;
+			height: 58px;
+			line-height: 58px;
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+			background-color: #22a4ff;
+			transition: all 0.3s;
+			transition: all 0.3s;
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			-ms-transition: all 0.3s;
+			&:hover{
+				transition: all 0.3s;
+				-webkit-transition: all 0.3s;
+				-moz-transition: all 0.3s;
+				-ms-transition: all 0.3s;
+				background-color: #0096ff;
 			}
 		}
 	}
