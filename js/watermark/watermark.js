@@ -1,61 +1,44 @@
 var WMconponents = {
-
-
-
     /**
-    * @描述：已投放水印图标组件； 
+    * @描述：已投放水印图标组件；
     */
-    usedWM: {
+    used: {
         template: '#used-watermark',
         data: function(){
             return {
                 planName: '',
                 eventName: '',
-                items: [
-                    {
-                        planName: '20161111',
-                        eventName: '20160914-17',
-                        src: 'https://proxy.huanleguang.com/?url=http://hlg_material.img-cn-hangzhou-internal.aliyuncs.com/20160923/3215139_170550_2925.png@310h_310w.png',
-                        startTime: '2016-11-11 00:00:00',
-                        endTime: '2016-11-11 23:59:59',
-                        num: 20,
-                        successNum: 19,
-                        failedNum: 1
-                    },
-                    {
-                        planName: '20161111',
-                        eventName: '20160914-17',
-                        src: 'https://proxy.huanleguang.com/?url=http://hlg_material.img-cn-hangzhou-internal.aliyuncs.com/20151022/2469023_195152_9919.png@310h_310w.png',
-                        startTime: '2016-11-11 00:00:00',
-                        endTime: '2016-11-11 23:59:59',
-                        num: 18,
-                        successNum: 10,
-                        failedNum: 8
-                    },
-                    {
-                        planName: '20161111',
-                        eventName: '20160914-17',
-                        src: 'https://proxy.huanleguang.com/?url=http://hlg_material.img-cn-hangzhou-internal.aliyuncs.com/20151022/2469023_200023_87.png@310h_310w.png',
-                        startTime: '2016-11-11 00:00:00',
-                        endTime: '2016-11-11 23:59:59',
-                        num: 15,
-                        successNum: 10,
-                        failedNum: 5
-                    }
-                ]
+                items: [],
+                busy: false
             }
+        },
+        created: function(){
+
         },
         methods: {
             search: function(){
                 console.log(1)
+            },
+            loadmore: function(){
+                var vm = this;
+                vm.busy = true;
+                $.ajax({
+                    url: ' http://127.0.0.1:3030/watermark/used',
+                    type: 'GET',
+                    dataType: 'json',
+                })
+                .done(function(data) {
+                    vm.items = vm.items.concat(data.data.items);
+                    vm.busy = false;
+                })
             }
         }
     },
 
     /**
-    * @描述：可投放水印图标组件； 
+    * @描述：可投放水印图标组件；
     */
-    allWM: {
+    all: {
         template: '#all-watermark',
         data: function(){
             return {
@@ -64,18 +47,8 @@ var WMconponents = {
                 isTypeActive: 0,
                 isThemeActive: 0,
                 showPop: false,
-                wmList: [{
-                    src: 'https://proxy.huanleguang.com/?url=http://hlg_material.img-cn-hangzhou-internal.aliyuncs.com/20160923/3215139_170550_2925.png@310h_310w.png',
-                    type: '折扣水印',
-                    isCollect: false,
-                    wmID: '0001'
-                },
-                {
-                    src: 'https://proxy.huanleguang.com/?url=http://hlg_material.img-cn-hangzhou-internal.aliyuncs.com/20151022/2469023_195152_9919.png@310h_310w.png',
-                    type: '普通水印',
-                    isCollect: false,
-                    wmID: '0002'
-                }]
+                wmList: [],
+                busy: false
             }
         },
         methods: {
@@ -90,14 +63,27 @@ var WMconponents = {
             },
             openEditor: function(){
                 window.open('./wmEditor.html');
+            },
+            loadmore: function(){
+                var vm = this;
+                vm.busy = true;
+                $.ajax({
+                    url: 'http://127.0.0.1:3030/watermark/all',
+                    type: 'get',
+                    dataType: 'json'
+                })
+                .done(function(data){
+                    vm.wmList = vm.wmList.concat(data.data.items);
+                    vm.busy = false;
+                })
             }
         }
     },
 
     /**
-    * @描述：已投放的宝贝组件； 
+    * @描述：已投放的宝贝组件；
     */
-    itemsJoined: {
+    items: {
         template: '#items-joined',
         data: function(){
             return {
@@ -110,7 +96,7 @@ var WMconponents = {
             }
         },
         mounted: function(){
-            
+
         },
         computed: {
             getItems: {
@@ -186,7 +172,7 @@ var WMconponents = {
         created: function(){
             var that = this;
             $.ajax({
-                url: '/getItems.json',
+                url: ' http://127.0.0.1:3030/watermark/items',
                 type: 'GET',
                 dataType: 'json'
             })
@@ -196,31 +182,19 @@ var WMconponents = {
                 that.page += 1;
             })
         }
-    },
+    }
 }
 
-
+var routes = [
+    { path: '/used', component: WMconponents.used },
+    { path: '/all', component: WMconponents.all },
+    { path: '/items', component: WMconponents.items },
+    { path: '*', component: WMconponents.used }
+]
+var router = new VueRouter({
+    routes: routes
+})
 var Watermark = new Vue({
     el: '#watermark',
-    data: {
-        currentView: WMconponents.itemsJoined,
-        nav: ['已投放的水印', '可投放的水印', '已投放的宝贝'],
-        isActive: 2
-    },
-    methods: {
-        changeTab: function(index){
-            this.isActive = index;
-            switch(index){
-                case 0:
-                    this.currentView = WMconponents.usedWM;
-                    break;
-                case 1:
-                    this.currentView = WMconponents.allWM;
-                    break;
-                case 2:
-                    this.currentView = WMconponents.itemsJoined;
-                    break;
-            }
-        }
-    }
+    router: router
 })

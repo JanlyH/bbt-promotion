@@ -1,6 +1,6 @@
 var WMconponents = {
     /**
-    * @描述：投放水印step1； 
+    * @描述：投放水印step1；
     */
     step1: {
         template: '#publish-step1',
@@ -19,7 +19,7 @@ var WMconponents = {
     },
 
     /**
-    * @描述：投放水印step2； 
+    * @描述：投放水印step2；
     */
     step2: {
         template: '#publish-step2',
@@ -62,38 +62,46 @@ var WMconponents = {
             }
         },
         created: function(){
+            this.originalItems = [].concat(this.items);
             this.currentItem = this.items[0];
+        },
+        methods: {
+            switchItem: function(index){
+                this.currentItem = this.items[index];
+            }
         },
         directives: {
             move: {
                 inserted: function(el, binding, vnode){
                     var contY, contX, originX, originY, _X, _Y,
                         isDrag = false,
-                        that = this;
+                        vm = vnode.context;
                     $(el).on('mousedown', function(e){
                         originX = e.pageX;
                         originY = e.pageY;
-                        contY = $(el).offset().top,
-                        contX = $(el).offset().left,
+                        positionY = $(el).position().top,
+                        positionX = $(el).position().left,
                         _X = originX - contX;
                         _Y = originY - contY;
                         isDrag = true;
-                    }).on('mousemove', function(e){
+                        vm.isMoving = true;
+                    })
+                    $('body').on('mousemove',  function(e){
                         if (isDrag) {
                             e.stopPropagation();
                             e.preventDefault();
-                            var moveX = e.pageX - contX - _X,
-                                moveY = e.pageY - contY - _Y;
+                            var moveX = e.pageX - originX + positionX,
+                                moveY = e.pageY - originY + positionY;
                             vnode.context.currentItem.wmLeft = moveX / 3 * 8;
                             vnode.context.currentItem.wmTop = moveY / 3 * 8;
                             console.log(1)
                         }
-                    });
-                    $('body').mouseup(function() {
+                    }).on('mouseup', function() {
                         if (isDrag) {
 
                         }
                         isDrag = false;
+                        vm.isMoving = false;
                     });
                 }
             }
@@ -109,7 +117,7 @@ var WMconponents = {
     },
 
     /**
-    * @描述：投放水印step3； 
+    * @描述：投放水印step3；
     */
     step3: {
         template: '#publish-step3'
