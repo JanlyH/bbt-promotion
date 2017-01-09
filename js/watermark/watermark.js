@@ -1,3 +1,33 @@
+Vue.component('wm-list', {
+    template: '#wm-list',
+    props: {
+        items: Array,
+        showCollect: {
+            type: Boolean,
+            default: true
+        }
+    },
+    data: function(){
+        return {
+            
+        }
+    },
+    methods: {
+        loadmore: function(){
+            this.$emit('loadmore');
+        },
+        openEditor: function(){
+
+        },
+        publish: function(){
+
+        },
+        collect: function(index){
+            this.$emit('collect', index);
+        }
+    }
+})
+
 var WMconponents = {
     /**
     * @描述：已投放水印图标组件；
@@ -7,17 +37,36 @@ var WMconponents = {
         data: function(){
             return {
                 planName: '',
-                eventName: '',
+                searchText: '',
                 items: [],
-                busy: false
+                busy: false,
+                searchActive: false
             }
         },
         created: function(){
 
         },
         methods: {
+            focusSearch: function(){
+                this.searchActive = true;
+            },
+            blurSearch: function(){
+                this.searchActive = false;
+            },
             search: function(){
-                console.log(1)
+                var vm = this;
+                $.ajax({
+                    url: 'http://127.0.0.1:3030/watermark/used',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        templateName: vm.searchText
+                    }
+                })
+                .done(function(data){
+                    debugger
+                    vm.items = data.data.items;
+                })
             },
             loadmore: function(){
                 var vm = this;
@@ -47,8 +96,10 @@ var WMconponents = {
                 isTypeActive: 0,
                 isThemeActive: 0,
                 showPop: false,
-                wmList: [],
-                busy: false
+                items: [],
+                busy: false,
+                currentPage: 0,
+                loading: false
             }
         },
         methods: {
@@ -59,7 +110,7 @@ var WMconponents = {
                 this.isThemeActive = index;
             },
             collect: function(index){
-                this.wmList[index].isCollect = !this.wmList[index].isCollect;
+                this.items[index].isCollect = !this.items[index].isCollect;
             },
             openEditor: function(){
                 window.open('./wmEditor.html');
@@ -67,14 +118,23 @@ var WMconponents = {
             loadmore: function(){
                 var vm = this;
                 vm.busy = true;
+                vm.loading = true;
                 $.ajax({
                     url: 'http://127.0.0.1:3030/watermark/all',
-                    type: 'get',
-                    dataType: 'json'
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        page: vm.currentPage + 1
+                    }
                 })
                 .done(function(data){
-                    vm.wmList = vm.wmList.concat(data.data.items);
+                    vm.items = vm.items.concat(data.data.items);
                     vm.busy = false;
+                    vm.currentPage += 1;
+                    vm.loading = false
+                    if(data.data.items.length === 0){
+                        vm.busy = true;
+                    }
                 })
             }
         }
@@ -92,6 +152,7 @@ var WMconponents = {
                 items: [],
                 page: 0,
                 busy: false,
+                searchActive: false,
                 itemList: []
             }
         },
@@ -109,6 +170,12 @@ var WMconponents = {
             }
         },
         methods: {
+            focusSearch: function(){
+                this.searchActive = true;
+            },
+            blurSearch: function(){
+                this.searchActive = false;
+            },
             changeStatus: function(index, item){
                 this.currentStatus = index;
                 if (index === 0) {
@@ -182,6 +249,48 @@ var WMconponents = {
                 that.page += 1;
             })
         }
+    },
+
+    /**
+    * @描述：我收藏的水印组件；
+    */
+    collect: {
+        template: '#my-collect',
+        data: function(){
+            return {
+                busy: false,
+                loading: false,
+                currentPage: 0,
+                items: []
+            }
+        },
+        methods: {
+            collect: function(){
+
+            },
+            loadmore: function(){
+                var vm = this;
+                vm.busy = true;
+                vm.loading = true;
+                $.ajax({
+                    url: 'http://127.0.0.1:3030/watermark/all',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        page: vm.currentPage + 1
+                    }
+                })
+                .done(function(data){
+                    vm.items = vm.items.concat(data.data.items);
+                    vm.busy = false;
+                    vm.currentPage += 1;
+                    vm.loading = false
+                    if(data.data.items.length === 0){
+                        vm.busy = true;
+                    }
+                })
+            }
+        }
     }
 }
 
@@ -189,6 +298,7 @@ var routes = [
     { path: '/used', component: WMconponents.used },
     { path: '/all', component: WMconponents.all },
     { path: '/items', component: WMconponents.items },
+    { path: '/collect', component: WMconponents.collect },
     { path: '*', component: WMconponents.used }
 ]
 var router = new VueRouter({

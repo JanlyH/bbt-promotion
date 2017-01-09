@@ -278,30 +278,35 @@
 <script type="text/x-template" id="publish-step2" ref="component">
 	<div class="publish-step2">
 		<div class="title">主图预览调整<span class="ml20 text-tips">温馨提示：可以移动和拖拽水印位置及图片大小</span></div>
-		<div class="wm-preview">
+		<div class="wm-preview clearfix">
 			<div class="showcase">
 				<div class="current-item" :style="{backgroundImage: 'url(' + currentItem.itemImg + '_400x400.jpg)'}">
 					<img :src="currentItem.wmImg" class="wm-img" :class="{moving: isMoving}" :style="currentItemStyle" v-move>
 				</div>
 				<div class="btn-group">
-					<!-- <a href="javascript:;" class="btn btn-default">还原调整</a> -->
-					<!-- <a href="javascript:;" class="btn btn-primary">保存调整</a> -->
+					<a href="javascript:;" class="btn btn-default mr20">还原调整</a>
+					<a href="javascript:;" class="btn btn-primary">保存调整</a>
 				</div>
 			</div>
 			<div class="items-wrap">
-				<ul class="item-list">
-					<li :class="{active: currentItem.itemImg === item.itemImg}" v-for="(item, index) in items" @click="switchItem(index)" :style="{backgroundImage: 'url(' + item.itemImg + '_100x100.jpg)'}">
+				<ul class="item-list clearfix mb12">
+					<li :class="{active: isActive === index}" v-for="(item, index) in items" @click="switchItem(index)" :style="{backgroundImage: 'url(' + item.itemImg + '_100x100.jpg)'}">
 						<div class="wm-img-cont"><img :src="item.wmImg" :style="{left: item.wmLeft / 8  + 'px', top: item.wmTop / 8 + 'px'}"></div>
 					</li>
 				</ul>
+				<pagination v-if="total > 10" class="center" :currentPage="currentPage" :total="total" @pageChange="handleCurrentChange"></pagination>
 			</div>
 		</div>
 	</div>
 </script>
 
-<script type="text/x-template" id="publish-step3">
-	<div class="publish-step3">
-		3
+<script type="text/x-template" id="pagination">
+	<div class="pagination">
+		<div class="prev-page" :class="{disable: currentPage === 1}" @click="pageChange">上一页</div>
+		<ul class="pages clearfix">
+			<li @click="pageChange" v-for="(item, index) in pageList" :class="[{active: item === currentPage}, {'prev-skip': item === -1}, {'next-skip': item === -2}]" v-text="item < 0 ? '...' : item"></li>
+		</ul>
+		<div class="next-page" :class="{disable: currentPage === pageCount}" @click="pageChange">下一页</div>
 	</div>
 </script>
 

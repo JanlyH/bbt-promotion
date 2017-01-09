@@ -8,6 +8,16 @@ $wmbg: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGX
 	.text-tips{
 		color: #999;
 	}
+	.loading{
+		width: 100%;
+		padding: 10px 0;
+		text-align: center;
+		img{
+			width: 24px;
+			margin-right: 20px;
+			vertical-align: middle;
+		}
+	}
 	.page-header{
 		width: 100%;
 	    margin: 0;
@@ -65,9 +75,33 @@ $wmbg: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGX
 		}
 	}
 	.search-bar{
+		height: 52px;
 		margin-bottom: 20px;
 		padding-bottom: 20px;
 		border-bottom: 1px solid #eee;
+		.search{
+			float: right;
+			.search-text{
+				float: left;
+				border-right: 0;
+				transition: all .3s;
+				-webkit-transition: all .3s;
+				-moz-transition: all .3s;
+				-ms-transition: all .3s;
+				&.active{
+					width: 350px;
+					transition: all .3s;
+					-webkit-transition: all .3s;
+					-moz-transition: all .3s;
+					-ms-transition: all .3s;
+				}
+			}
+			.search-btn{
+				float: left;
+				vertical-align: top;
+				border-radius: 0;
+			}
+		}
 		.search-item{
 			display: inline-block;
 			margin-right: 30px;

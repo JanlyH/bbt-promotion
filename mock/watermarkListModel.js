@@ -1,22 +1,18 @@
-var express = require('express');
 var Mock = require('mockjs');
-var app = express();
-var router = express.Router();
 var Random = Mock.Random;
-Random.datetime();
-Random.ctitle();
-
-app.all('*', function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
-    res.header('Access-Control-Allow-Credentials','true');
-    next();
+Random.extend({
+    planName: function(data){
+        var name = ['双11促销', '双12促销', '年货节促销', '春节大促', '年终大促', '99大促'];
+        return this.pick(name);
+    },
+    activityName: function(data){
+        var name = ['限时打折', '超级满就送', '首件优惠', '首件包邮'];
+        return this.pick(name);
+    }
 });
 
-//
-var WMProfile = {
-    //  已投放的宝贝
+module.exports = {
+     //  已投放的宝贝
     items: Mock.mock({
         "status" : 1,
         "data" : {
@@ -46,8 +42,8 @@ var WMProfile = {
                     "status|0-3" : 0,
                     "startTime" : "@datetime('yyyy-MM-dd HH:mm:ss')",
                     "endTime" : "@datetime('yyyy-MM-dd HH:mm:ss')",
-                    "planName" : "@ctitle(1, 10)",
-                    "eventName" : "@ctitle(1, 10)",
+                    "planName" : "@planName",
+                    "activityName" : "@activityName",
                     "num|1-1000" : 10,
                     "successNum|1-999" : 10,
                     "failedNum|1-999" : 10
@@ -71,19 +67,3 @@ var WMProfile = {
         }
     })
 }
-
-// 已投放宝贝
-router.get('/watermark/items', (req, res) => {
-    res.json(WMProfile.items)
-})
-
-router.get('/watermark/used', (req, res) => {
-    res.json(WMProfile.used)
-})
-
-router.get('/watermark/all', (req, res) => {
-    res.json(WMProfile.all)
-})
-
-app.use(router);
-app.listen(3030, () => console.log('成功'));

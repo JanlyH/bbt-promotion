@@ -151,8 +151,10 @@
 								<router-link to="used" tag="li">已投放的水印</router-link>
 								<router-link to="all" tag="li">可投放的水印</router-link>
 								<router-link to="items" tag="li">已投放的宝贝</router-link>
+								<router-link to="collect" tag="li">我收藏的水印</router-link>
+								<router-link to="design" tag="li">我设计的水印</router-link>
 							</ul>
-							<a href="javascript:;" class="btn btn-primary design">设计新水印</a>
+							<!-- <a href="javascript:;" class="btn btn-primary design">设计新水印</a> -->
 						</div>
 						<router-view></router-view>
 					</div>
@@ -242,16 +244,17 @@
 		<script type="text/x-template" id="used-watermark">
 			<div class="usedWatermark">
 				<div class="search-bar">
-					<div class="search-item">计划名称：<input type="text" class="form-control input-large" v-model="planName" @keyup.enter="search"></div>
-					<div class="search-item">关联活动：<input type="text" class="form-control input-large" v-model="eventName" @keyup.enter="search"></div>
-					<a href="javascript:;" class="btn btn-primary" @click="search">查询</a>
+					<div class="search">
+						<input type="text" class="form-control input-large search-text fl" @focus="focusSearch" @blur="blurSearch" :class="{active: searchActive}" placeholder="请输入计划名称/关联活动" v-model="searchText" @keyup.enter="search">
+						<a href="javascript:;" class="btn btn-primary search-btn fl" @click="search">查询</a>
+					</div>
 				</div>
 				<div class="wm-list" v-infinite-scroll="loadmore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
 					<div class="wm-item" v-for="item in items">
 						<div class="wm-icon"><img :src="item.src"></div>
 						<div class="wm-details">
 							<div class="details-item">计划名称：{{item.planName}}</div>
-							<div class="details-item">关联活动：{{item.eventName}}</div>
+							<div class="details-item">关联活动：{{item.activityName}}</div>
 							<div class="details-item">开始时间：<span class="text-tips">{{item.startTime}}</span></div>
 							<div class="details-item">结束时间：<span class="text-tips">{{item.endTime}}</span></div>
 							<div class="details-item">投放宝贝：<a href="javascript:;" class="btn-link">{{item.num}}个</a></div>
@@ -264,6 +267,10 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="loading" v-if="loading">
+					<img src="https://img.alicdn.com/imgextra/i2/17157061/TB2xM7HcCVmpuFjSZFFXXcZApXa-17157061.gif">
+					<span>不要命的加载中...</span>
 				</div>
 			</div>
 		</script>
@@ -285,22 +292,10 @@
 						</ul>
 					</div>
 				</div>
-				<div class="wm-list" v-infinite-scroll="loadmore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
-					<div v-for="(item, index) in wmList" class="wm-item">
-						<div class="wm-img">
-							<img :src="item.src">
-							<div class="btns">
-								<a href="javascript:;" class="btn btn-primary" @click="openEditor">在线制作</a>
-							</div>
-						</div>
-						<div class="collect-bar">
-							<span class="wm-id fl">编号：{{item.wmID}}</span>
-							<span class="collect-btn fr" @click="collect(index)">
-							<i :class="['bbt-icons', {active: item.isCollect}]">&#xe606;</i>
-							<span>收藏</span>
-							</span>
-						</div>
-					</div>
+				<wm-list v-infinite-scroll="loadmore" infinite-scroll-disabled="busy" infinite-scroll-distance="10" :items="items" @loadmore="loadmore" @collect="collect"></wm-list>
+				<div class="loading" v-if="loading">
+					<img src="https://img.alicdn.com/imgextra/i2/17157061/TB2xM7HcCVmpuFjSZFFXXcZApXa-17157061.gif">
+					<span>不要命的加载中...</span>
 				</div>
 			</div>
 		</script>
@@ -317,9 +312,10 @@
 							</ul>
 						</div>
 					</div>
-					<div class="search-item">所属计划：<input type="text" placeholder="输入计划名称" class="input-large form-control"></div>
-					<div class="search-item">宝贝信息：<input type="text" placeholder="宝贝名称、链接、ID" class="input-large form-control"></div>
-					<a href="javascript:;" class="btn btn-primary">查询</a>
+					<div class="search">
+						<input type="text" @focus="focusSearch" @blur="blurSearch" placeholder="计划名称/宝贝名称/链接/ID" class="input-large form-control search-text" :class="{active: searchActive}">
+						<a href="javascript:;" class="btn btn-primary search-btn">查询</a>
+					</div>
 				</div>
 				<div class="joined-table" v-infinite-scroll="loadmore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
 					<table class="table">
@@ -358,7 +354,36 @@
 				</div>
 			</div>
 		</script>
-
+		
+		<!-- 我的收藏 -->
+		<script type="text/x-template" id="my-collect">
+			<div class="my-collect">
+				<wm-list v-infinite-scroll="loadmore" infinite-scroll-disabled="busy" infinite-scroll-distance="10" :showCollect="false" :items="items" @loadmore="loadmore" @collect="collect"></wm-list>
+			</div>
+		</script>
+		
+		<!-- 我的设计 -->
+		<!-- 水印列表组件 -->
+		<script type="text/x-template" id="wm-list">
+			<div class="wm-list">
+				<div v-for="(item, index) in items" class="wm-item">
+					<div class="wm-img">
+						<img :src="item.src">
+						<div class="btns">
+							<a href="javascript:;" class="btn btn-primary mb20" @click="openEditor">在线制作</a>
+							<a href="javascript:;" class="btn btn-danger" @click="publish">马上投放</a>
+						</div>
+					</div>
+					<div class="collect-bar">
+						<span class="wm-id fl">编号：{{item.wmID}}</span>
+						<span class="collect-btn fr" @click="collect(index)" v-if="showCollect">
+							<i :class="['bbt-icons', {active: item.isCollect}]">&#xe606;</i>
+							<span v-text="item.isCollect? '已收藏' : '收藏'"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</script>
 		<!-- **************************************************************************************************************组件分割线 -->
 
 

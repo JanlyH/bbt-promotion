@@ -1573,7 +1573,16 @@ p, h1, h2, h3, h4, h5, h6 {
 .pagination ul > span {
   float: left;
   margin: 0 5px; }
-
+.pagination li.points{
+  border: 0;
+  cursor: default;
+}
+.pagination li.disable{
+  opacity: 0.5;
+}
+.pagination li.points:hover{
+  background-color: #fff;
+}
 .pagination li {
   float: left;
   padding: 1px 7px;
@@ -1593,7 +1602,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .pagination li.active {
   background-color: #22a4ff;
-  border-color: #22a4ff; }
+  border-color: #22a4ff;
+  color: #fff; }
 
 .pagination li.active a {
   color: #fff; }
@@ -1602,7 +1612,8 @@ p, h1, h2, h3, h4, h5, h6 {
   color: #fff; }
 
 .pagination li.active:hover {
-  background-color: #0096ff; }
+  background-color: #0096ff;
+  color: #fff; }
 
 .pagination li.disable {
   color: #999;
