@@ -23,6 +23,64 @@ Random.extend({
 
 module.exports = {
      //  已投放的宝贝
+    step1Items: {
+        "status" : 1,
+        "data" : {
+            "items|10" : [
+                {
+                    "img" : "https://asearch.alicdn.com/bao/uploaded/i3/139050161646325719/TB27B4UjFXXXXbvXpXXXXXXXXXX_!!13063905-0-saturn_solar.jpg",
+                    "originPrice" : 999.00,
+                    "price" : 199.00,
+                    "status|0-1" : 1,
+                    "title" : "HANY汉尼2016春夏西服男套装 商务男士婚礼",
+                    "url" : "秋冬季新款毛呢大衣男修身韩版中长款呢子西服青年男装外套茄克衫"
+                }
+            ],
+            "category" : [
+                {
+                    "cid": 1257736635,
+                    "created": null,
+                    "modified": null,
+                    "name": "潮流服装",
+                    "parentCid": 0,
+                    "picUrl": "",
+                    "sortOrder": 1,
+                    "type": "manual_type"
+                },
+                {
+                    "cid": 1257736636,
+                    "created": null,
+                    "modified": null,
+                    "name": "上衣短袖",
+                    "parentCid": 1257736635,
+                    "picUrl": "",
+                    "sortOrder": 1,
+                    "type": "manual_type"
+                },
+                {
+                    "cid": 1257737136,
+                    "created": null,
+                    "modified": null,
+                    "name": "长裙",
+                    "parentCid": 1257736635,
+                    "picUrl": "",
+                    "sortOrder": 1,
+                    "type": "manual_type"
+                },
+                {
+                    "cid": 1257737137,
+                    "created": null,
+                    "modified": null,
+                    "name": "短裙",
+                    "parentCid": 1257736635,
+                    "picUrl": "",
+                    "sortOrder": 1,
+                    "type": "manual_type"
+                },
+            ],
+            "total" : 100
+        }
+    },
     step2Items: {
         "status" : 1,
         "data" : {

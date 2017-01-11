@@ -1286,7 +1286,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .form-checkbox p.disable {
   color: #999;
-  cursor: not-allowed; }
+  cursor: not-allowed;
+  opacity: 0.5; }
 
 .form-checkbox p i {
   display: block;

@@ -42,7 +42,7 @@
 			}
 			.wm-options{
 				float: left;
-				li{
+				&>li{
 					margin-bottom: 16px;
 					.opt-title{
 						width: 120px;
@@ -55,6 +55,24 @@
 					.activity-intro{
 						display: inline-block;
 						width: 500px;
+					}
+				}
+				.tags{
+					display: inline-block;
+					font-size: 0;
+					li{
+						display: inline-block;
+						font-size: 14px;
+						border-radius: 3px;
+						background-color: #f5f5f5;
+						color: #666;
+						padding: 6px 10px;
+						cursor: pointer;
+						margin-right: 6px;
+						&:hover, &.active{
+							background-color: #0096ff;
+							color: #fff;
+						}
 					}
 				}
 			}
@@ -152,6 +170,30 @@
 		height: 60px;
 		background-color: #f9f9f9;
 		border: 1px solid #ddd;
+		.prev-step{
+			float: left;
+			padding: 0 20px;
+			min-width: 150px;
+			height: 58px;
+			line-height: 58px;
+			font-size: 16px;
+			color: #666;
+			text-align: center;
+			background-color: #fff;
+			border-right: 1px solid #ddd;
+			transition: all 0.3s;
+			transition: all 0.3s;
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			-ms-transition: all 0.3s;
+			&:hover{
+				transition: all 0.3s;
+				-webkit-transition: all 0.3s;
+				-moz-transition: all 0.3s;
+				-ms-transition: all 0.3s;
+				color: #22a4ff;
+			}
+		}
 		.next-step{
 			float: right;
 			padding: 0 20px;
@@ -175,6 +217,38 @@
 				background-color: #0096ff;
 			}
 		}
+	}
+}
+.filter-bar{
+	padding: 12px;
+	margin-bottom: 16px;
+	background-color: #f9f9f9;
+	.discount-input{
+		margin: 0 4px;
+	}
+}
+.search{
+	display: inline-block;
+	vertical-align: middle;
+	.search-text{
+		float: left;
+		border-right: 0;
+		transition: all .3s;
+		-webkit-transition: all .3s;
+		-moz-transition: all .3s;
+		-ms-transition: all .3s;
+		&.active{
+			width: 350px;
+			transition: all .3s;
+			-webkit-transition: all .3s;
+			-moz-transition: all .3s;
+			-ms-transition: all .3s;
+		}
+	}
+	.search-btn{
+		float: left;
+		vertical-align: top;
+		border-radius: 0;
 	}
 }
 .pagination{

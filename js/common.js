@@ -305,20 +305,19 @@ var fCheckbox = function(){
 
 fCheckbox.prototype.init = function(ele){
 	var ccb = $(ele).find('[ttp="checkbox"]');
-
+	$('body').off('click',ele+' p[ttp="checkbox"]');
 	$('body').on('click',ele+' p[ttp="checkbox"]',function(){
-	
-		if($(this).attr('disabled') != 'disabled'){
+		if($(this).attr('disabled') != 'disabled' && $(this).attr('data-allow') != 'false'){
 			if($(this).hasClass('checkbox-active')){
 				$(this).removeClass('checkbox-active');
 			}else{
 				$(this).addClass('checkbox-active');
 			}
 		}
-
+		var len = $('[name="goosel"].checkbox-active').length;
+		$('.seledNums').text(len);
 	});
-	
-};
+}
 
 
 var ckbox = new fCheckbox();

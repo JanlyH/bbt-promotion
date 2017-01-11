@@ -151,8 +151,8 @@
 								<router-link to="used" tag="li">已投放的水印</router-link>
 								<router-link to="all" tag="li">可投放的水印</router-link>
 								<router-link to="items" tag="li">已投放的宝贝</router-link>
-								<router-link to="collect" tag="li">我收藏的水印</router-link>
-								<router-link to="design" tag="li">我设计的水印</router-link>
+								<router-link to="my-collect" tag="li">我收藏的水印</router-link>
+								<router-link to="my-design" tag="li">我设计的水印</router-link>
 							</ul>
 							<!-- <a href="javascript:;" class="btn btn-primary design">设计新水印</a> -->
 						</div>
@@ -282,13 +282,13 @@
 					<div class="wm-filter">
 						<h5>水印类型：</h5>
 						<ul class="condition">
-							<li :class="[{active: isTypeActive == index}, {'my-collect': item == '我的收藏'}]" v-for="(item, index) in wmType" @click="selTypeCondition(index)">{{item}}</li>
+							<li :class="[{active: isTypeActive == index}]" v-for="(item, index) in wmType" @click="selTypeCondition(index)">{{item.typeValue}}</li>
 						</ul>
 					</div>
 					<div class="wm-filter">
 						<h5>水印主题：</h5>
 						<ul class="condition">
-							<li :class="{active: isThemeActive == index}" v-for="(item, index) in wmTitle" @click="selThemeCondition(index)">{{item}}</li>
+							<li :class="{active: isThemeActive == index}" v-for="(item, index) in wmTheme" @click="selThemeCondition(index)">{{item.themeValue}}</li>
 						</ul>
 					</div>
 				</div>
@@ -363,9 +363,14 @@
 		</script>
 		
 		<!-- 我的设计 -->
+		<script type="text/x-template" id="my-design">
+			<div class="my-design">
+				<wm-list v-infinite-scroll="loadmore" infinite-scroll-disabled="busy" infinite-scroll-distance="10" :items="items" @loadmore="loadmore"></wm-list>
+			</div>
+		</script>
 		<!-- 水印列表组件 -->
 		<script type="text/x-template" id="wm-list">
-			<div class="wm-list">
+			<div class="wm-list-sm">
 				<div v-for="(item, index) in items" class="wm-item">
 					<div class="wm-img">
 						<img :src="item.src">

@@ -63,6 +63,46 @@ module.exports = {
                     "isCollect|1" : false,
                     "wmID|1-1000" : 0001
                 }
+            ],
+            "type" : [
+                {
+                    "typeValue": 1,
+                    "typeName": "折扣水印"
+                },
+                {
+                    "typeValue" : 2,
+                    "typeName" : "普通水印"
+                }
+            ],
+            "theme" : [
+                {
+                    "themeValue" : 1,
+                    "themeName" : "节日"
+                },
+                {
+                    "themeValue" : 2,
+                    "themeName" : "上新"
+                },
+                {
+                    "themeValue" : 3,
+                    "themeName" : "包邮"
+                },
+                {
+                    "themeValue" : 4,
+                    "themeName" : "清仓"
+                },
+                {
+                    "themeValue" : 5,
+                    "themeName" : "秒杀"
+                },
+                {
+                    "themeValue" : 6,
+                    "themeName" : "双11"
+                },
+                {
+                    "themeValue" : 7,
+                    "themeName" : "其他"
+                }
             ]
         }
     })

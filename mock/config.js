@@ -26,6 +26,12 @@ router.route('/watermark/items')
             res.json(WMProfile.items)
         }, 1000)
     })
+    .post((req, res, next) => {
+        setTimeout(function(){
+            res.json(WMProfile.items)
+        }, 1000)
+        console.log(req.body)
+    })
 
 router.route('/watermark/used')
     .get((req, res) => {
@@ -63,6 +69,7 @@ router.route('/watermark/all')
     .post((req, res) => {
          setTimeout(function(){
             res.json(WMProfile.all)
+            console.log(req.body)
         }, 1000)
     })
 
@@ -73,6 +80,17 @@ router.route('/wartermark/publish/step2/items')
     .post((req, res) => {
         setTimeout(function(){
             res.json(Mock.mock(WMPublish.step2Items));
+        }, 1000)
+        console.log(req.body.page)
+    })
+
+router.route('/wartermark/publish/step1/items')
+    .get((req, res) => {
+        res.json(Mock.mock(WMPublish.step1Items));
+    })
+    .post((req, res) => {
+        setTimeout(function(){
+            res.json(Mock.mock(WMPublish.step1Items));
         }, 1000)
         console.log(req.body.page)
     })

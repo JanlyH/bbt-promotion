@@ -95,14 +95,127 @@ var WMconponents = {
         template: '#publish-step1',
         data: function(){
             return {
-
+                planName: '',
+                startTime: '',
+                endTime: '',
+                timeTags: ['3天', '7天', '15天', '30天', '产品到期时间'],
+                categories: [],
+                items: [],
+                isActive: 1,
+                currentPage: 0,
+                pageSize: 10,
+                total: 0
             }
         },
+        created: function(){
+            var vm = this,
+                startDate = new Date(),
+                endDate = new Date();
+                endDate.setDate(startDate.getDate()+7);
+            vm.planName = vm.dateFormat(startDate).y + vm.dateFormat(startDate).M + vm.dateFormat(startDate).d + '-' + vm.dateFormat(startDate).h;
+            vm.startTime = vm.dateFormat(startDate).date;
+            vm.endTime = vm.dateFormat(endDate).date;
+            $.ajax({
+                url: 'http://192.168.1.146:3030/wartermark/publish/step1/items',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+
+                }
+            })
+            .done(function(data){
+                vm.items = data.data.items;
+                vm.total = data.data.total;
+                vm.currentPage += 1;
+            })
+        },
         methods: {
+            // 返回上一步
             goNext: function(){
                 router.push({
                     path: '/step2'
                 })
+            },
+
+            // 到下一步
+            goPrev: function(){
+                window.location.href="http://192.168.1.146:8081/watermark/watermark.html#/"
+            },
+
+            // 选择开始时间
+            WdateStart: function(){
+                var vm = this;
+                WdatePicker({
+                    dateFmt: 'yyyy-MM-dd HH:mm:ss',
+                    maxDate: vm.endTime,
+                    onpicked: function(dp){
+                        vm.startTime = dp.cal.getDateStr();
+                    }
+                })
+
+            },
+
+            // 选择结束时间
+            WdateEnd: function(){
+                var vm = this;
+                WdatePicker({
+                    dateFmt: 'yyyy-MM-dd HH:mm:ss',
+                    minDate: vm.startTime,
+                    onpicked: function(dp){
+                        vm.endTime = dp.cal.getDateStr();
+                    }
+                })
+            },
+
+            // 快速设置活动时间
+            quickSelectTime: function(index){
+                var endDate = new Date();
+                this.isActive = index;
+                switch(index){
+                    case 0:
+                        endDate.setDate((new Date(this.startTime)).getDate() + 3);
+                        break;
+                    case 1:
+                        endDate.setDate((new Date(this.startTime)).getDate() + 7);
+                        break;
+                    case 2:
+                        endDate.setDate((new Date(this.startTime)).getDate() + 15);
+                        break;
+                    case 3:
+                        endDate.setDate((new Date(this.startTime)).getDate() + 30);
+                        break;
+                    case 4:
+                        endDate = new Date(parseInt(customer.deadline));
+                        break;
+                }
+                this.endTime = this.dateFormat(endDate).date;
+            },
+            check: function(){
+
+            },
+            dateFormat: function(date){
+                var y = date.getFullYear(),
+                    M = date.getMonth() < 9 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1,
+                    d = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(),
+                    h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours(),
+                    m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes(),
+                    s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+                return {
+                    y : y.toString(), 
+                    M : M.toString(), 
+                    d : d.toString(), 
+                    h : h.toString(), 
+                    m : m.toString(), 
+                    s : s.toString(), 
+                    date : y + '-' + M + '-' + d + ' ' + h + ':' + m + ':' + s
+                }
+            },
+            queryCategory: function(){
+                
+            },
+            handleCurrentChange: function(val){
+                var vm = this;
+                vm.currentPage = val;
             }
         }
     },
@@ -154,6 +267,13 @@ var WMconponents = {
                     vm.items = data.data.items;
                     vm.currentItem = vm.items[0];
                 })
+            },
+            reset: function(){
+                this.currentItem.wmLeft = 0;
+                this.currentItem.wmTop = 0;
+            },
+            save: function(){
+                
             }
         },
         directives: {

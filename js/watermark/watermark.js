@@ -40,6 +40,7 @@ var WMconponents = {
                 searchText: '',
                 items: [],
                 busy: false,
+                loading: false,
                 searchActive: false
             }
         },
@@ -71,14 +72,19 @@ var WMconponents = {
             loadmore: function(){
                 var vm = this;
                 vm.busy = true;
+                vm.loading= true;
                 $.ajax({
-                    url: ' http://127.0.0.1:3030/watermark/used',
+                    url: 'http://192.168.1.146:3030/watermark/used',
                     type: 'GET',
                     dataType: 'json',
                 })
                 .done(function(data) {
                     vm.items = vm.items.concat(data.data.items);
                     vm.busy = false;
+                    vm.loading= false;
+                    if(data.data.items.length === 0){
+                        vm.busy = true;
+                    }
                 })
             }
         }
@@ -91,8 +97,8 @@ var WMconponents = {
         template: '#all-watermark',
         data: function(){
             return {
-                wmType: ['全部', '折扣水印', '普通水印', '我的收藏', '我的设计'],
-                wmTitle: ['全部', '节日', '上新', '包邮', '清仓', '秒杀', '双11', '其他'],
+                wmType: [],
+                wmTheme: [],
                 isTypeActive: 0,
                 isThemeActive: 0,
                 showPop: false,
@@ -101,6 +107,30 @@ var WMconponents = {
                 currentPage: 0,
                 loading: false
             }
+        },
+        created: function(){
+            var vm = this;
+            vm.loading = true;
+            $.ajax({
+                url: 'http://127.0.0.1:3030/watermark/all',
+                type: 'GET',
+                dataType: 'json'
+            })
+            .done(function(data){
+                vm.loading = false;
+                vm.items = vm.items.concat(data.data.items);
+                vm.wmType = data.data.type;
+                vm.wmType.unshift({
+                    'typeNum': 0,
+                    'typeValue': '全部'
+                })
+                vm.wmTheme = data.data.theme;
+                vm.wmTheme.unshift({
+                    'typeNum': 0,
+                    'themeValue': '全部'
+                })
+                vm.currentPage += 1;
+            })
         },
         methods: {
             selTypeCondition: function(index){
@@ -119,23 +149,25 @@ var WMconponents = {
                 var vm = this;
                 vm.busy = true;
                 vm.loading = true;
-                $.ajax({
-                    url: 'http://127.0.0.1:3030/watermark/all',
-                    type: 'POST',
-                    dataType: 'json',
-                    data: {
-                        page: vm.currentPage + 1
-                    }
-                })
-                .done(function(data){
-                    vm.items = vm.items.concat(data.data.items);
-                    vm.busy = false;
-                    vm.currentPage += 1;
-                    vm.loading = false
-                    if(data.data.items.length === 0){
-                        vm.busy = true;
-                    }
-                })
+                if (vm.currentPage > 0) {
+                    $.ajax({
+                        url: 'http://127.0.0.1:3030/watermark/all',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            page: vm.currentPage + 1
+                        }
+                    })
+                    .done(function(data){
+                        vm.items = vm.items.concat(data.data.items);
+                        vm.busy = false;
+                        vm.currentPage += 1;
+                        vm.loading = false
+                        if(data.data.items.length === 0){
+                            vm.busy = true;
+                        }
+                    })
+                }
             }
         }
     },
@@ -147,7 +179,7 @@ var WMconponents = {
         template: '#items-joined',
         data: function(){
             return {
-                publishStatus: ['全部状态', '投放失败', '投放成功', '正在投放', '退出失败'],
+                publishStatus: ['全部状态', '投放失败', '投放成功', '正在投放'],
                 currentStatus: 0,
                 items: [],
                 page: 0,
@@ -187,75 +219,85 @@ var WMconponents = {
                 }
                 // this.statusFilter()
             },
-            statusFilter: function(){
-                if (this.currentStatus === 0) {
-                    this.getItems = this.items;
-                }else{
-                    this.getItems = this.items.filter(function(item){
-                        return item.status + 1 === this.currentStatus
-                    });
-                }
-            },
             loadmore: function(){
-                var that = this;
-                if (that.page > 0) {
-                    that.busy = true;
-                    $.ajax({
-                        url: '/getItems.json',
-                        type: 'POST',
-                        dataType: 'json',
-                        data: {
-                            page: that.page
+                var vm = this;
+                vm.busy = true;
+                $.ajax({
+                    url: 'http://127.0.0.1:3030/watermark/items',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        page: vm.page + 1
+                    }
+                })
+                .done(function(data) {
+                    if (data.status === 1 && data.data.items.length !== 0) {
+                        vm.items = vm.items.concat(data.data.items);
+                        if (vm.currentStatus === 0) {
+                            vm.getItems = vm.items;
+                        }else{
+                            vm.getItems = vm.items.filter(function(item){
+                                return item.status + 1 === vm.currentStatus
+                            });
                         }
-                    })
-                    .done(function(data) {
-                        if (data.status === 1 && data.data.items.length !== 0) {
-                            that.items = that.items.concat(data.data.items);
-                            if (that.currentStatus === 0) {
-                                that.getItems = that.items;
-                            }else{
-                                that.getItems = that.items.filter(function(item){
-                                    return item.status + 1 === that.currentStatus
-                                });
-                            }
-                            // that.statusFilter();
-                            that.page += 1;
-                            that.$nextTick(function(){
-                                that.busy = false;
-                            })
-                        }
-                        if (data.data.items.length === 0) {
-                            that.busy = true;
-                        }
-                    })
-                }
-            },
-            textFilter: function(items, filter){
-                return items.filter(function(item){
-                    item.indexOf(filter) !== -1;
+                        vm.page += 1;
+                        vm.busy = false;
+                    }
+                    if (data.data.items.length === 0) {
+                        vm.busy = true;
+                    }
                 })
             }
-        },
-        created: function(){
-            var that = this;
-            $.ajax({
-                url: ' http://127.0.0.1:3030/watermark/items',
-                type: 'GET',
-                dataType: 'json'
-            })
-            .done(function(data) {
-                that.items = data.data.items;
-                that.getItems = that.items;
-                that.page += 1;
-            })
         }
     },
 
     /**
     * @描述：我收藏的水印组件；
     */
-    collect: {
+    myCollect: {
         template: '#my-collect',
+        data: function(){
+            return {
+                busy: false,
+                loading: false,
+                currentPage: 0,
+                items: []
+            }
+        },
+        methods: {
+            collect: function(){
+
+            },
+            loadmore: function(){
+                var vm = this;
+                vm.busy = true;
+                vm.loading = true;
+                $.ajax({
+                    url: 'http://127.0.0.1:3030/watermark/all',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        page: vm.currentPage + 1
+                    }
+                })
+                .done(function(data){
+                    vm.items = vm.items.concat(data.data.items);
+                    vm.busy = false;
+                    vm.currentPage += 1;
+                    vm.loading = false
+                    if(data.data.items.length === 0){
+                        vm.busy = true;
+                    }
+                })
+            }
+        }
+    },
+
+    /**
+    * @描述：我设计的水印组件；
+    */
+    myDesign: {
+        template: '#my-design',
         data: function(){
             return {
                 busy: false,
@@ -298,7 +340,8 @@ var routes = [
     { path: '/used', component: WMconponents.used },
     { path: '/all', component: WMconponents.all },
     { path: '/items', component: WMconponents.items },
-    { path: '/collect', component: WMconponents.collect },
+    { path: '/my-collect', component: WMconponents.myCollect },
+    { path: '/my-design', component: WMconponents.myDesign },
     { path: '*', component: WMconponents.used }
 ]
 var router = new VueRouter({

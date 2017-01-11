@@ -32,7 +32,6 @@
 				 	<div class="bb-right-free">
 				 		<a href="javascript:;" class="bb-discount">续费有礼</a>
 				 	</div>
-
 				 		<ul class="bb-right-navcontent">
 				 			<li ><a href="javascript:;" class="bb-right-opera">卖家中心</a></li>
 				 			<li ><a href="javascript:;" class="bb-right-opera">联系客服</a></li>
@@ -219,6 +218,8 @@
 
 
 <!-- **************************************************************************************************************组件分割线 -->
+
+<!-- 发布第一步 -->
 <script type="text/x-template" id="publish-step1">
 	<div class="publish-step1">
 		<div class="title">关联打折活动</div>
@@ -229,9 +230,9 @@
 			<ul class="wm-options">
 				<li>
 					<h5 class="opt-title">计划名称：</h5>
-					<input type="text" class="form-control input-large">
+					<input type="text" class="form-control input-large" v-model="planName">
 				</li>
-				<li>
+				<!-- <li>
 					<h5 class="opt-title">关联活动：</h5>
 					<div class="dropdown mr20">
 						<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">打折活动1<span class="caret"></span></a>
@@ -242,39 +243,98 @@
 						</ul>
 					</div>
 					<a href="javascript" class="btn-link">创建打折活动</a>
-				</li>
+				</li> -->
 				<li>
 					<h5 class="opt-title">活动开始时间：</h5>
-					<input type="text" class="form-control input-large" placeholder="请选择活动开始时间">
+					<input id="startTime" type="text" class="form-control input-large" placeholder="请选择活动开始时间" v-model="startTime" @focus="WdateStart">
+					<ul class="tags">
+						<li :class="{active: isActive === index}" v-for="(item, index) in timeTags" @click="quickSelectTime(index)" v-text="item"></li>
+					</ul>
 				</li>
 				<li>
 					<h5 class="opt-title">活动结束时间：</h5>
-					<input type="text" class="form-control input-large" placeholder="请选择活动结束时间">
-				</li>
-				<li>
-					<h5 class="opt-title">水印替换：</h5>
-					<div class="form-checkbox">
-						<p ttp="checkbox"><i></i>替换宝贝主图上的其他水印</p>
-					</div>
+					<input id="endTime" type="text" class="form-control input-large" placeholder="请选择活动结束时间" v-model="endTime" @focus="WdateEnd">
 				</li>
 				<li>
 					<h5 class="opt-title top">关于活动说明：</h5>
-					<div class="activity-intro">
-						水印投放与活动关联后，在活动期内，水印将自动读取对应宝贝的活动价格，并且只能对参加活动的宝贝进行投放。活动到期，该水印将自动失效不再展示。
+					<div class="activity-intro text-danger">
+						目前仅支持投放到第一张主图图片上。
 					</div>
 				</li>
 			</ul>
 		</div>
 		<div class="items-wrap">
 			<div class="title">选择投放宝贝</div>
-			<div class="item-list"></div>
+			<div class="filter-bar">
+				<div class="dropdown mr20">
+					<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">全店类目<span class="caret"></span></a>
+					<ul class="dropdown-menu" aria-labelledby="dLabel">
+						<li v-for="(item, index) in categories" v-text="item" @click="queryCategory"></li>
+					</ul>
+				</div>
+				<div class="dropdown mr20">
+					<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">出售中<span class="caret"></span></a>
+					<ul class="dropdown-menu" aria-labelledby="dLabel">
+						<li>123456</li>
+					</ul>
+				</div>
+				<div class="search mr20">
+					<input type="text" placeholder="宝贝名称/链接/ID" class="input-large form-control search-text">
+					<a href="javascript:;" class="btn btn-primary search-btn">查询</a>
+				</div>
+				<!-- <div class="form-checkbox">
+					<p ttp="checkbox" @click="hideItems"><i></i>隐藏有水印的宝贝</p>
+				</div> -->
+				<div class="fr">
+					水印批量打<input type="text" class="form-control input-mini text-center discount-input">折
+				</div>
+			</div>
+			<div class="item-list">
+				<table class="table mb20">
+					<tbody>
+						<tr>
+							<td width="60"></td>
+							<td width="120">宝贝主图</td>
+							<td width="300">宝贝名称</td>
+							<td width="150">水印状态</td>
+							<td width="150">宝贝原价</td>
+							<td width="150">水印价格</td>
+						</tr>
+						<tr v-for="(item, index) in items">
+							<td>
+								<div class="form-checkbox" @click="check(index)">
+									<p ttp="checkbox" :class="{disable: item.status === 1}" :disabled="item.status === 1"><i></i></p>
+								</div>
+							</td>
+							<td>
+								<a :href="item.url" target="_blank"><img :src="item.img + '_80x80.jpg'"></a>
+							</td>
+							<td class="text-left">
+								<a :href="item.url" class="btn-link" target="_blank" v-text="item.title"></a>
+							</td>
+							<td>
+								<span :class="{'text-danger' : item.status === 1}" v-text="item.status === 1 ? '已添加水印' : '未添加水印'"></span>
+							</td>
+							<td>
+								<span class="origin-price" v-text="'￥' + item.originPrice"></span>
+							</td>
+							<td>
+								<input type="text" class="form-control text-center" v-model="item.price" :disabled="item.status === 1">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<pagination class="center" :currentPage="currentPage" :total="total" @pageChange="handleCurrentChange"></pagination>
+			</div>
 		</div>
 		<div class="publish-bar">
+			<a href="javascript:;" class="prev-step" @click="goPrev">上一步</a>
 			<a href="javascript:;" class="next-step" @click="goNext">下一步</a>
 		</div>
 	</div>
 </script>
 
+<!-- 发布第二步 -->
 <script type="text/x-template" id="publish-step2" ref="component">
 	<div class="publish-step2">
 		<div class="title">主图预览调整<span class="ml20 text-tips">温馨提示：可以移动和拖拽水印位置及图片大小</span></div>
@@ -284,8 +344,8 @@
 					<img :src="currentItem.wmImg" class="wm-img" :class="{moving: isMoving}" :style="currentItemStyle" v-move>
 				</div>
 				<div class="btn-group">
-					<a href="javascript:;" class="btn btn-default mr20">还原调整</a>
-					<a href="javascript:;" class="btn btn-primary">保存调整</a>
+					<a href="javascript:;" class="btn btn-default mr20" @click="reset">还原调整</a>
+					<a href="javascript:;" class="btn btn-primary" @click="save">保存调整</a>
 				</div>
 			</div>
 			<div class="items-wrap">
@@ -300,6 +360,7 @@
 	</div>
 </script>
 
+<!-- 分页组件 -->
 <script type="text/x-template" id="pagination">
 	<div class="pagination">
 		<div class="prev-page" :class="{disable: currentPage === 1}" @click="pageChange">上一页</div>
@@ -323,6 +384,8 @@
 	<!--@Common 共同js v1.0.0-->
 
 	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/lib/My97DatePicker/WdatePicker.js"></script>
+
 
 	<script type="text/javascript" src="../js/lib/vue/vue.js"></script>
 	<script type="text/javascript" src="../js/lib/vue/vue-router.js"></script>
