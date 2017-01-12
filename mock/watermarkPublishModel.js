@@ -33,7 +33,9 @@ module.exports = {
                     "price" : 199.00,
                     "status|0-1" : 1,
                     "title" : "HANY汉尼2016春夏西服男套装 商务男士婚礼",
-                    "url" : "秋冬季新款毛呢大衣男修身韩版中长款呢子西服青年男装外套茄克衫"
+                    "url" : "秋冬季新款毛呢大衣男修身韩版中长款呢子西服青年男装外套茄克衫",
+                    "itemId|1000-9999" : 1000,
+                    "isChecked": false
                 }
             ],
             "category" : [
@@ -78,6 +80,7 @@ module.exports = {
                     "type": "manual_type"
                 },
             ],
+            "approveStatus" : 1,
             "total" : 100
         }
     },

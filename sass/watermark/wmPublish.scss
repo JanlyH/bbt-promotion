@@ -1,6 +1,4 @@
 @import "../opt";
-@import "../tips";
-
 .publish-main-cont{
 	position: relative;
 	min-height: 600px;
@@ -170,6 +168,13 @@
 		height: 60px;
 		background-color: #f9f9f9;
 		border: 1px solid #ddd;
+		.checkAll{
+			margin: 12px 0 0 12px;
+			background-color: #fff;
+			&.btn-primary{
+				background-color: #22a4ff;
+			}
+		}
 		.prev-step{
 			float: left;
 			padding: 0 20px;

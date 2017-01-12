@@ -273,27 +273,29 @@
 					</ul>
 				</div>
 				<div class="dropdown mr20">
-					<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">出售中<span class="caret"></span></a>
+					<a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{approve[approveStatus]}}<span class="caret"></span></a>
 					<ul class="dropdown-menu" aria-labelledby="dLabel">
-						<li>123456</li>
+						<li v-for="(item, index) in approve" v-text="item" @click="queryApprove(index)"></li>
 					</ul>
 				</div>
 				<div class="search mr20">
-					<input type="text" placeholder="宝贝名称/链接/ID" class="input-large form-control search-text">
-					<a href="javascript:;" class="btn btn-primary search-btn">查询</a>
+					<input type="text" placeholder="宝贝名称/链接/ID" class="input-large form-control search-text" v-model="title">
+					<a href="javascript:;" class="btn btn-primary search-btn" @click="queryTitle">查询</a>
 				</div>
 				<!-- <div class="form-checkbox">
 					<p ttp="checkbox" @click="hideItems"><i></i>隐藏有水印的宝贝</p>
 				</div> -->
 				<div class="fr">
-					水印批量打<input type="text" class="form-control input-mini text-center discount-input">折
+					水印批量打<input type="text" class="form-control input-small text-center discount-input" v-model="discountNum" @keyup="setDiscount(discountNum)">折
 				</div>
 			</div>
 			<div class="item-list">
 				<table class="table mb20">
 					<tbody>
 						<tr>
-							<td width="60"></td>
+							<td width="120" class="text-left">
+								<a href="javascript:;" :class="['btn', {'btn-default' : !isCheckAll, 'btn-primary' : isCheckAll}]" v-text="isCheckAll ? '取消全选' : '本页全选'" @click="checkAll"></a>
+							</td>
 							<td width="120">宝贝主图</td>
 							<td width="300">宝贝名称</td>
 							<td width="150">水印状态</td>
@@ -302,8 +304,8 @@
 						</tr>
 						<tr v-for="(item, index) in items">
 							<td>
-								<div class="form-checkbox" @click="check(index)">
-									<p ttp="checkbox" :class="{disable: item.status === 1}" :disabled="item.status === 1"><i></i></p>
+								<div class="form-checkbox" @click.stop="check(index, item.status)">
+									<p ttp="checkbox" :class="[{disable: item.status === 1}, {'checkbox-active' : item.isChecked}]" :disabled="item.status === 1"><i></i></p>
 								</div>
 							</td>
 							<td>
@@ -327,8 +329,9 @@
 				<pagination class="center" :currentPage="currentPage" :total="total" @pageChange="handleCurrentChange"></pagination>
 			</div>
 		</div>
-		<div class="publish-bar">
+		<div class="publish-bar" v-fixedbar>
 			<a href="javascript:;" class="prev-step" @click="goPrev">上一步</a>
+			<a href="javascript:;" :class="['checkAll','btn', {'btn-default' : !isCheckAll, 'btn-primary' : isCheckAll}]" v-text="isCheckAll ? '取消全选' : '本页全选'" @click="checkAll"></a>
 			<a href="javascript:;" class="next-step" @click="goNext">下一步</a>
 		</div>
 	</div>

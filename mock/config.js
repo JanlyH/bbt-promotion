@@ -92,7 +92,7 @@ router.route('/wartermark/publish/step1/items')
         setTimeout(function(){
             res.json(Mock.mock(WMPublish.step1Items));
         }, 1000)
-        console.log(req.body.page)
+        console.log(req.body)
     })
 
 app.use(router);

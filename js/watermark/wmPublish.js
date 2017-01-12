@@ -95,16 +95,22 @@ var WMconponents = {
         template: '#publish-step1',
         data: function(){
             return {
-                planName: '',
-                startTime: '',
-                endTime: '',
+                planName: '',                                                                                             // 计划名称
+                startTime: '',                                                                                              // 活动开始时间
+                endTime: '',                                                                                               // 活动结束时间
                 timeTags: ['3天', '7天', '15天', '30天', '产品到期时间'],
-                categories: [],
-                items: [],
-                isActive: 1,
-                currentPage: 0,
-                pageSize: 10,
-                total: 0
+                categories: [],                                                                                           // 类目
+                items: [],                                                                                                  // 获取的宝贝
+                isActive: 1,                                                                                               // 快速选择活动时间的tag标志
+                currentPage: 0,                                                                                       // 当前页
+                pageSize: 10,                                                                                          // 每页显示的宝贝个数
+                total: 0,                                                                                                   // 一共有多少个宝贝，根据这个数值来算页数
+                discountNum: '',                                                                                    // 折扣
+                cachePages: [],                                                                                             // 勾选中的宝贝缓存在这里
+                approveStatus: 0,
+                approve: ['仓库中', '出售中', '橱窗中'],
+                title: '',
+                isCheckAll: false
             }
         },
         created: function(){
@@ -115,21 +121,50 @@ var WMconponents = {
             vm.planName = vm.dateFormat(startDate).y + vm.dateFormat(startDate).M + vm.dateFormat(startDate).d + '-' + vm.dateFormat(startDate).h;
             vm.startTime = vm.dateFormat(startDate).date;
             vm.endTime = vm.dateFormat(endDate).date;
-            $.ajax({
-                url: 'http://192.168.1.146:3030/wartermark/publish/step1/items',
-                type: 'POST',
-                dataType: 'json',
-                data: {
-
-                }
-            })
-            .done(function(data){
+            vm.request() .done(function(data){
                 vm.items = data.data.items;
                 vm.total = data.data.total;
                 vm.currentPage += 1;
+                vm.approveStatus = data.data.approveStatus;
             })
         },
+
+        computed: {
+
+            // 计算已选的宝贝数
+            checkedNum: function(){
+                var num = 0;
+                this.items.forEach(function(item){
+                    if(item.isChecked){
+                        num += 1
+                    }
+                })
+                return num;
+            },
+
+            // 计算可选的宝贝数
+            validItems: function(){
+                var num = 0;
+                this.items.forEach(function(item){
+                    if(item.status === 0){
+                        num += 1
+                    }
+                })
+                return num;
+            }
+        },
+
         methods: {
+            request: function(data){
+                var obj = data || {};
+                return $.ajax({
+                    url: 'http://192.168.1.146:3030/wartermark/publish/step1/items',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: obj
+                })
+            },
+
             // 返回上一步
             goNext: function(){
                 router.push({
@@ -190,9 +225,44 @@ var WMconponents = {
                 }
                 this.endTime = this.dateFormat(endDate).date;
             },
-            check: function(){
 
+            // 勾选
+            check: function(index, status){
+                if(status === 0){
+                    this.items[index].isChecked = !this.items[index].isChecked;
+                    this.inspectChecked();
+                }
             },
+
+            // 检查是否全选
+            inspectChecked: function(){
+                var num = 0;
+                if(this.validItems === this.checkedNum){
+                    this.isCheckAll = true;
+                }else{
+                    this.isCheckAll = false;
+                }
+            },
+
+            // 全选
+            checkAll: function(){
+                if(this.isCheckAll){
+                    this.items.forEach(function(item){
+                        if(item.status === 0){
+                            item.isChecked = false;
+                        }
+                    })
+                }else{
+                    this.items.forEach(function(item){
+                        if(item.status === 0){
+                            item.isChecked = true;
+                        }
+                    })
+                }
+                this.isCheckAll = !this.isCheckAll;
+            },
+
+            // 格式化日期
             dateFormat: function(date){
                 var y = date.getFullYear(),
                     M = date.getMonth() < 9 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1,
@@ -210,12 +280,99 @@ var WMconponents = {
                     date : y + '-' + M + '-' + d + ' ' + h + ':' + m + ':' + s
                 }
             },
+
+            // 类目查询
             queryCategory: function(){
                 
             },
+
+            // 出售中，仓库中、橱窗中的宝贝查询
+            queryApprove: function(index){
+                var vm = this;
+                vm.approveStatus = index;
+            },
+
+            //  按宝贝标题、链接、ID查询
+            queryTitle: function(){
+
+            },
+
+            // 翻页
             handleCurrentChange: function(val){
                 var vm = this;
                 vm.currentPage = val;
+                postData = {
+                    pageNo: vm.currentPage + 1,
+                    approveStatus: vm.approveStatus,
+                    title: vm.title
+                }
+                if(vm.checkedNum > 0){
+                    vm.cachePages.push(this.cacheItems());
+                }
+                vm.request(postData).done(function(data){
+                    vm.items = data.data.items;
+                    vm.checkCache();
+                })
+            },
+
+            // 批量打折
+            setDiscount: function(newVal){
+                var vm = this;
+                if(isNaN(newVal) || newVal === ''){
+                    vm.discountNum = '';
+                }else{
+                    if(newVal < 0.1){
+                        newVal = '0.1'
+                    }
+                    if(newVal > 10){
+                        newVal = '10'
+                    }
+                    vm.discountNum = newVal.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3');
+                }
+                if(vm.discountNum === ''){
+                    return
+                }
+                vm.items.forEach(function(item, index){
+                    if(item.status === 0){
+                        item.price = parseInt(item.originPrice * (vm.discountNum / 10));
+                        console.log(item.price)
+                    }
+                })
+            },
+
+            // 缓存当前页选中的宝贝
+            cacheItems: function(){
+                var obj = {};
+                obj.pagination = this.currentPage;
+                obj.items = [];
+                obj.indexs = [];
+                this.items.forEach(function(item, index){
+                    if(item.isChecked){
+                        obj.items.push(item);
+                        obj.indexs.push(index);
+                    }
+                })
+                return obj;
+            },
+
+            // 检查缓存的宝贝
+            checkCache: function(){
+                var vm = this;
+                for(var i = 0; i < vm.cachePages.length; i++){
+                    if(vm.cachePages[i].pagination === vm.currentPage){
+                        vm.cachePages[i].indexs.forEach(function(item){
+                            vm.items[item] = vm.cachePages[i].items[item]
+                        })
+                        break;
+                    }
+                }
+            }
+        },
+        directives: {
+            fixedbar: {
+                inserted: function(el, binding){
+                    
+                }
             }
         }
     },

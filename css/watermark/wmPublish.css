@@ -1,16 +1,3 @@
-.tips-content {
-  margin-bottom: 20px; }
-  .tips-content .tips-title {
-    margin-bottom: 10px; }
-  .tips-content .blue-warning {
-    float: left;
-    margin-right: 10px; }
-  .tips-content .tips-list li {
-    margin-left: 26px;
-    margin-bottom: 10px;
-    list-style-type: decimal;
-    color: #999; }
-
 .publish-main-cont {
   position: relative;
   min-height: 600px;
@@ -147,6 +134,11 @@
     height: 60px;
     background-color: #f9f9f9;
     border: 1px solid #ddd; }
+    .publish-main-cont .publish-bar .checkAll {
+      margin: 12px 0 0 12px;
+      background-color: #fff; }
+      .publish-main-cont .publish-bar .checkAll.btn-primary {
+        background-color: #22a4ff; }
     .publish-main-cont .publish-bar .prev-step {
       float: left;
       padding: 0 20px;
