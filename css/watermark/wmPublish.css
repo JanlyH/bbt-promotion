@@ -11,13 +11,21 @@
     padding-bottom: 15px;
     font-size: 16px;
     border-bottom: 1px solid #ddd; }
-  .publish-main-cont .pop-mask-enter-active, .publish-main-cont .pop-mask-leave-active {
+  .publish-main-cont .pop-mask-enter-active,
+  .publish-main-cont .pop-mask-leave-active {
     transition: opacity 0.2s ease-in-out;
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
     -ms-transition: opacity 0.2s ease-in-out; }
-  .publish-main-cont .pop-mask-enter, .publish-main-cont .pop-mask-leave {
+  .publish-main-cont .pop-mask-enter,
+  .publish-main-cont .pop-mask-leave {
     opacity: 0; }
+  .publish-main-cont .publish-step1 .table tr.checked {
+    background-color: #f3f9ff; }
+  .publish-main-cont .publish-step1 .big-rang {
+    box-sizing: content-box;
+    padding: 25px;
+    cursor: pointer; }
   .publish-main-cont .publish-step1 .wm-detailes {
     margin-bottom: 20px;
     padding-bottom: 40px;
@@ -224,18 +232,22 @@
       line-height: 24px;
       padding: 0;
       text-align: center; }
-  .pagination .prev-page, .pagination .next-page {
+  .pagination .prev-page,
+  .pagination .next-page {
     display: inline-block;
     padding: 1px 7px;
     border: 1px solid #ddd;
     background-color: #fff;
     border-radius: 3px;
     vertical-align: top; }
-    .pagination .prev-page:hover, .pagination .next-page:hover {
+    .pagination .prev-page:hover,
+    .pagination .next-page:hover {
       cursor: pointer;
       background-color: #f5f5f5; }
-    .pagination .prev-page.disable, .pagination .next-page.disable {
+    .pagination .prev-page.disable,
+    .pagination .next-page.disable {
       opacity: 0.5;
       cursor: not-allowed; }
-      .pagination .prev-page.disable:hover, .pagination .next-page.disable:hover {
+      .pagination .prev-page.disable:hover,
+      .pagination .next-page.disable:hover {
         background-color: #fff; }
