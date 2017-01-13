@@ -87,32 +87,34 @@ Vue.component('pagination', {
         }
     }
 })
-var vueState = {};
 var WMconponents = {
     /**
      * @描述：投放水印step1；
      */
     step1: {
         template: '#publish-step1',
-        data: function() {
+        data: function () {
             return {
                 planName: '', // 计划名称
                 startTime: '', // 活动开始时间
                 endTime: '', // 活动结束时间
                 timeTags: ['3天', '7天', '15天', '30天', '产品到期时间'],
-                categories: [], // 类目
+                categories: [{name: '全部类目', parentCid: 0}], // 类目
                 items: [], // 获取的宝贝
                 isActive: 1, // 快速选择活动时间的tag标志
                 currentPage: 0, // 当前页
                 pageSize: 10, // 每页显示的宝贝个数
                 total: 0, // 一共有多少个宝贝，根据这个数值来算页数
                 discountNum: '', // 折扣
-                cachePages: [], // 勾选中的宝贝缓存在这里
+                cache: {}, // 勾选中的宝贝缓存在这里
                 approveStatus: 0,
                 approve: ['仓库中', '出售中', '橱窗中'],
-                title: ''
+                title: '', //查询的内容宝贝标题、id、链接
+                wmImg: '',
+                currentCategory: 0
             }
         },
+
         created: function() {
             var vm = this,
                 startDate = new Date(),
@@ -121,12 +123,27 @@ var WMconponents = {
             vm.planName = vm.dateFormat(startDate).y + vm.dateFormat(startDate).M + vm.dateFormat(startDate).d + '-' + vm.dateFormat(startDate).h;
             vm.startTime = vm.dateFormat(startDate).date;
             vm.endTime = vm.dateFormat(endDate).date;
+            vm.cache.items = [];
             vm.request().done(function(data) {
                 vm.items = data.data.items;
                 vm.total = data.data.total;
                 vm.currentPage += 1;
                 vm.approveStatus = data.data.approveStatus;
+                vm.wmImg = data.data.wmImg;
+                vm.categories.push.apply(vm.categories, data.data.category);
+                if(sessionStorage.getItem('wmPublishState')){
+                    vm.cache = JSON.parse(sessionStorage.getItem('wmPublishState'));
+                    vm.checkCache();
+                }
             })
+        },
+
+        beforeRouteLeave: function(to, from, next){
+            this.cachePages.items.push(this.cacheItems());
+            this.cachePages.wmImg = this.wmImg;
+            sessionStorage.removeItem('wmPublishState')
+            sessionStorage.setItem('wmPublishState', JSON.stringify(this.cachePages));
+            next();
         },
 
         computed: {
@@ -172,7 +189,6 @@ var WMconponents = {
 
             // 到下一步
             goNext: function() {
-                this.cachePages.push(this.cacheItems());
                 router.push({
                     path: '/step2'
                 })
@@ -277,8 +293,8 @@ var WMconponents = {
             },
 
             // 类目查询
-            queryCategory: function() {
-
+            queryCategory: function(item, index) {
+                this.currentCategory = index;
             },
 
             // 出售中，仓库中、橱窗中的宝贝查询
@@ -290,22 +306,6 @@ var WMconponents = {
             //  按宝贝标题、链接、ID查询
             queryTitle: function() {
 
-            },
-
-            // 翻页
-            handleCurrentChange: function(val) {
-                var vm = this;
-                vm.checkedNum > 0 && vm.cachePages.push(this.cacheItems());
-                vm.currentPage = val;
-                postData = {
-                    pageNo: vm.currentPage,
-                    approveStatus: vm.approveStatus,
-                    title: vm.title
-                }
-                vm.request(postData).done(function(data) {
-                    vm.items = data.data.items;
-                    vm.checkCache();
-                })
             },
 
             // 批量打折
@@ -333,35 +333,62 @@ var WMconponents = {
                 })
             },
 
+            // 翻页
+            handleCurrentChange: function(val) {
+                var vm = this;
+                vm.checkedNum > 0 && vm.cachePages.items.push(this.cacheItems());
+                vm.currentPage = val;
+                postData = {
+                    pageNo: vm.currentPage,
+                    approveStatus: vm.approveStatus,
+                    title: vm.title
+                }
+                vm.request(postData).done(function(data) {
+                    vm.items = data.data.items;
+                    vm.checkCache();
+                })
+            },
+
+
             // 缓存当前页选中的宝贝
             cacheItems: function() {
-                var vm = this,
-                    cachePages = vm.cachePages;
-                if (cachePages.length > 0) {
-                    for (var i = 0; i < cachePages.length; i++) {
-                        cachePages[i].pagination === vm.currentPage && cachePages.splice(i, 1);
-                    }
-                }
-                var obj = {};
-                obj.pagination = vm.currentPage;
-                obj.items = [];
-                obj.indexs = [];
-                vm.items.forEach(function(item, index) {
-                    if (item.isChecked) {
-                        obj.items.push(item);
-                        obj.indexs.push(index);
-                    }
+                // var vm = this,
+                //     cachePages = vm.cachePages;
+                // if (cachePages.items.length > 0) {
+                //     for (var i = 0; i < cachePages.items.length; i++) {
+                //         cachePages.items[i].pagination === vm.currentPage && cachePages.items.splice(i, 1);
+                //     }
+                // }
+                // var obj = {};
+                // obj.pagination = vm.currentPage;
+                // obj.items = [];
+                // obj.indexs = [];
+                // vm.items.forEach(function(item, index) {
+                //     if (item.isChecked) {
+                //         obj.items.push(item);
+                //         obj.indexs.push(index);
+                //     }
+                // })
+                // return obj;
+                var vm = this, arr = [],  cache = vm.cache;
+                vm.items.forEach(function(item, index){
+                    cache.items.forEach(function(cacheItem, cacheIndex){
+                        if(item.itemId === cacheItem.itemId){
+                            item.isChecked ? cacheItem = item : cache.splice(cacheIndex, 1);
+                        }else if(item.isChecked){
+                            arr.push(item);
+                        }
+                    })           
                 })
-                return obj;
             },
 
             // 检查缓存的宝贝
             checkCache: function() {
                 var vm = this;
-                for (var i = 0; i < vm.cachePages.length; i++) {
-                    if (vm.cachePages[i].pagination === vm.currentPage) {
-                        vm.cachePages[i].indexs.forEach(function(item, index) {
-                            vm.items[item] = vm.cachePages[i].items[index]
+                for (var i = 0; i < vm.cachePages.items.length; i++) {
+                    if (vm.cachePages.items[i].pagination === vm.currentPage) {
+                        vm.cachePages.items[i].indexs.forEach(function(item, index) {
+                            vm.items[item] = vm.cachePages.items[i].items[index]
                         })
                         break;
                     }
@@ -384,31 +411,46 @@ var WMconponents = {
         template: '#publish-step2',
         data: function() {
             return {
-                currentItem: '',
                 items: [],
                 isMoving: false,
-                total: 100,
                 currentPage: 1,
-                isActive: 0
+                isActive: 0,
+                total: '',
+                wmImg: ''
             }
         },
+
         created: function() {
-            var vm = this;
-            vm.originalItems = [].concat(vm.items);
-            $.ajax({
-                    url: 'http://192.168.1.146:3030/wartermark/publish/step2/items',
-                    type: 'POST',
-                    dataType: 'json',
-                    data: { page: this.currentPage }
+            var vm = this, arr = [], getCache;
+            // vm.originalItems = [].concat(vm.items);
+            if(sessionStorage.getItem('wmPublishState')){
+                getCache = JSON.parse(sessionStorage.getItem('wmPublishState'));
+                getCache.items.forEach(function(item){
+                    arr.push.apply(arr, item.items);
                 })
-                .done(function(data) {
-                    vm.items = data.data.items;
-                    vm.currentItem = vm.items[0];
-                })
+                vm.items = arr;
+                vm.total = vm.items.length;
+                vm.wmImg = getCache.wmImg;
+            }else{
+                router.push({path: '/step1'})
+            }
         },
+
+        computed: {
+            currentItem: function(){
+                return this.items[this.isActive];
+            },
+
+            currentItemStyle: function() {
+                return {
+                    left: this.currentItem.wmLeft * (3 / 8) + 'px',
+                    top: this.currentItem.wmTop * (3 / 8) + 'px'
+                }
+            }
+        },
+
         methods: {
             switchItem: function(index) {
-                this.currentItem = this.items[index];
                 this.isActive = index;
             },
             handleCurrentChange: function(val) {
@@ -465,14 +507,6 @@ var WMconponents = {
                         isDrag = false;
                         vm.isMoving = false;
                     });
-                }
-            }
-        },
-        computed: {
-            currentItemStyle: function() {
-                return {
-                    left: this.currentItem.wmLeft * (3 / 8) + 'px',
-                    top: this.currentItem.wmTop * (3 / 8) + 'px'
                 }
             }
         }

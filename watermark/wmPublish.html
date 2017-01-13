@@ -232,7 +232,7 @@
             <div class="title">关联打折活动</div>
             <div class="wm-detailes clearfix">
                 <div class="wm-img">
-                    <img src="https://proxy.huanleguang.com/?url=http://hlg_material.img-cn-hangzhou-internal.aliyuncs.com/20160923/3215139_170550_2925.png@310h_310w.png">
+                    <img :src="wmImg">
                 </div>
                 <ul class="wm-options">
                     <li>
@@ -274,9 +274,9 @@
                 <div class="title">选择投放宝贝</div>
                 <div class="filter-bar">
                     <div class="dropdown mr20">
-                        <a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">全店类目<span class="caret"></span></a>
+                        <a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{categories[currentCategory].name}}<span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li v-for="(item, index) in categories" v-text="item" @click="queryCategory"></li>
+                            <li v-for="(item, index) in categories" v-text="item.parentCid !== 0 ? '└ ' + item.name : item.name"  @click="queryCategory(item, index)"></li>
                         </ul>
                     </div>
                     <div class="dropdown mr20">
@@ -350,8 +350,8 @@
             <div class="title">主图预览调整<span class="ml20 text-tips">温馨提示：可以移动和拖拽水印位置及图片大小</span></div>
             <div class="wm-preview clearfix">
                 <div class="showcase">
-                    <div class="current-item" :style="{backgroundImage: 'url(' + currentItem.itemImg + '_400x400.jpg)'}">
-                        <img :src="currentItem.wmImg" class="wm-img" :class="{moving: isMoving}" :style="currentItemStyle" v-move>
+                    <div class="current-item" :style="{backgroundImage: 'url(' + currentItem.img + '_400x400.jpg)'}">
+                        <img :src="wmImg" class="wm-img" :class="{moving: isMoving}" :style="currentItemStyle" v-move>
                     </div>
                     <div class="btn-group">
                         <a href="javascript:;" class="btn btn-default mr20" @click="reset">还原调整</a>
@@ -360,8 +360,8 @@
                 </div>
                 <div class="items-wrap">
                     <ul class="item-list clearfix mb12">
-                        <li :class="{active: isActive === index}" v-for="(item, index) in items" @click="switchItem(index)" :style="{backgroundImage: 'url(' + item.itemImg + '_100x100.jpg)'}">
-                            <div class="wm-img-cont"><img :src="item.wmImg" :style="{left: item.wmLeft / 8  + 'px', top: item.wmTop / 8 + 'px'}"></div>
+                        <li :class="{active: isActive === index}" v-for="(item, index) in items" @click="switchItem(index)" :style="{backgroundImage: 'url(' + item.img + '_100x100.jpg)'}">
+                            <div class="wm-img-cont"><img :src="wmImg" :style="{left: item.wmLeft / 8  + 'px', top: item.wmTop / 8 + 'px'}"></div>
                         </li>
                     </ul>
                     <pagination v-if="total > 10" class="center" :currentPage="currentPage" :total="total" @pageChange="handleCurrentChange"></pagination>

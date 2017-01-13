@@ -1333,7 +1333,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .dropdown-menu li {
   cursor: pointer;
-  padding: 5px 15px; }
+  padding: 5px 15px;
+  white-space: nowrap; }
 
 .dropdown-menu li:hover, .dropdown-menu li.sel {
   background-color: #22a4ff;

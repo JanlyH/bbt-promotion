@@ -34,7 +34,9 @@ module.exports = {
                 "title": "HANY汉尼2016春夏西服男套装 商务男士婚礼",
                 "url": "秋冬季新款毛呢大衣男修身韩版中长款呢子西服青年男装外套茄克衫",
                 "itemId|+1": 1000,
-                "isChecked": false
+                "isChecked": false,
+                "wmLeft" : 0,
+                "wmTop" : 0
             }],
             "category": [{
                     "cid": 1257736635,
@@ -78,7 +80,8 @@ module.exports = {
                 },
             ],
             "approveStatus": 1,
-            "total": 100
+            "total": 100,
+            "wmImg" : "https://proxy.huanleguang.com/?url=http://hlg_material.img-cn-hangzhou-internal.aliyuncs.com/20160923/3215139_170550_2925.png@310h_310w.png"
         }
     },
     step2Items: {
