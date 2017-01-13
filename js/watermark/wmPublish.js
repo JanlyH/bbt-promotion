@@ -93,20 +93,20 @@ var WMconponents = {
      */
     step1: {
         template: '#publish-step1',
-        data: function () {
+        data: function() {
             return {
                 planName: '', // 计划名称
                 startTime: '', // 活动开始时间
                 endTime: '', // 活动结束时间
                 timeTags: ['3天', '7天', '15天', '30天', '产品到期时间'],
-                categories: [{name: '全部类目', parentCid: 0}], // 类目
+                categories: [{ name: '全部类目', parentCid: 0 }], // 类目
                 items: [], // 获取的宝贝
                 isActive: 1, // 快速选择活动时间的tag标志
                 currentPage: 0, // 当前页
                 pageSize: 10, // 每页显示的宝贝个数
                 total: 0, // 一共有多少个宝贝，根据这个数值来算页数
                 discountNum: '', // 折扣
-                cache: {}, // 勾选中的宝贝缓存在这里
+                cache: { items: [] }, // 勾选中的宝贝缓存在这里
                 approveStatus: 0,
                 approve: ['仓库中', '出售中', '橱窗中'],
                 title: '', //查询的内容宝贝标题、id、链接
@@ -123,7 +123,6 @@ var WMconponents = {
             vm.planName = vm.dateFormat(startDate).y + vm.dateFormat(startDate).M + vm.dateFormat(startDate).d + '-' + vm.dateFormat(startDate).h;
             vm.startTime = vm.dateFormat(startDate).date;
             vm.endTime = vm.dateFormat(endDate).date;
-            vm.cache.items = [];
             vm.request().done(function(data) {
                 vm.items = data.data.items;
                 vm.total = data.data.total;
@@ -131,14 +130,14 @@ var WMconponents = {
                 vm.approveStatus = data.data.approveStatus;
                 vm.wmImg = data.data.wmImg;
                 vm.categories.push.apply(vm.categories, data.data.category);
-                if(sessionStorage.getItem('wmPublishState')){
+                if (sessionStorage.getItem('wmPublishState')) {
                     vm.cache = JSON.parse(sessionStorage.getItem('wmPublishState'));
                     vm.checkCache();
                 }
             })
         },
 
-        beforeRouteLeave: function(to, from, next){
+        beforeRouteLeave: function(to, from, next) {
             this.cacheItems()
             this.cache.wmImg = this.wmImg;
             sessionStorage.removeItem('wmPublishState')
@@ -173,6 +172,11 @@ var WMconponents = {
             // 计算是否全选
             isCheckAll: function() {
                 return this.checkedNum === this.validItems
+            },
+
+            // 已选的数量
+            selectedNum: function() {
+                return this.cache.items.length;
             }
         },
 
@@ -253,6 +257,7 @@ var WMconponents = {
             check: function(index, status) {
                 if (status === 0) {
                     this.items[index].isChecked = !this.items[index].isChecked;
+                    this.cacheItems();
                 }
             },
 
@@ -272,6 +277,7 @@ var WMconponents = {
                     })
                 }
                 this.isCheckAll = !this.isCheckAll;
+                this.cacheItems()
             },
 
             // 格式化日期
@@ -329,7 +335,6 @@ var WMconponents = {
                 vm.items.forEach(function(item, index) {
                     if (item.status === 0) {
                         item.price = parseInt(item.originPrice * (vm.discountNum / 10));
-                        console.log(item.price)
                     }
                 })
             },
@@ -371,17 +376,22 @@ var WMconponents = {
                 //     }
                 // })
                 // return obj;
-                var vm = this, arr = [],  cache = vm.cache;
-                vm.items.forEach(function(item, index){
-                    if(cache.items.length > 0){
-                        cache.items.forEach(function(cacheItem, cacheIndex){
-                            if(item.itemId === cacheItem.itemId){
-                                item.isChecked ? cacheItem = item : cache.splice(cacheIndex, 1);
-                            }else if(item.isChecked){
-                                arr.push(item);
+                var vm = this,
+                    arr = [],
+                    cache = vm.cache;
+                vm.items.forEach(function(item, index) {
+                    if (cache.items.length > 0) {
+                        var flag = true;
+                        cache.items.forEach(function(cacheItem, cacheIndex) {
+                            if (item.itemId === cacheItem.itemId) {
+                                item.isChecked || cache.items.splice(cacheIndex, 1);
+                                flag = false;
                             }
-                        })           
-                    }else if(item.isChecked){
+                        })
+                        if (flag && item.isChecked) {
+                            arr.push(item);
+                        }
+                    } else if (item.isChecked) {
                         arr.push(item);
                     }
                 })
@@ -390,7 +400,9 @@ var WMconponents = {
 
             // 检查缓存的宝贝
             checkCache: function() {
-                var vm = this, items = vm.items, cache = vm.cache;
+                var vm = this,
+                    items = vm.items,
+                    cache = vm.cache;
                 // for (var i = 0; i < vm.cachePages.items.length; i++) {
                 //     if (vm.cachePages.items[i].pagination === vm.currentPage) {
                 //         vm.cachePages.items[i].indexs.forEach(function(item, index) {
@@ -399,14 +411,22 @@ var WMconponents = {
                 //         break;
                 //     }
                 // }
-                if(cache.items.length > 0){
-                    items.forEach(function(item){
-                        cache.items.forEach(function(cacheItem){
-                            if(item.itemId === cacheItem.itemId){
-                                item = cacheItem;
+                if (cache.items.length > 0) {
+                    // items.forEach(function(item) {
+                    // cache.items.forEach(function(cacheItem) {
+                    //     if (item.itemId === cacheItem.itemId) {
+                    //         item = cacheItem;
+                    //     }
+                    // })
+                    itemsFor: for (var j = 0; j < vm.items.length; j++) {
+                            cacheFor: for (var i = 0; i < vm.cache.items.length; i++) {
+                                if (items[j].itemId === cache.items[i].itemId) {
+                                    items[j] = cache.items[i];
+                                    break cacheFor;
+                                }
                             }
-                        })
-                    })
+                        }
+                        // })
                 }
             }
         },
@@ -436,23 +456,21 @@ var WMconponents = {
         },
 
         created: function() {
-            var vm = this, arr = [], getCache;
+            var vm = this,
+                getCache;
             // vm.originalItems = [].concat(vm.items);
-            if(sessionStorage.getItem('wmPublishState')){
+            if (sessionStorage.getItem('wmPublishState')) {
                 getCache = JSON.parse(sessionStorage.getItem('wmPublishState'));
-                getCache.items.forEach(function(item){
-                    arr.push.apply(arr, item.items);
-                })
-                vm.items = arr;
+                vm.items = getCache.items;
                 vm.total = vm.items.length;
                 vm.wmImg = getCache.wmImg;
-            }else{
-                router.push({path: '/step1'})
+            } else {
+                router.push({ path: '/step1' })
             }
         },
 
         computed: {
-            currentItem: function(){
+            currentItem: function() {
                 return this.items[this.isActive];
             },
 

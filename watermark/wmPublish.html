@@ -276,7 +276,7 @@
                     <div class="dropdown mr20">
                         <a class="btn" data-target="#" href="javascript:;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{categories[currentCategory].name}}<span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li v-for="(item, index) in categories" v-text="item.parentCid !== 0 ? '└ ' + item.name : item.name"  @click="queryCategory(item, index)"></li>
+                            <li v-for="(item, index) in categories" v-text="item.parentCid !== 0 ? '└ ' + item.name : item.name" @click="queryCategory(item, index)"></li>
                         </ul>
                     </div>
                     <div class="dropdown mr20">
@@ -340,6 +340,7 @@
                 <a href="javascript:;" class="prev-step" @click="goPrev">上一步</a>
                 <a href="javascript:;" :class="['checkAll','btn', {'btn-default' : !isCheckAll, 'btn-primary' : isCheckAll}]" v-text="isCheckAll ? '取消全选' : '本页全选'" @click="checkAll"></a>
                 <a href="javascript:;" class="next-step" @click="goNext">下一步</a>
+                <span class="selectedNum mt20 mr20 fr">已选择<span class="text-danger" v-text="selectedNum"></span>个宝贝</span>
             </div>
         </div>
     </script>
