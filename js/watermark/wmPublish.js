@@ -139,10 +139,10 @@ var WMconponents = {
         },
 
         beforeRouteLeave: function(to, from, next){
-            this.cachePages.items.push(this.cacheItems());
-            this.cachePages.wmImg = this.wmImg;
+            this.cacheItems()
+            this.cache.wmImg = this.wmImg;
             sessionStorage.removeItem('wmPublishState')
-            sessionStorage.setItem('wmPublishState', JSON.stringify(this.cachePages));
+            sessionStorage.setItem('wmPublishState', JSON.stringify(this.cache));
             next();
         },
 
@@ -181,6 +181,7 @@ var WMconponents = {
                 var obj = data || {};
                 return $.ajax({
                     url: 'http://127.0.0.1:3030/wartermark/publish/step1/items',
+                    // url: 'http://promotion.baobeituan.com/watermark/watermark!preWatermarkCreate.action',
                     type: 'POST',
                     dataType: 'json',
                     data: obj
@@ -336,7 +337,7 @@ var WMconponents = {
             // 翻页
             handleCurrentChange: function(val) {
                 var vm = this;
-                vm.checkedNum > 0 && vm.cachePages.items.push(this.cacheItems());
+                this.cacheItems();
                 vm.currentPage = val;
                 postData = {
                     pageNo: vm.currentPage,
@@ -372,26 +373,40 @@ var WMconponents = {
                 // return obj;
                 var vm = this, arr = [],  cache = vm.cache;
                 vm.items.forEach(function(item, index){
-                    cache.items.forEach(function(cacheItem, cacheIndex){
-                        if(item.itemId === cacheItem.itemId){
-                            item.isChecked ? cacheItem = item : cache.splice(cacheIndex, 1);
-                        }else if(item.isChecked){
-                            arr.push(item);
-                        }
-                    })           
+                    if(cache.items.length > 0){
+                        cache.items.forEach(function(cacheItem, cacheIndex){
+                            if(item.itemId === cacheItem.itemId){
+                                item.isChecked ? cacheItem = item : cache.splice(cacheIndex, 1);
+                            }else if(item.isChecked){
+                                arr.push(item);
+                            }
+                        })           
+                    }else if(item.isChecked){
+                        arr.push(item);
+                    }
                 })
+                cache.items.push.apply(cache.items, arr);
             },
 
             // 检查缓存的宝贝
             checkCache: function() {
-                var vm = this;
-                for (var i = 0; i < vm.cachePages.items.length; i++) {
-                    if (vm.cachePages.items[i].pagination === vm.currentPage) {
-                        vm.cachePages.items[i].indexs.forEach(function(item, index) {
-                            vm.items[item] = vm.cachePages.items[i].items[index]
+                var vm = this, items = vm.items, cache = vm.cache;
+                // for (var i = 0; i < vm.cachePages.items.length; i++) {
+                //     if (vm.cachePages.items[i].pagination === vm.currentPage) {
+                //         vm.cachePages.items[i].indexs.forEach(function(item, index) {
+                //             vm.items[item] = vm.cachePages.items[i].items[index]
+                //         })
+                //         break;
+                //     }
+                // }
+                if(cache.items.length > 0){
+                    items.forEach(function(item){
+                        cache.items.forEach(function(cacheItem){
+                            if(item.itemId === cacheItem.itemId){
+                                item = cacheItem;
+                            }
                         })
-                        break;
-                    }
+                    })
                 }
             }
         },

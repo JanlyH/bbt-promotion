@@ -89,6 +89,14 @@ router.route('/wartermark/publish/step1/items')
         res.json(Mock.mock(WMPublish.step1Items));
     })
     .post((req, res) => {
+        // var request = require('request');
+        // request.post({
+        //     url: 'http://promotion.baobeituan.com' + req.url
+        // } )
+        // .on('response', function(response){
+        //     res.json(response);
+        //     // console.log(response)
+        // })
         setTimeout(function(){
             res.json(Mock.mock(WMPublish.step1Items));
         }, 1000)
