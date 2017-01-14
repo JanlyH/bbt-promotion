@@ -403,21 +403,7 @@ var WMconponents = {
                 var vm = this,
                     items = vm.items,
                     cache = vm.cache;
-                // for (var i = 0; i < vm.cachePages.items.length; i++) {
-                //     if (vm.cachePages.items[i].pagination === vm.currentPage) {
-                //         vm.cachePages.items[i].indexs.forEach(function(item, index) {
-                //             vm.items[item] = vm.cachePages.items[i].items[index]
-                //         })
-                //         break;
-                //     }
-                // }
                 if (cache.items.length > 0) {
-                    // items.forEach(function(item) {
-                    // cache.items.forEach(function(cacheItem) {
-                    //     if (item.itemId === cacheItem.itemId) {
-                    //         item = cacheItem;
-                    //     }
-                    // })
                     itemsFor: for (var j = 0; j < vm.items.length; j++) {
                             cacheFor: for (var i = 0; i < vm.cache.items.length; i++) {
                                 if (items[j].itemId === cache.items[i].itemId) {
@@ -426,7 +412,6 @@ var WMconponents = {
                                 }
                             }
                         }
-                        // })
                 }
             }
         },

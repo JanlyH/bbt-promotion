@@ -20,6 +20,16 @@
   .publish-main-cont .pop-mask-enter,
   .publish-main-cont .pop-mask-leave {
     opacity: 0; }
+  .publish-main-cont .loading {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    height: 400px;
+    line-height: 380px; }
+    .publish-main-cont .loading img {
+      width: 24px;
+      margin-right: 20px;
+      vertical-align: middle; }
   .publish-main-cont .publish-step1 .table tr.checked {
     background-color: #f3f9ff; }
   .publish-main-cont .publish-step1 .big-rang {
@@ -197,6 +207,9 @@
   background-color: #f9f9f9; }
   .filter-bar .discount-input {
     margin: 0 4px; }
+  .filter-bar .dropdown-menu {
+    max-height: 400px;
+    overflow: auto; }
 
 .search {
   display: inline-block;

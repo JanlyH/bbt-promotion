@@ -24,6 +24,18 @@
     .pop-mask-leave {
         opacity: 0;
     }
+    .loading{
+		width: 100%;
+		padding: 10px 0;
+		text-align: center;
+		height: 400px;
+		line-height: 380px;
+		img{
+			width: 24px;
+			margin-right: 20px;
+			vertical-align: middle;
+		}
+	}
     .publish-step1 {
         .table {
             tr.checked {
@@ -245,6 +257,10 @@
     background-color: #f9f9f9;
     .discount-input {
         margin: 0 4px;
+    }
+    .dropdown-menu{
+    	max-height: 400px;
+    	overflow: auto;
     }
 }
 
