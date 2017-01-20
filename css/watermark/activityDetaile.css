@@ -13,11 +13,19 @@
   .details-cont .loading {
     width: 100%;
     padding: 10px 0;
-    text-align: center; }
+    text-align: center;
+    height: 400px;
+    line-height: 380px; }
     .details-cont .loading img {
       width: 24px;
       margin-right: 20px;
       vertical-align: middle; }
+  .details-cont .big-rang {
+    box-sizing: content-box;
+    padding: 25px;
+    cursor: pointer; }
+  .details-cont .table tr.checked {
+    background-color: #f3f9ff; }
   .details-cont .tab-wraped {
     width: 100%;
     height: 50px;
@@ -61,59 +69,57 @@
       float: right;
       margin-top: 8px;
       margin-right: 15px; }
-  .details-cont .publish-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd; }
-    .details-cont .publish-bar .checkAll {
-      margin: 12px 0 0 12px;
-      background-color: #fff; }
-      .details-cont .publish-bar .checkAll.btn-primary {
-        background-color: #22a4ff; }
-    .details-cont .publish-bar .prev-step {
-      float: left;
-      padding: 0 20px;
-      min-width: 150px;
-      height: 58px;
-      line-height: 58px;
-      font-size: 16px;
-      color: #666;
-      text-align: center;
+  .details-cont .pagination {
+    user-select: none; }
+    .details-cont .pagination.center {
+      text-align: center; }
+    .details-cont .pagination.right {
+      text-align: right; }
+    .details-cont .pagination .pages {
+      display: inline-block;
+      vertical-align: top; }
+      .details-cont .pagination .pages li {
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+        padding: 0;
+        text-align: center; }
+    .details-cont .pagination .prev-page,
+    .details-cont .pagination .next-page {
+      display: inline-block;
+      padding: 1px 7px;
+      border: 1px solid #ddd;
       background-color: #fff;
-      border-right: 1px solid #ddd;
-      transition: all 0.3s;
-      transition: all 0.3s;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      -ms-transition: all 0.3s; }
-      .details-cont .publish-bar .prev-step:hover {
-        transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        -ms-transition: all 0.3s;
-        color: #22a4ff; }
-    .details-cont .publish-bar .next-step {
-      float: right;
-      padding: 0 20px;
-      min-width: 150px;
-      height: 58px;
-      line-height: 58px;
-      font-size: 16px;
-      color: #fff;
-      text-align: center;
-      background-color: #22a4ff;
-      transition: all 0.3s;
-      transition: all 0.3s;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      -ms-transition: all 0.3s; }
-      .details-cont .publish-bar .next-step:hover {
-        transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        -ms-transition: all 0.3s;
-        background-color: #0096ff; }
+      border-radius: 3px;
+      vertical-align: top; }
+      .details-cont .pagination .prev-page:hover,
+      .details-cont .pagination .next-page:hover {
+        cursor: pointer;
+        background-color: #f5f5f5; }
+      .details-cont .pagination .prev-page.disable,
+      .details-cont .pagination .next-page.disable {
+        opacity: 0.5;
+        cursor: not-allowed; }
+        .details-cont .pagination .prev-page.disable:hover,
+        .details-cont .pagination .next-page.disable:hover {
+          background-color: #fff; }
+  .details-cont .search {
+    display: inline-block;
+    vertical-align: middle; }
+    .details-cont .search .search-text {
+      float: left;
+      border-right: 0;
+      transition: all .3s;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -ms-transition: all .3s; }
+      .details-cont .search .search-text.active {
+        width: 350px;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s; }
+    .details-cont .search .search-btn {
+      float: left;
+      vertical-align: top;
+      border-radius: 0; }

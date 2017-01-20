@@ -148,30 +148,16 @@
                     </div>
                     <div class="tab-wraped">
                         <ul class="nav-items">
-                            <li v-for="(item, index) in tabs" v-text="item" :class="{active: currentTab === index}"></li>
+                            <li v-for="(item, index) in tabs" v-text="item" :class="{active: currentTab === index}" @click="changeTab(index)"></li>
                         </ul>
-                    </div>
-                    <div class="success" v-if="currentTab === 0">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <a href="javascript:;" class="btn btn-primary">本页全选</a>
-                                    </td>
-                                    <td>宝贝标题</td>
-                                    <td>宝贝价格</td>
-                                    <td>投放状态</td>
-                                    <td>操作</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="publish-bar" v-fixedbar>
-                            <a href="javascript:;" class="prev-step" @click="goPrev">上一步</a>
-                            <a href="javascript:;" class="btn btn-primary" @click="batchCancel">批量退出</a>
-                            <a href="javascript:;" class="next-step" @click="goNext">下一步</a>
-                            <span class="selectedNum mt20 mr20 fr">已选择<span class="text-danger" v-text="selectedNum"></span>个宝贝</span>
+                        <div class="search fr mt8 mr20">
+                            <input type="text" placeholder="宝贝名称/链接/ID" class="input-large form-control search-text" v-model="title">
+                            <a href="javascript:;" class="btn btn-primary search-btn" @click="queryTitle">查询</a>
                         </div>
                     </div>
+                    <keep-alive>
+                        <component :is="currentView"></component>
+                    </keep-alive>
                 </div>
                 <!-- 水印图标页面-end -->
             </div>
@@ -248,6 +234,118 @@
                 </li>
             </ul>
         </div>
+
+        <!-- 分页组件 -->
+        <script type="text/x-template" id="pagination">
+            <div class="pagination">
+                <slot name="ctrl"></slot>
+                <div class="prev-page" :class="{disable: currentPage === 1}" @click="pageChange">上一页</div>
+                <ul class="pages clearfix">
+                    <li @click="pageChange" v-for="(item, index) in pageList" :class="[{active: item === currentPage}, {'prev-skip': item === -1}, {'next-skip': item === -2}]" v-text="item < 0 ? '...' : item"></li>
+                </ul>
+                <div class="next-page" :class="{disable: currentPage === pageCount}" @click="pageChange">下一页</div>
+            </div>
+        </script>
+
+        <!-- 成功的宝贝 -->
+        <script type="text/x-template" id="successItems">
+            <div class="success">
+                <table class="table mb20">
+                    <tbody>
+                        <tr>
+                            <td width="100">
+                                <a href="javascript:;" :class="['btn', {'btn-default' : !isCheckAll, 'btn-primary' : isCheckAll}]" v-text="isCheckAll ? '取消全选' : '本页全选'" @click.stop="checkAll"></a>
+                            </td>
+                            <td width="120">宝贝主图</td>
+                            <td width="240">宝贝标题</td>
+                            <td width="100">宝贝价格</td>
+                            <td width="120">投放状态</td>
+                            <td width="180">成功投放时间</td>
+                            <td>操作</td>
+                        </tr>
+                        <tr v-for="(item, index) in items">
+                            <td>
+                                <div class="form-checkbox big-rang" @click.stop="check(item, index)">
+                                    <p ttp="checkbox" :class="{'checkbox-active' : item.isChecked}"><i></i></p>
+                                </div>
+                            </td>
+                            <td>
+                                <a :href="item.url" target="_blank"><img :src="item.img + '_80x80.jpg'"></a>
+                            </td>
+                            <td class="text-left">
+                                <a :href="item.url" class="btn-link" target="_blank" v-text="item.title"></a>
+                            </td>
+                            <td>
+                                <span v-text="item.price"></span>
+                            </td>
+                            <td>
+                                <span v-text="item.status === 0 ? '正常投放中' : '退出投放中...'" :class="[{'text-success' : item.status === 0}, {'text-tips' : item.status === 1}]"></span>
+                            </td>
+                            <td>
+                                <span class="text-tips" v-text="item.time"></span>
+                            </td>
+                            <td>
+                                <a href="javascript:;" class="btn btn-primary">退出投放</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination v-if="total > 10" class="right" :current-page="currentPage" :total="total" @page-change="changePage">
+                    <div class="fl" slot="ctrl" style="margin-top: -5px;">
+                        <a href="javascript:;" :class="['btn', {'btn-default' : !isCheckAll, 'btn-primary' : isCheckAll}, 'mr20']" v-text="isCheckAll ? '取消全选' : '本页全选'" @click.stop="checkAll"></a>
+                        <a href="javascript:;" class="btn btn-primary" @click="batchPublish">批量退出</a>
+                    </div>
+                </pagination>
+            </div>
+        </script>
+
+        <!-- 失败的宝贝 -->
+        <script type="text/x-template" id="failedItems">
+            <div class="failed">
+                <table class="table mb20">
+                    <tbody>
+                        <tr>
+                            <td width="100">
+                                <a href="javascript:;" :class="['btn', {'btn-default' : !isCheckAll, 'btn-primary' : isCheckAll}]" v-text="isCheckAll ? '取消全选' : '本页全选'" @click.stop="checkAll"></a>
+                            </td>
+                            <td width="120">宝贝主图</td>
+                            <td width="240">宝贝标题</td>
+                            <td width="120">投放状态</td>
+                            <td width="250">失败原因</td>
+                            <td>操作</td>
+                        </tr>
+                        <tr v-for="(item, index) in items">
+                            <td>
+                                <div class="form-checkbox big-rang" @click.stop="check(item, index)">
+                                    <p ttp="checkbox" :class="{'checkbox-active' : item.isChecked}"><i></i></p>
+                                </div>
+                            </td>
+                            <td>
+                                <a :href="item.url" target="_blank"><img :src="item.img + '_80x80.jpg'"></a>
+                            </td>
+                            <td class="text-left">
+                                <a :href="item.url" class="btn-link" target="_blank" v-text="item.title"></a>
+                            </td>
+                            <td>
+                                <span v-text="item.status === 0 ? '正常投放中' : '退出投放中...'" :class="[{'text-success' : item.status === 0}]"></span>
+                            </td>
+                            <td class="text-left">
+                                <span class="text-tips" v-text="item.season"></span>
+                            </td>
+                            <td>
+                                <a href="javascript:;" class="btn btn-primary">重新投放</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination v-if="total > 10" class="right" :current-page="currentPage" :total="total" @page-change="changePage">
+                    <div class="fl" slot="ctrl" style="margin-top: -5px;">
+                        <a href="javascript:;" :class="['btn', {'btn-default' : !isCheckAll, 'btn-primary' : isCheckAll}, 'mr20']" v-text="isCheckAll ? '取消全选' : '本页全选'" @click.stop="checkAll"></a>
+                        <a href="javascript:;" class="btn btn-primary" @click="batchPublish">批量投放</a>
+                    </div>
+                </pagination>
+            </div>
+        </script>
     </div>
 
     <!--@JQuery v1.9.1-->
@@ -260,6 +358,7 @@
     <script type="text/javascript" src="../js/common.js"></script>
 
     <script type="text/javascript" src="../js/lib/vue/vue.js"></script>
+    <script type="text/javascript" src="../js/lib/lodash/lodash.min.js"></script>
     <script type="text/javascript" src="../js/watermark/activityDetaile.js"></script>
 
 </body>

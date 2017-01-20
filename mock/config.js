@@ -7,6 +7,7 @@ var router = express.Router();
 
 var WMProfile = require('./watermarkListModel');
 var WMPublish = require('./watermarkPublishModel');
+var WMActivity = require('./watermarkActivityDetaile');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -100,6 +101,24 @@ router.route('/wartermark/publish/step1/items')
         setTimeout(function(){
             res.json(Mock.mock(WMPublish.step1Items));
         }, 1000)
+        console.log(req.body)
+    })
+
+router.route('/wartermark/activityDetaile/success')
+    .get((req, res) => {
+        res.json(Mock.mock(WMActivity.success));
+    })
+    .post((req, res) => {
+        res.json(Mock.mock(WMActivity.success));
+        console.log(req.body)
+    })
+
+router.route('/wartermark/activityDetaile/failed')
+    .get((req, res) => {
+        res.json(Mock.mock(WMActivity.failed));
+    })
+    .post((req, res) => {
+        res.json(Mock.mock(WMActivity.failed));
         console.log(req.body)
     })
 
